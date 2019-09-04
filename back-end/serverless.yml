@@ -21,6 +21,7 @@ custom:
   tableName: 'hey-bevan-table-${self:provider.stage}'
   customDomain:
     domainName: hey-bevan.com
+    certificateName: "*.hey-bevan.com"
     basePath: ''
     stage: ${self:provider.stage}
     createRoute53Record: true

@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a89f8bc9-b4df-4921-8cd5-7af5cb2b3055" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.aws-csharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.aws-csharp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.serverless/GetAll.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/GetAll.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.serverless/addBevan.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/addBevan.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.serverless/challenge.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/challenge.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.serverless/cloudformation-template-update-stack.json" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/cloudformation-template-update-stack.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.serverless/serverless-state.json" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/serverless-state.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/release/netcoreapp2.1/hello.zip" beforeDir="false" afterPath="$PROJECT_DIR$/bin/release/netcoreapp2.1/hello.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/serverless.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/serverless.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+            <state relative-caret-position="250">
+              <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -128,12 +121,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567637648190</updated>
-      <workItem from="1567637649332" duration="1330000" />
+      <workItem from="1567637649332" duration="1497000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1330000" />
+    <option name="totallyTimeSpent" value="1497000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -146,7 +139,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="959" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Image Layers" />
@@ -220,8 +212,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/serverless.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        <state relative-caret-position="250">
+          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
         </state>
       </provider>
     </entry>
