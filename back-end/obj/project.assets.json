@@ -4783,11 +4783,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/jesse.paclar/Documents/learn-simplify/serverless/hey-bevan/aws-csharp.csproj",
+      "projectUniqueName": "/Users/jesse.paclar/Documents/learn-simplify/hack-day/hey-bevan/back-end/aws-csharp.csproj",
       "projectName": "aws-csharp",
-      "projectPath": "/Users/jesse.paclar/Documents/learn-simplify/serverless/hey-bevan/aws-csharp.csproj",
+      "projectPath": "/Users/jesse.paclar/Documents/learn-simplify/hack-day/hey-bevan/back-end/aws-csharp.csproj",
       "packagesPath": "/Users/jesse.paclar/.nuget/packages/",
-      "outputPath": "/Users/jesse.paclar/Documents/learn-simplify/serverless/hey-bevan/obj/",
+      "outputPath": "/Users/jesse.paclar/Documents/learn-simplify/hack-day/hey-bevan/back-end/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

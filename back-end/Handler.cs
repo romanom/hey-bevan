@@ -7,18 +7,33 @@ namespace AwsDotnetCsharp
 {
     public class Handler
     {
-       public Response Hello(Request request)
-       {
-           return new Response("Go Serverless v1.0! Your function executed successfully!", request);
-       }
+      public Response AddBevan(Request request)
+      {
+        return new Response("Go Serverless v1.0! Your function executed successfully!", request);
+      }
+
+      public Response Challenge(Request request)
+      {
+        return new Response("Go Serverless v1.0! Your function executed successfully!", request);
+      }
+       
+      public Response GetAll()
+      {
+        return new Response("Go Serverless v1.0! Your function executed successfully!");
+      }
+
+      public Response GetById(string userId)
+      {
+        return new Response("Go Serverless v1.0! Your function executed successfully!");
+      }
     }
 
     public class Response
     {
       public string Message {get; set;}
-      public Request Request {get; set;}
+      public Request Request { get; set; }
 
-      public Response(string message, Request request){
+      public Response(string message, Request request = null){
         Message = message;
         Request = request;
       }

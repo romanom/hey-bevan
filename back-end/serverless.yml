@@ -55,14 +55,38 @@ package:
   individually: true
 
 functions:
-  hello:
-    handler: CsharpHandlers::AwsDotnetCsharp.Handler::Hello
+  addBevan:
+    handler: CsharpHandlers::AwsDotnetCsharp.Handler::AddBevan
     memorySize: 128
-    description: add bevan endpoint
+    description: add bevan
     events:
-      - http: 
+      - http:
           path: addBevan
           method: post
+  challenge:
+    handler: CsharpHandlers::AwsDotnetCsharp.Handler::Challenge
+    memorySize: 128
+    description: challenge auth
+    events:
+      - http:
+          path: challenge
+          method: post
+  GetAll:
+    handler: CsharpHandlers::AwsDotnetCsharp.Handler::GetAll
+    memorySize: 128
+    description: get all bevans
+    events:
+      - http:
+          path: getAll
+          method: get
+  GetById:
+    handler: CsharpHandlers::AwsDotnetCsharp.Handler::GetById
+    memorySize: 128
+    description: get bevan by id
+    events:
+      - http:
+          path: getById
+          method: get
 
     # you can add packaging information here
     package:
