@@ -68,6 +68,8 @@ functions:
       - http:
           path: addBevan
           method: post
+    package:
+      artifact: bin/release/netcoreapp2.1/AddBevan.zip
   challenge:
     handler: CsharpHandlers::AwsDotnetCsharp.Handler::Challenge
     memorySize: 128
@@ -76,6 +78,8 @@ functions:
       - http:
           path: challenge
           method: post
+    package:
+      artifact: bin/release/netcoreapp2.1/Challenge.zip
   GetAll:
     handler: CsharpHandlers::AwsDotnetCsharp.Handler::GetAll
     memorySize: 128
@@ -84,6 +88,8 @@ functions:
       - http:
           path: getAll
           method: get
+    package:
+      artifact: bin/release/netcoreapp2.1/GetAll.zip
   GetById:
     handler: CsharpHandlers::AwsDotnetCsharp.Handler::GetById
     memorySize: 128
@@ -95,7 +101,8 @@ functions:
 
     # you can add packaging information here
     package:
-      artifact: bin/release/netcoreapp2.1/hello.zip
+      artifact: bin/release/netcoreapp2.1/GetById.zip
+    
     #  exclude:
     #    - exclude-me.js
     #    - exclude-me-dir/**

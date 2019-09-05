@@ -1,6 +1,8 @@
 using Amazon.Lambda.Core;
 using System;
+using System.Threading.Tasks;
 using System.Transactions;
+using Amazon.Lambda.APIGatewayEvents;
 using AwsDotnetCsharp.Models;
 
 [assembly:LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
@@ -14,12 +16,10 @@ namespace AwsDotnetCsharp
         return new Response();
       }
 
-      public Response Challenge(SlackAuthentication request)
+      [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
+      public APIGatewayProxyResponse Challenge(SlackAuthentication request)
       {
-        return new Response
-        {
-          StatusCode = 200
-        };
+        return new APIGatewayProxyResponse {StatusCode = 200};
       }
        
       public Response GetAll()
@@ -36,7 +36,6 @@ namespace AwsDotnetCsharp
     public class Response
     {
       public object StatusCode {get; set;}
-      public Header Headers { get; set; }
     }
 
     public class Header
