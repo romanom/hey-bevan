@@ -1,10 +1,9 @@
 using System;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Amazon.DynamoDBv2;
-using AwsDotnetCsharp.Infrastructure;
-using AwsDotnetCsharp.Infrastructure.Configs;
 using AwsDotnetCsharp.Models;
 using AwsDotnetCsharp.Repository;
+using SlackAPI;
 
 namespace AwsDotnetCsharp.Business.SlackMessage
 {
@@ -17,6 +16,7 @@ namespace AwsDotnetCsharp.Business.SlackMessage
         public SlackMessage(IDynamoRepository dynamoRepository)
         {
             _dynamoRepository = dynamoRepository;
+
         }
 
         internal async Task<Bevan> ProcessMessage(Event @event)
@@ -47,11 +47,30 @@ namespace AwsDotnetCsharp.Business.SlackMessage
                 };
 
                 await _dynamoRepository.SaveBevan(bevan);
+
+                await sendDM(whoSent, string.Format("You gave <@{0}> {1} {2}'s", whoReceived, noOfEmojis, emoji));
+
             }
-            
+
             //do nothing
             return bevan;
         }
 
+        private async Task sendDM(string whoSent, string message)
+        {
+            var token = "xoxb-2315277109-749184996816-mTCSqqL485bJl3SLSmEeVVL5";
+            var client = new SlackTaskClient(token);
+            var response = await client.PostMessageAsync(whoSent, message, null, null, false, null, null, false, null, null, true);
+
+            // process response from API call
+            if (response.ok)
+            {
+                Console.WriteLine("Message sent successfully");
+            }
+            else
+            {
+                Console.WriteLine("Message sending failed. error: " + response.error);
+            }
+        }
     }
 }
