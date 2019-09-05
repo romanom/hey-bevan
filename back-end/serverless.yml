@@ -100,6 +100,16 @@ functions:
           method: get
     package:
       artifact: bin/release/netcoreapp2.1/GetById.zip
+  showSent:
+    handler: CsharpHandlers::AwsDotnetCsharp.Handler::ShowSent
+    memorySize: 128
+    description: Show sent Bevans
+    events:
+      - http:
+          path: showSent
+          method: post
+    package:
+      artifact: bin/release/netcoreapp2.1/ShowSent.zip
     
     #  exclude:
     #    - exclude-me.js
