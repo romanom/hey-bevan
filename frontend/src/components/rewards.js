@@ -1,20 +1,72 @@
 import React, { Component } from "react";
+import "./styles/rewards.css";
 import Assistant from "./images/reward-assistant.png";
-import Coffee from "./images/reward-assistant.png";
-import Dining from "./images/reward-assistant.png";
-import Pilot from "./images/reward-assistant.png";
-import Pug from "./images/reward-assistant.png";
+import Coffee from "./images/reward-coffee.png";
+import Dining from "./images/reward-dining.png";
+import Pilot from "./images/reward-pilot.png";
+import Pug from "./images/reward-pug.png";
 class RewardPage extends Component {
   render() {
     return (
-      <div className="reward-container">
-        <div className="card">
-          <div className="reward-img">
-            <img src={Assistant}></img>
+      <div className="rewards-container">
+        <div className="rewards-card">
+          <div className="rewards-img">
+            <img className="rewards-card" src={Assistant}></img>
           </div>
-          <div className="description">
-            Bevan will be your PA for the day. Note that Bevan has no paid
-            experience in this role.
+          <div className="rewards-text">
+            <div className="rewards-title">Personal Assistant Bevan</div>
+            <div className="description">
+              Bevan will be your PA for the day. Note that Bevan has no paid
+              experience in this role.
+            </div>
+          </div>
+        </div>
+        <div className="rewards-card">
+          <div className="rewards-img">
+            <img className="rewards-card" src={Coffee}></img>
+          </div>
+          <div className="rewards-text">
+            <div className="rewards-title">Personal Assistant Bevan</div>
+            <div className="description">
+              Bevan will be your PA for the day. Note that Bevan has no paid
+              experience in this role.
+            </div>
+          </div>
+        </div>
+        <div className="rewards-card">
+          <div className="rewards-img">
+            <img className="rewards-card" src={Dining}></img>
+          </div>
+          <div className="rewards-text">
+            <div className="rewards-title">Personal Assistant Bevan</div>
+            <div className="description">
+              Bevan will be your PA for the day. Note that Bevan has no paid
+              experience in this role.
+            </div>
+          </div>
+        </div>
+        <div className="rewards-card">
+          <div className="rewards-img">
+            <img className="rewards-card" src={Pilot}></img>
+          </div>
+          <div className="rewards-text">
+            <div className="rewards-title">Personal Assistant Bevan</div>
+            <div className="description">
+              Bevan will be your PA for the day. Note that Bevan has no paid
+              experience in this role.
+            </div>
+          </div>
+        </div>
+        <div className="rewards-card">
+          <div className="rewards-img">
+            <img className="rewards-card" src={Pug}></img>
+          </div>
+          <div className="rewards-text">
+            <div className="rewards-title">Personal Assistant Bevan</div>
+            <div className="description">
+              Bevan will be your PA for the day. Note that Bevan has no paid
+              experience in this role.
+            </div>
           </div>
         </div>
       </div>
