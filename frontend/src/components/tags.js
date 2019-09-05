@@ -14,13 +14,12 @@ class Content extends Component {
             <td>
               <table>
                 <tr id="sub-header">
-                  <td class="page-title">{this.props.title}</td>
+                  <td className="page-title">{this.props.title}</td>
                   <td>
                     <Filter />
                   </td>
                 </tr>
-                <tr>
-                </tr>
+                <tr></tr>
               </table>
             </td>
           </tr>

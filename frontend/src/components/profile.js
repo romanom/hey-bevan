@@ -18,19 +18,19 @@ class Profile extends Component {
   }
   render() {
     return (
-      <div class="profile-container">
+      <div className="profile-container">
         {this.state.userImage ? (
           <img
             alt="user"
-            class="profile-img"
+            className="profile-img"
             src={require(`./images/${this.state.userImage}`)}
           ></img>
         ) : (
           ""
         )}
         <p>{this.state.userName}</p>
-        <p class="redeemable-text">Redeemable HeyBevans</p>
-        <p class="no-padding">{this.state.totalBevans}</p>
+        <p className="redeemable-text">Redeemable HeyBevans</p>
+        <p className="no-padding">{this.state.totalBevans}</p>
       </div>
     );
   }
