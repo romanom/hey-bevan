@@ -15,6 +15,7 @@ namespace AwsDotnetCsharp.Repository
     public interface IDynamoRepository
     {
         Task SaveBevan(Bevan bevan);
+        Task<List<string>> GetChannels();
     }
     
     public class DynamoRepository: IDynamoRepository
@@ -33,19 +34,29 @@ namespace AwsDotnetCsharp.Repository
             };
         }
 
-        public async Task GetChannels(Bevan bevan)
+        public async Task<List<string>> GetChannels()
         {
-            using (var client = new AmazonDynamoDBClient())
+            var list = new List<string>();
+            /*using (var client = new AmazonDynamoDBClient())
             {
-                var table = Table.LoadTable(client, "hey-bevan-table-dev");
-                
-                var channelOnly = new Document
+                var request = new QueryRequest
                 {
-                    ["channel"] = bevan.Channel
+                    TableName = "hey-bevan-table-dev",
+                    KeyConditionExpression = "Id = :v_Id",
+                    ExpressionAttributeValues = new Dictionary<string, AttributeValue> {
+                        {":v_Id", new AttributeValue { S =  "Amazon DynamoDB#DynamoDB Thread 1" }}}
                 };
+                
+                var response = client.Query(request);
 
-                await table.PutItemAsync(channelOnly);
-            }
+                foreach (Dictionary<string, AttributeValue> item in response.Items)
+                {
+                    // Process the result.
+                    list.Add(item);
+                }
+            }*/
+
+            return list;
         }
         
         public async Task SaveBevan(Bevan bevan)
