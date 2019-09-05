@@ -2,44 +2,26 @@ import React, { Component } from "react";
 import Header from "./components/header";
 import "./App.css";
 import Content from "./components/content";
-import ActivityContainer from "./components/activitycontainer";
 import Tags from "./components/tags";
 import Footer from "./components/footer";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import SignInCallback from "./components/signincallback";
+import Home from './components/home';
 
 class App extends Component {
-  state = {
-    showLeaderboard : true,
-    showActivities : false,
-    showTags: false
-  }
-
-  onClickActivities = () => {
-    this.setState({ showActivities : true, showLeaderboard: false, showTags: false});
-  }
-
-  onClickLeaderboard = () => {
-    this.setState({ showLeaderboard : true, showActivities: false, showTags: false});
-  }
-
-  onClickTags = () => {
-    this.setState({ showTags : true, showActivities: false, showLeaderboard: false});
-  }
-
+    
   render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <Header 
-            onClickActivities={this.onClickActivities} 
-            onClickLeaderboard= {this.onClickLeaderboard}
-            onClickTags={this.onClickTags}  
-          />
+  return (
+      <Router>
+        <div className="App">
+          <Header />
+          <Route exact path= "/" component= { Home } />
+          <Route path= "/leaderboard" component= { Content } />
+          <Route path="/signincallback" component={ SignInCallback } />
+          <Route path="/Tags" component={ Tags } />
+          <Footer />
         </div>
-        { this.state.showLeaderboard && <Content title="Leaderboard" />}
-        { this.state.showActivities && <ActivityContainer title="Activities" />}
-        { this.state.showTags && <Tags title="Tags" />}
-        <Footer />
-      </div>
+      </Router>
     );
   }
 }
