@@ -112,6 +112,17 @@ functions:
           method: post
     package:
       artifact: bin/release/netcoreapp2.1/ShowSent.zip
+  showGiven:
+    handler: CsharpHandlers::AwsDotnetCsharp.Handler::ShowGiven
+    memorySize: 128
+    description: Show given Bevans
+    events:
+      - http:
+          path: showGiven
+          method: post
+    package:
+      artifact: bin/release/netcoreapp2.1/ShowGiven.zip
+    
     
 resources:
  Resources:
