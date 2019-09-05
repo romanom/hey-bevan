@@ -20,6 +20,8 @@ namespace AwsDotnetCsharp.Repository
         Task<List<string>> GetChannels();
 
         Task<IEnumerable<Bevan>> GetBevansByChannel(string channelId);
+
+        Task<Redeemable> GetRedeemableByRecieverId(string userId);
     }
     
     public class DynamoRepository: IDynamoRepository
@@ -75,6 +77,18 @@ namespace AwsDotnetCsharp.Repository
 //                    Timestamp = DateTime.Parse(i["timestamp"].S)
 //                });
 //            }
+        }
+
+        public async Task<Redeemable> GetRedeemableByRecieverId(string userId)
+        {
+            var bevans = (await GetBevanList()).Where(b => b.ReceiverId.Equals(userId));
+
+            return bevans.GroupBy(g => g.ReceiverId)
+                .Select(s => new Redeemable
+                {
+                    ReceiverId = s.Key,
+                    TotalCount = s.Sum(i => i.Count)
+                }).FirstOrDefault();
         }
 
         public async Task SaveBevan(Bevan bevan)

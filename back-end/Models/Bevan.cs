@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using Amazon.DynamoDBv2.DataModel;
 
 namespace AwsDotnetCsharp.Models
@@ -23,5 +24,11 @@ namespace AwsDotnetCsharp.Models
         
         [DynamoDBProperty]
         public DateTime Timestamp { get; set; }
+    }
+
+    public class Redeemable
+    {
+        public string ReceiverId { get; set; }
+        public int TotalCount { get; set; }
     }
 }
