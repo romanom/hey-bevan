@@ -30,6 +30,8 @@ namespace AwsDotnetCsharp
 
       private APIGatewayProxyResponse HandleRequest(SlackRequest request)
       {
+        Console.WriteLine("HandleRequest invoked with Type " + request.Type);
+
         switch (request.Type)
         {
           case "url_verification":
@@ -42,6 +44,9 @@ namespace AwsDotnetCsharp
             };
           case "event_callback":
             // do dynamo db inserts
+            
+            Console.WriteLine("Event " + request.Event);
+
             return new APIGatewayProxyResponse
             {
               StatusCode = 200, Body = JsonConvert.SerializeObject(new
