@@ -12,7 +12,7 @@ class RewardPage extends Component {
       <div className="rewards-container">
         <div className="rewards-card">
           <div className="rewards-img">
-            <img className="rewards-card" src={Assistant}></img>
+            <img src={Assistant}></img>
           </div>
           <div className="rewards-text">
             <div className="rewards-title">Personal Assistant Bevan</div>
@@ -24,7 +24,7 @@ class RewardPage extends Component {
         </div>
         <div className="rewards-card">
           <div className="rewards-img">
-            <img className="rewards-card" src={Coffee}></img>
+            <img src={Coffee}></img>
           </div>
           <div className="rewards-text">
             <div className="rewards-title">Coffee with Bevan himself</div>
@@ -36,7 +36,7 @@ class RewardPage extends Component {
         </div>
         <div className="rewards-card">
           <div className="rewards-img">
-            <img className="rewards-card" src={Dining}></img>
+            <img src={Dining}></img>
           </div>
           <div className="rewards-text">
             <div className="rewards-title">
@@ -50,7 +50,7 @@ class RewardPage extends Component {
         </div>
         <div className="rewards-card">
           <div className="rewards-img">
-            <img className="rewards-card" src={Pilot}></img>
+            <img src={Pilot}></img>
           </div>
           <div className="rewards-text">
             <div className="rewards-title">Pilot Bevan</div>
@@ -62,7 +62,7 @@ class RewardPage extends Component {
         </div>
         <div className="rewards-card">
           <div className="rewards-img">
-            <img className="rewards-card" src={Pug}></img>
+            <img src={Pug}></img>
           </div>
           <div className="rewards-text">
             <div className="rewards-title">Bevansitting</div>
