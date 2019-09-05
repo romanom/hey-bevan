@@ -105,7 +105,6 @@ namespace AwsDotnetCsharp
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
         public async Task<APIGatewayProxyResponse> Channels()
         {
-            // ask to dynamo ask for my selected channels where bevans are used
             List<string> channels = await _dynamoRepository.GetChannels();
             return new APIGatewayProxyResponse { StatusCode = 200, Body = JsonConvert.SerializeObject(channels) };
         }
