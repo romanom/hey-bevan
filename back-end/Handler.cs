@@ -20,7 +20,19 @@ namespace AwsDotnetCsharp
   public class Handler
   {
 
-    private readonly IDynamoRepository _dynamoRepository;
+      private readonly IDynamoRepository _dynamoRepository;
+      public Handler()
+      {
+        _dynamoRepository = new DynamoRepository(new DynamoDbConfiguration
+        {
+          TableName = "hey-bevan-table-dev"
+        }, new AwsClientFactory<AmazonDynamoDBClient>(new AwsBasicConfiguration()));
+      }
+      [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
+      public APIGatewayProxyResponse AddBevan(APIGatewayProxyRequest request)
+      {
+        return new APIGatewayProxyResponse {StatusCode = 200};
+      }
 
     public Handler()
     {
@@ -55,27 +67,16 @@ namespace AwsDotnetCsharp
           {
             StatusCode = 200, Body = JsonConvert.SerializeObject(new
             {
-              Challenge = request.Challenge
-            })
-          };
-        case "event_callback":
-          // do dynamo db inserts
-          var bevan = new Bevan
-          {
-            UserId = request.Event.User,
-            Count = 1,
-            Message = request.Event.Text,
-            Channel = request.Event.Channel,
-            GiverId = "123"
-          };
-
-          await _dynamoRepository.SaveBevan(bevan);
-
-          SlackMessage.PostMessage(request.Event);
-
-          return new APIGatewayProxyResponse
-          {
-            StatusCode = 200, Body = JsonConvert.SerializeObject(new
+              StatusCode = 200, Body = JsonConvert.SerializeObject(new
+              {
+                Challenge = request.Challenge
+              })
+            };
+          case "event_callback":            
+            
+            await SlackMessage.ProcessMessage(request.Event);
+          
+            return new APIGatewayProxyResponse
             {
               Message = request.Event.Text
             })
