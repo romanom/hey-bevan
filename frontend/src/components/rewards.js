@@ -5,6 +5,7 @@ import Coffee from "./images/reward-coffee.png";
 import Dining from "./images/reward-dining.png";
 import Pilot from "./images/reward-pilot.png";
 import Pug from "./images/reward-pug.png";
+import Profile from "./profile";
 class RewardPage extends Component {
   render() {
     return (
@@ -26,10 +27,10 @@ class RewardPage extends Component {
             <img className="rewards-card" src={Coffee}></img>
           </div>
           <div className="rewards-text">
-            <div className="rewards-title">Personal Assistant Bevan</div>
+            <div className="rewards-title">Coffee with Bevan himself</div>
             <div className="description">
-              Bevan will be your PA for the day. Note that Bevan has no paid
-              experience in this role.
+              Have you ever wanted to pick Bevan's brains? Now's your chance.
+              Coffee not included.
             </div>
           </div>
         </div>
@@ -38,10 +39,12 @@ class RewardPage extends Component {
             <img className="rewards-card" src={Dining}></img>
           </div>
           <div className="rewards-text">
-            <div className="rewards-title">Personal Assistant Bevan</div>
+            <div className="rewards-title">
+              Fine Dining Experience for Bevan
+            </div>
             <div className="description">
-              Bevan will be your PA for the day. Note that Bevan has no paid
-              experience in this role.
+              Want to give back to Bevan? Use your Bevans to give him a culinary
+              experience to remember!
             </div>
           </div>
         </div>
@@ -50,10 +53,10 @@ class RewardPage extends Component {
             <img className="rewards-card" src={Pilot}></img>
           </div>
           <div className="rewards-text">
-            <div className="rewards-title">Personal Assistant Bevan</div>
+            <div className="rewards-title">Pilot Bevan</div>
             <div className="description">
-              Bevan will be your PA for the day. Note that Bevan has no paid
-              experience in this role.
+              As a man of many talents, Bevan is able to pivot. He cannot pilot
+              though. Good luck.
             </div>
           </div>
         </div>
@@ -62,10 +65,10 @@ class RewardPage extends Component {
             <img className="rewards-card" src={Pug}></img>
           </div>
           <div className="rewards-text">
-            <div className="rewards-title">Personal Assistant Bevan</div>
+            <div className="rewards-title">Bevansitting</div>
             <div className="description">
-              Bevan will be your PA for the day. Note that Bevan has no paid
-              experience in this role.
+              Have a date night planned? Bevan will look after your pets (and
+              children). Bevan takes no responsibility for any damaged goods.
             </div>
           </div>
         </div>
