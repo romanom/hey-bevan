@@ -27,3 +27,6 @@
 .footer-menu > li:first-child {
   margin-left: 0px;
 }
+.footer-menu > li > a:hover {
+  color: gray;
+}
