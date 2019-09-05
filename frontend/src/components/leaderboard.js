@@ -1,6 +1,15 @@
 import React, { Component } from "react";
-import LeaderboardRow from "./leaderboard-row";
+import getLeaderboardData from "./../service/service";
+
 class Leaderboard extends Component {
+  state = {
+    leaderboardData: []
+  }
+
+  componentDidMount(){
+    this.setState({ leaderboardData : getLeaderboardData(this.props.type, this.props.dateType, this.props.channel ) });
+  }
+
   render() {
     return (
       <div>
@@ -10,9 +19,14 @@ class Leaderboard extends Component {
             <th>Person</th>
             <th>Total Hey-Bevans</th>
           </tr>
-          <LeaderboardRow rank="1" name="jp" count="30" />
-          <LeaderboardRow rank="2" name="jp2" count="29" />
-          <LeaderboardRow rank="3" name="jp3" count="28" />
+          { this.state.leaderboardData.map(leaderboard => 
+          <tr>
+            <td>{leaderboard.rank}</td>
+            <td>{leaderboard.name} {leaderboard.image}</td>
+            <td>{leaderboard.total}</td>
+          </tr>
+          )
+          }
         </table>
       </div>
     );
