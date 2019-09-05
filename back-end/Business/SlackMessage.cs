@@ -38,7 +38,8 @@ namespace AwsDotnetCsharp.Business.SlackMessage
                 // do dynamo db inserts
                 bevan = new Bevan
                 {
-                    UserId = whoReceived,
+                    BevanId = new Guid().ToString(),
+                    ReceiverId = whoReceived,
                     Count = noOfEmojis,
                     Message = theMessage,
                     Channel = @event.Channel,
