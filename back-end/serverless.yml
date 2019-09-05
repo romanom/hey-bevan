@@ -4,7 +4,7 @@ plugins:
   - serverless-domain-manager
 
 custom:
-  tableName: 'hey-bevan-table-${self:provider.stage}'
+  tableName: 'hey-bevan-table-new-${self:provider.stage}'
   customDomain:
     domainName: "api.hey-bevan.com"
     certificateArn: arn:aws:acm:us-east-1:038405731550:certificate/29abc4e1-433f-4440-ba0e-3d03b1e0ad8c
@@ -134,16 +134,16 @@ functions:
     
 resources:
  Resources:
-    HeyBevanTable:
+    HeyBevanTable2:
       Type: 'AWS::DynamoDB::Table'
       DeletionPolicy: Retain
       Properties:
         TableName: ${self:custom.tableName}
         AttributeDefinitions:
-          - AttributeName: userId
+          - AttributeName: bevanId
             AttributeType: S
         KeySchema:
-          - AttributeName: userId
+          - AttributeName: bevanId
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 1

@@ -124,7 +124,7 @@ namespace AwsDotnetCsharp
         {
             using (var client = new AmazonDynamoDBClient())
             {
-                var response = await client.ScanAsync(new ScanRequest("hey-bevan-table-dev"));
+                var response = await client.ScanAsync(new ScanRequest("hey-bevan-table-new-dev"));
 
                 var heyBevanJson = JsonConvert.SerializeObject(response.Items);
 
