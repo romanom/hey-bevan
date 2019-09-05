@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import getLeaderboardData from "./../service/service";
+import serviceFunc from "./../service/service";
 import "./styles/leaderboard.css";
+
 class Leaderboard extends Component {
   state = {
     leaderboardData: []
@@ -8,7 +9,7 @@ class Leaderboard extends Component {
 
   componentDidMount() {
     this.setState({
-      leaderboardData: getLeaderboardData(
+      leaderboardData: serviceFunc.getLeaderboardData(
         this.props.type,
         this.props.dateType,
         this.props.channel
@@ -24,7 +25,9 @@ class Leaderboard extends Component {
           <col width="80%" />
           <col width="10%" />
           <tr>
-            <th class="leaderboard-headings">Rank</th>
+            <th class="leaderboard-headings" style={{ textAlign: "left" }}>
+              Rank
+            </th>
             <th class="leaderboard-headings" style={{ textAlign: "left" }}>
               Person
             </th>
@@ -32,11 +35,11 @@ class Leaderboard extends Component {
           </tr>
           {this.state.leaderboardData.map(leaderboard => (
             <tr>
-              <td>{leaderboard.rank}</td>
+              <td style={{ textAlign: "left" }}>{leaderboard.rank}</td>
               <td style={{ textAlign: "left" }}>
                 {leaderboard.name} {leaderboard.image}
               </td>
-              <td>{leaderboard.total}</td>
+              <td>{leaderboard.totalBevans}</td>
             </tr>
           ))}
         </table>

@@ -62,12 +62,12 @@ namespace AwsDotnetCsharp
             {
               UserId = request.Event.User,
               Count = 1,
-              Message = request.Event.Text
+              Message = request.Event.Text,
+              Channel = request.Event.Channel,
+              GiverId = "123"
             };
 
             await _dynamoRepository.SaveBevan(bevan);
-
-            // var ss = await somethingAsync();
             
             SlackMessage.PostMessage(request.Event);
           
@@ -115,6 +115,7 @@ namespace AwsDotnetCsharp
         // ask to dynamo ask for my selected channels where bevans are used
         List<string> channels = new List<string>();
         return new APIGatewayProxyResponse {StatusCode = 200, Body = JsonConvert.SerializeObject(channels)};
+<<<<<<< HEAD
       }
       
       [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
@@ -138,5 +139,8 @@ namespace AwsDotnetCsharp
         }
       }    
     
+=======
+      } 
+>>>>>>> ebd72f185ff382f4cec953d632ab5b233ff1787d
     }
 }

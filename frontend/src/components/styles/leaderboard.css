@@ -2,6 +2,9 @@
   width: 100%;
   min-width: 500px;
 }
+#leaderboard > th {
+  padding: 0;
+}
 
 /* .float-left {
 } */

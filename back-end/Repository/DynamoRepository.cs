@@ -32,13 +32,6 @@ namespace AwsDotnetCsharp.Repository
                 SkipVersionCheck = true
             };
         }
-//        public async Task SaveBevan(Bevan bevan)
-//        {
-//            using (var context = new DynamoDBContext(_client))
-//            {
-//                await context.SaveAsync(bevan, _configuration);
-//            }
-//        }
         
         public async Task SaveBevan(Bevan bevan)
         {
@@ -50,7 +43,9 @@ namespace AwsDotnetCsharp.Repository
                 {
                     ["userId"] = bevan.UserId, 
                     ["count"] = bevan.Count, 
-                    ["message"] = bevan.Message
+                    ["message"] = bevan.Message,
+                    ["giverId"] = bevan.GiverId,
+                    ["channel"] = bevan.Channel
                 };
 
                 await table.PutItemAsync(book);                
