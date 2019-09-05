@@ -24,7 +24,9 @@ class Leaderboard extends Component {
           <col width="80%" />
           <col width="10%" />
           <tr>
-            <th class="leaderboard-headings">Rank</th>
+            <th class="leaderboard-headings" style={{ textAlign: "left" }}>
+              Rank
+            </th>
             <th class="leaderboard-headings" style={{ textAlign: "left" }}>
               Person
             </th>
@@ -32,7 +34,7 @@ class Leaderboard extends Component {
           </tr>
           {this.state.leaderboardData.map(leaderboard => (
             <tr>
-              <td>{leaderboard.rank}</td>
+              <td style={{ textAlign: "left" }}>{leaderboard.rank}</td>
               <td style={{ textAlign: "left" }}>
                 {leaderboard.name} {leaderboard.image}
               </td>
