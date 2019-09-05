@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Transactions;
 using Amazon.Lambda.APIGatewayEvents;
 using AwsDotnetCsharp.Models;
+using Newtonsoft.Json;
 
 [assembly:LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
 
@@ -12,7 +13,7 @@ namespace AwsDotnetCsharp
     public class Handler
     {
       [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
-      public APIGatewayProxyResponse AddBevan(Request request)
+      public APIGatewayProxyResponse AddBevan(APIGatewayProxyRequest request)
       {
         return new APIGatewayProxyResponse {StatusCode = 200};
       }
@@ -20,9 +21,43 @@ namespace AwsDotnetCsharp
       [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
       public APIGatewayProxyResponse Challenge(APIGatewayProxyRequest request)
       {
-        return new APIGatewayProxyResponse {StatusCode = 200};
+        var requestModel = JsonConvert.DeserializeObject<SlackRequest>(request.Body);
+        
+        return HandleRequest(requestModel);
       }
-       
+
+      private APIGatewayProxyResponse HandleRequest(SlackRequest request)
+      {
+        switch (request.Type)
+        {
+          case "url_verification":
+            return new APIGatewayProxyResponse
+            {
+              StatusCode = 200, Body = JsonConvert.SerializeObject(new
+              {
+                Challenge = request.Challenge
+              })
+            };
+          case "event_callback":
+            return new APIGatewayProxyResponse
+            {
+              StatusCode = 200, Body = JsonConvert.SerializeObject(new
+              {
+                Message = request.Event.Text
+              })
+            };
+          default:
+            return new APIGatewayProxyResponse
+            {
+              StatusCode = 200, Body = JsonConvert.SerializeObject(new
+              {
+                Error = "unhandled"
+              })
+            };
+        }
+      }
+      
+      
       [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
       public APIGatewayProxyResponse GetAll()
       {
@@ -35,26 +70,5 @@ namespace AwsDotnetCsharp
         return new APIGatewayProxyResponse {StatusCode = 200};
       }
     }
-
-    public class Response
-    {
-      public object StatusCode {get; set;}
-    }
-
-    public class Header
-    {  
-    }
-
-    public class Request
-    {
-      public string Key1 {get; set;}
-      public string Key2 {get; set;}
-      public string Key3 {get; set;}
-
-      public Request(string key1, string key2, string key3){
-        Key1 = key1;
-        Key2 = key2;
-        Key3 = key3;
-      }
-    }
+    
 }

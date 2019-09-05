@@ -9,7 +9,8 @@
       <e p="build.sh" t="Include" />
       <e p="Handler.cs" t="Include" />
       <e p="Models" t="Include">
-        <e p="SlackAuthentication.cs" t="Include" />
+        <e p="Bevan.cs" t="Include" />
+        <e p="SlackRequest.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">

@@ -98,8 +98,6 @@ functions:
       - http:
           path: getById
           method: get
-
-    # you can add packaging information here
     package:
       artifact: bin/release/netcoreapp2.1/GetById.zip
     
