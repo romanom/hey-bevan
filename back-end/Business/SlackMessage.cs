@@ -58,7 +58,7 @@ namespace AwsDotnetCsharp.Business.SlackMessage
 
         private async Task sendDM(string whoSent, string message)
         {
-            var token = "xoxb-2315277109-749184996816-mTCSqqL485bJl3SLSmEeVVL5";
+            var token = "xoxb-2315277109-749184996816-Bpf9LGUV8nWxZlH9YS64FbXC";
             var client = new SlackTaskClient(token);
             var response = await client.PostMessageAsync(whoSent, message, null, null, false, null, null, false, null, null, true);
 
