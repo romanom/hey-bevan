@@ -137,7 +137,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/hey-bevan/dev/1567639526970-2019-09-04T23:25:26.970Z/addBevan.zip"
+                "S3Key": "serverless/hey-bevan/dev/1567642317983-2019-09-05T00:11:57.983Z/addBevan.zip"
               },
               "FunctionName": "hey-bevan-dev-addBevan",
               "Handler": "CsharpHandlers::AwsDotnetCsharp.Handler::AddBevan",
@@ -157,14 +157,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "AddBevanLambdaVersionZmtmq1l7soJGOqPRUYkmJXMmGLmJqNw7nBFUjoHWU": {
+          "AddBevanLambdaVersionG2a1TbimUx2Ax8tGdkWFgqCxWGqqWGifOb2wf2cm98o": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AddBevanLambdaFunction"
               },
-              "CodeSha256": "bZbfKHAvRUBiSE75ygxZr6rHrGCUfMs6ntm5MsEeMHo=",
+              "CodeSha256": "lC2WYqmAOes3vMtVQtUo83wdoMmA2oPzclCFAnRfc8k=",
               "Description": "add bevan"
             }
           },
@@ -175,7 +175,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/hey-bevan/dev/1567639526970-2019-09-04T23:25:26.970Z/challenge.zip"
+                "S3Key": "serverless/hey-bevan/dev/1567642317983-2019-09-05T00:11:57.983Z/challenge.zip"
               },
               "FunctionName": "hey-bevan-dev-challenge",
               "Handler": "CsharpHandlers::AwsDotnetCsharp.Handler::Challenge",
@@ -195,14 +195,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "ChallengeLambdaVersion1BIPyi3fU9lCkJYnvX8yayTwfLj5xOfjKHxcPu23Cg": {
+          "ChallengeLambdaVersionKnyMspskg8iixBBURe5wLmbdQeUvLa6Kk7E730C1Gc": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ChallengeLambdaFunction"
               },
-              "CodeSha256": "bZbfKHAvRUBiSE75ygxZr6rHrGCUfMs6ntm5MsEeMHo=",
+              "CodeSha256": "lC2WYqmAOes3vMtVQtUo83wdoMmA2oPzclCFAnRfc8k=",
               "Description": "challenge auth"
             }
           },
@@ -213,7 +213,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/hey-bevan/dev/1567639526970-2019-09-04T23:25:26.970Z/GetAll.zip"
+                "S3Key": "serverless/hey-bevan/dev/1567642317983-2019-09-05T00:11:57.983Z/GetAll.zip"
               },
               "FunctionName": "hey-bevan-dev-GetAll",
               "Handler": "CsharpHandlers::AwsDotnetCsharp.Handler::GetAll",
@@ -233,14 +233,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetAllLambdaVersion6esrEQjJBs1bmtMbcCg2A5YWc5tPLqw7NiAaifP68": {
+          "GetAllLambdaVersiono0EfEnDuOqu8QjRR6Wz6ZMhNJtxOcrMBmo8l0ksbxw": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetAllLambdaFunction"
               },
-              "CodeSha256": "bZbfKHAvRUBiSE75ygxZr6rHrGCUfMs6ntm5MsEeMHo=",
+              "CodeSha256": "lC2WYqmAOes3vMtVQtUo83wdoMmA2oPzclCFAnRfc8k=",
               "Description": "get all bevans"
             }
           },
@@ -251,7 +251,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/hey-bevan/dev/1567639526970-2019-09-04T23:25:26.970Z/hello.zip"
+                "S3Key": "serverless/hey-bevan/dev/1567642317983-2019-09-05T00:11:57.983Z/hello.zip"
               },
               "FunctionName": "hey-bevan-dev-GetById",
               "Handler": "CsharpHandlers::AwsDotnetCsharp.Handler::GetById",
@@ -271,14 +271,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GetByIdLambdaVersionvCcFjubIBBxGmSood6I3h7Pk3c7a1Hy22HGoQBIeTio": {
+          "GetByIdLambdaVersionTYpuIzDqE8iAjb3rVGlJHE39gxNcXw99Br94IzFLG8": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetByIdLambdaFunction"
               },
-              "CodeSha256": "jMZssVEeCTm5fiNDdNwyHN8wtnVSXv6kKHsYBxtUdEY=",
+              "CodeSha256": "9u6wQP7gkc1xtGP4+a1qiE3DQCd/ht8Tp0DW0HKT5+s=",
               "Description": "get bevan by id"
             }
           },
@@ -525,7 +525,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1567639525928": {
+          "ApiGatewayDeployment1567642316799": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -720,25 +720,25 @@
           "AddBevanLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AddBevanLambdaVersionZmtmq1l7soJGOqPRUYkmJXMmGLmJqNw7nBFUjoHWU"
+              "Ref": "AddBevanLambdaVersionG2a1TbimUx2Ax8tGdkWFgqCxWGqqWGifOb2wf2cm98o"
             }
           },
           "ChallengeLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ChallengeLambdaVersion1BIPyi3fU9lCkJYnvX8yayTwfLj5xOfjKHxcPu23Cg"
+              "Ref": "ChallengeLambdaVersionKnyMspskg8iixBBURe5wLmbdQeUvLa6Kk7E730C1Gc"
             }
           },
           "GetAllLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetAllLambdaVersion6esrEQjJBs1bmtMbcCg2A5YWc5tPLqw7NiAaifP68"
+              "Ref": "GetAllLambdaVersiono0EfEnDuOqu8QjRR6Wz6ZMhNJtxOcrMBmo8l0ksbxw"
             }
           },
           "GetByIdLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetByIdLambdaVersionvCcFjubIBBxGmSood6I3h7Pk3c7a1Hy22HGoQBIeTio"
+              "Ref": "GetByIdLambdaVersionTYpuIzDqE8iAjb3rVGlJHE39gxNcXw99Br94IzFLG8"
             }
           },
           "ServiceEndpoint": {
@@ -796,18 +796,8 @@
       "vpc": {}
     },
     "custom": {
-      "tableName": "hey-bevan-table-dev",
-      "customDomain": {
-        "domainName": "hey-bevan.com",
-        "certificateName": "*.hey-bevan.com",
-        "basePath": "",
-        "stage": "dev",
-        "createRoute53Record": true
-      }
+      "tableName": "hey-bevan-table-dev"
     },
-    "plugins": [
-      "serverless-domain-manager"
-    ],
     "pluginsData": {},
     "functions": {
       "addBevan": {
@@ -931,7 +921,7 @@
   },
   "package": {
     "individually": true,
-    "artifactDirectoryName": "serverless/hey-bevan/dev/1567639526970-2019-09-04T23:25:26.970Z",
+    "artifactDirectoryName": "serverless/hey-bevan/dev/1567642317983-2019-09-05T00:11:57.983Z",
     "artifact": ""
   }
 }

@@ -1,5 +1,7 @@
 using Amazon.Lambda.Core;
 using System;
+using System.Transactions;
+using AwsDotnetCsharp.Models;
 
 [assembly:LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
 
@@ -9,34 +11,36 @@ namespace AwsDotnetCsharp
     {
       public Response AddBevan(Request request)
       {
-        return new Response("Go Serverless v1.0! Your function executed successfully!", request);
+        return new Response();
       }
 
-      public Response Challenge(Request request)
+      public Response Challenge(SlackAuthentication request)
       {
-        return new Response("Go Serverless v1.0! Your function executed successfully!", request);
+        return new Response
+        {
+          StatusCode = 200
+        };
       }
        
       public Response GetAll()
       {
-        return new Response("Go Serverless v1.0! Your function executed successfully!");
+        return new Response();
       }
 
       public Response GetById(string userId)
       {
-        return new Response("Go Serverless v1.0! Your function executed successfully!");
+        return new Response();
       }
     }
 
     public class Response
     {
-      public string Message {get; set;}
-      public Request Request { get; set; }
+      public object StatusCode {get; set;}
+      public Header Headers { get; set; }
+    }
 
-      public Response(string message, Request request = null){
-        Message = message;
-        Request = request;
-      }
+    public class Header
+    {  
     }
 
     public class Request

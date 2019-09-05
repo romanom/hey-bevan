@@ -2,6 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a89f8bc9-b4df-4921-8cd5-7af5cb2b3055" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.aws-csharp/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.aws-csharp/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.aws-csharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.aws-csharp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.serverless/GetAll.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/GetAll.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.serverless/addBevan.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/addBevan.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.serverless/challenge.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/challenge.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.serverless/cloudformation-template-update-stack.json" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/cloudformation-template-update-stack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.serverless/serverless-state.json" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/serverless-state.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Handler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Handler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/release/netcoreapp2.1/hello.zip" beforeDir="false" afterPath="$PROJECT_DIR$/bin/release/netcoreapp2.1/hello.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/release/netcoreapp2.1/linux-x64/CsharpHandlers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/release/netcoreapp2.1/linux-x64/CsharpHandlers.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/release/netcoreapp2.1/linux-x64/CsharpHandlers.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/release/netcoreapp2.1/linux-x64/CsharpHandlers.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/release/netcoreapp2.1/publish/CsharpHandlers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/release/netcoreapp2.1/publish/CsharpHandlers.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/release/netcoreapp2.1/publish/CsharpHandlers.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/release/netcoreapp2.1/publish/CsharpHandlers.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/aws-csharp.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/aws-csharp.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/aws-csharp.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/aws-csharp.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/aws-csharp.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/aws-csharp.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/aws-csharp.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/obj/aws-csharp.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/release/netcoreapp2.1/linux-x64/CsharpHandlers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/release/netcoreapp2.1/linux-x64/CsharpHandlers.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/release/netcoreapp2.1/linux-x64/CsharpHandlers.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/release/netcoreapp2.1/linux-x64/CsharpHandlers.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/release/netcoreapp2.1/linux-x64/aws-csharp.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/release/netcoreapp2.1/linux-x64/aws-csharp.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/serverless.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,11 +34,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/serverless.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+            <state relative-caret-position="508">
+              <caret line="82" column="13" lean-forward="true" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build.cmd">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="120" selection-start-line="1" selection-start-column="115" selection-end-line="1" selection-end-column="120" />
             </state>
           </provider>
         </entry>
@@ -24,20 +55,34 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Handler.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+            <state relative-caret-position="190">
+              <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
               <folding>
-                <marker date="1567638593781" expanded="false" signature="6:39" ph="..." />
-                <marker date="1567638593781" expanded="true" signature="152:1344" ph="{...}" />
-                <marker date="1567638593781" expanded="true" signature="179:812" ph="{...}" />
-                <marker date="1567638593781" expanded="true" signature="233:347" ph="{...}" />
-                <marker date="1567638593781" expanded="true" signature="397:511" ph="{...}" />
-                <marker date="1567638593781" expanded="true" signature="550:655" ph="{...}" />
-                <marker date="1567638593781" expanded="true" signature="701:806" ph="{...}" />
-                <marker date="1567638593781" expanded="true" signature="839:1060" ph="{...}" />
-                <marker date="1567638593781" expanded="true" signature="991:1054" ph="{...}" />
-                <marker date="1567638593781" expanded="true" signature="1086:1342" ph="{...}" />
-                <marker date="1567638593781" expanded="true" signature="1264:1336" ph="{...}" />
+                <marker date="1567641747068" expanded="false" signature="6:39" ph="..." />
+                <marker date="1567641747068" expanded="true" signature="209:1123" ph="{...}" />
+                <marker date="1567641747068" expanded="true" signature="236:676" ph="{...}" />
+                <marker date="1567641747068" expanded="true" signature="290:337" ph="{...}" />
+                <marker date="1567641747068" expanded="true" signature="399:491" ph="{...}" />
+                <marker date="1567641747068" expanded="true" signature="444:482" ph="{...}" />
+                <marker date="1567641747068" expanded="true" signature="530:577" ph="{...}" />
+                <marker date="1567641747068" expanded="true" signature="623:670" ph="{...}" />
+                <marker date="1567641747068" expanded="true" signature="703:800" ph="{...}" />
+                <marker date="1567641747068" expanded="true" signature="825:839" ph="{...}" />
+                <marker date="1567641747068" expanded="true" signature="865:1121" ph="{...}" />
+                <marker date="1567641747068" expanded="true" signature="1043:1115" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/SlackAuthentication.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+              <folding>
+                <marker date="1567641747068" expanded="true" signature="32:216" ph="{...}" />
+                <marker date="1567641747068" expanded="true" signature="71:214" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -49,21 +94,25 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Models/SlackAuthentication.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Handler.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Handler.cs" />
         <option value="$PROJECT_DIR$/gitignore.json" />
+        <option value="$PROJECT_DIR$/Models/Challenge.cs" />
+        <option value="$PROJECT_DIR$/Models/SlackAuthentication.cs" />
         <option value="$PROJECT_DIR$/serverless.yml" />
+        <option value="$PROJECT_DIR$/Handler.cs" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="13" />
     <option name="y" value="23" />
     <option name="width" value="1680" />
-    <option name="height" value="959" />
+    <option name="height" value="960" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -78,11 +127,6 @@
             <path>
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="aws-csharp" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="aws-csharp" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Dependencies" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
           <select />
@@ -121,12 +165,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567637648190</updated>
-      <workItem from="1567637649332" duration="1497000" />
+      <workItem from="1567637649332" duration="3418000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1497000" />
+    <option name="totallyTimeSpent" value="3418000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -138,18 +182,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="959" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="961" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Image Layers" />
       <window_info id="Capture Tool" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14652015" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14652015" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="NuGet" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.46828142" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.2278481" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -183,26 +228,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Handler.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-          <folding>
-            <marker date="1567638593781" expanded="false" signature="6:39" ph="..." />
-            <marker date="1567638593781" expanded="true" signature="152:1344" ph="{...}" />
-            <marker date="1567638593781" expanded="true" signature="179:812" ph="{...}" />
-            <marker date="1567638593781" expanded="true" signature="233:347" ph="{...}" />
-            <marker date="1567638593781" expanded="true" signature="397:511" ph="{...}" />
-            <marker date="1567638593781" expanded="true" signature="550:655" ph="{...}" />
-            <marker date="1567638593781" expanded="true" signature="701:806" ph="{...}" />
-            <marker date="1567638593781" expanded="true" signature="839:1060" ph="{...}" />
-            <marker date="1567638593781" expanded="true" signature="991:1054" ph="{...}" />
-            <marker date="1567638593781" expanded="true" signature="1086:1342" ph="{...}" />
-            <marker date="1567638593781" expanded="true" signature="1264:1336" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -210,10 +235,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/launch.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/SlackAuthentication.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <marker date="1567641747068" expanded="true" signature="32:216" ph="{...}" />
+            <marker date="1567641747068" expanded="true" signature="71:214" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Handler.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding>
+            <marker date="1567641747068" expanded="false" signature="6:39" ph="..." />
+            <marker date="1567641747068" expanded="true" signature="209:1123" ph="{...}" />
+            <marker date="1567641747068" expanded="true" signature="236:676" ph="{...}" />
+            <marker date="1567641747068" expanded="true" signature="290:337" ph="{...}" />
+            <marker date="1567641747068" expanded="true" signature="399:491" ph="{...}" />
+            <marker date="1567641747068" expanded="true" signature="444:482" ph="{...}" />
+            <marker date="1567641747068" expanded="true" signature="530:577" ph="{...}" />
+            <marker date="1567641747068" expanded="true" signature="623:670" ph="{...}" />
+            <marker date="1567641747068" expanded="true" signature="703:800" ph="{...}" />
+            <marker date="1567641747068" expanded="true" signature="825:839" ph="{...}" />
+            <marker date="1567641747068" expanded="true" signature="865:1121" ph="{...}" />
+            <marker date="1567641747068" expanded="true" signature="1043:1115" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/serverless.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+        <state relative-caret-position="508">
+          <caret line="82" column="13" lean-forward="true" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.cmd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="120" selection-start-line="1" selection-start-column="115" selection-end-line="1" selection-end-column="120" />
         </state>
       </provider>
     </entry>

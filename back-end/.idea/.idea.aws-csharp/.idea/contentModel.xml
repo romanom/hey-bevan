@@ -8,6 +8,9 @@
       <e p="build.cmd" t="Include" />
       <e p="build.sh" t="Include" />
       <e p="Handler.cs" t="Include" />
+      <e p="Models" t="Include">
+        <e p="SlackAuthentication.cs" t="Include" />
+      </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
           <e p="netcoreapp2.1" t="Include">
@@ -15,6 +18,8 @@
           </e>
         </e>
       </e>
+      <e p="package-lock.json" t="Include" />
+      <e p="package.json" t="Include" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="serverless.yml" t="Include" />
     </e>

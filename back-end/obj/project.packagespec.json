@@ -1,20 +1,17 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/Users/robert.giles/hey-bevan/back-end/aws-csharp.csproj",
+    "projectUniqueName": "/Users/jesse.paclar/Documents/learn-simplify/hack-day/hey-bevan/back-end/aws-csharp.csproj",
     "projectName": "aws-csharp",
-    "projectPath": "/Users/robert.giles/hey-bevan/back-end/aws-csharp.csproj",
-    "outputPath": "/Users/robert.giles/hey-bevan/back-end/obj/",
+    "projectPath": "/Users/jesse.paclar/Documents/learn-simplify/hack-day/hey-bevan/back-end/aws-csharp.csproj",
+    "outputPath": "/Users/jesse.paclar/Documents/learn-simplify/hack-day/hey-bevan/back-end/obj/",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
-      "/Users/robert.giles/.dotnet/sdk/NuGetFallbackFolder"
+      "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
     ],
     "originalTargetFrameworks": [
       "netcoreapp2.1"
     ],
-    "sources": {
-      "https://api.nuget.org/v3/index.json": {}
-    },
     "frameworks": {
       "netcoreapp2.1": {
         "projectReferences": {}

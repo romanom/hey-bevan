@@ -14,8 +14,8 @@
 service: hey-bevan
 #app: your-app-name
 #tenant: your-tenant-name
-plugins:
-  - serverless-domain-manager
+#plugins:
+#  - serverless-domain-manager
 
 custom:
   tableName: 'hey-bevan-table-${self:provider.stage}'
