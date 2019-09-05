@@ -12,11 +12,7 @@ class Header extends Component {
         <div id="header-container">
           <img id="logo" alt="logo" src={Logo} />
           <div id="menu-container">
-            <Menu
-              onClickActivities={this.props.onClickActivities}
-              onClickLeaderboard={this.props.onClickLeaderboard}
-              onClickTags={this.props.onClickTags}
-            />
+            <Menu/>
           </div>
         </div>
         <SlackLogin />
