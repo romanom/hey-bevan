@@ -2,6 +2,8 @@ using Amazon.Lambda.Core;
 using System;
 using System.Threading.Tasks;
 using System.Transactions;
+using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.Model;
 using Amazon.Lambda.APIGatewayEvents;
 using AwsDotnetCsharp.Models;
 using Newtonsoft.Json;
@@ -69,6 +71,18 @@ namespace AwsDotnetCsharp
       public APIGatewayProxyResponse GetById(string userId)
       {
         return new APIGatewayProxyResponse {StatusCode = 200};
+      }
+      
+      private async Task<string> somethingAsync()
+      {
+        using (var client = new AmazonDynamoDBClient())
+        {
+          var response = await client.ScanAsync(new ScanRequest("HeyBevanTable"));
+
+          var heyBevanJson = JsonConvert.SerializeObject(response.Items);
+
+          return heyBevanJson;
+        }
       }
     }
     
