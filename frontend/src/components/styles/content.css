@@ -1,11 +1,12 @@
 #content-container {
   display: flex;
   justify-content: space-between;
-  padding: 0 50px 0 50px;
+  padding: 0 40px 0 40px;
 }
 #sub-header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 #filter-container {
   display: flex;

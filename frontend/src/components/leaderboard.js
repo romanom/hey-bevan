@@ -19,16 +19,21 @@ class Leaderboard extends Component {
   render() {
     return (
       <div>
-        <table id="leaderboard" border="1">
+        <table id="leaderboard">
+          <col width="10%" />
+          <col width="80%" />
+          <col width="10%" />
           <tr>
-            <th>Rank</th>
-            <th>Person</th>
-            <th>Total Hey-Bevans</th>
+            <th class="leaderboard-headings">Rank</th>
+            <th class="leaderboard-headings" style={{ textAlign: "left" }}>
+              Person
+            </th>
+            <th class="leaderboard-headings">Total HeyBevans</th>
           </tr>
           {this.state.leaderboardData.map(leaderboard => (
             <tr>
               <td>{leaderboard.rank}</td>
-              <td>
+              <td style={{ textAlign: "left" }}>
                 {leaderboard.name} {leaderboard.image}
               </td>
               <td>{leaderboard.total}</td>

@@ -7,8 +7,8 @@ class Filter extends Component {
       <div>
         <span id="filter-heading">Filter</span>
         <select>
-          <option>Hey-Bevan Received</option>
-          <option> Hey-Bevan Sent</option>
+          <option>HeyBevan received</option>
+          <option> HeyBevan sent</option>
         </select>
         <select>
           <option>Today</option>
