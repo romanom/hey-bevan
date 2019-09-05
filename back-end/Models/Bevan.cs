@@ -10,5 +10,11 @@ namespace AwsDotnetCsharp.Models
         public int Count { get; set; }
         [DynamoDBProperty]
         public string Message { get; set; }
+        
+        [DynamoDBProperty] 
+        public string GiverId { get; set; }
+        
+        [DynamoDBProperty] 
+        public string Channel { get; set; }
     }
 }
