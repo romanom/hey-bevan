@@ -39,6 +39,7 @@ namespace AwsDotnetCsharp
               })
             };
           case "event_callback":
+            // do dynamo db inserts
             return new APIGatewayProxyResponse
             {
               StatusCode = 200, Body = JsonConvert.SerializeObject(new
