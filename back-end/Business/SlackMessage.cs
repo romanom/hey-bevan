@@ -59,7 +59,7 @@ namespace AwsDotnetCsharp.Business.SlackMessage
         private async Task sendDM(string whoSent, string message)
         {
 
-            var token = Environment.GetEnvironmentVariable("heybevanBotToken");         
+            var token = Environment.GetEnvironmentVariable("SLACK_ACCESS_TOKEN");         
             if (token == null){
                 throw new Exception("Error getting slack token from ssm");
             }

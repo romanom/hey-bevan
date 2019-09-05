@@ -1,9 +1,12 @@
 service: hey-bevan
 
+plugins:
+  - serverless-domain-manager
+
 custom:
   tableName: 'hey-bevan-table-${self:provider.stage}'
   customDomain:
-    domainName: "hey-bevan.com"
+    domainName: "api.hey-bevan.com"
     certificateArn: arn:aws:acm:us-east-1:038405731550:certificate/29abc4e1-433f-4440-ba0e-3d03b1e0ad8c
     basePath: ''
     stage: ${self:provider.stage}
@@ -31,6 +34,7 @@ provider:
 #        - { "Fn::GetAtt": ["HeyBevanTable"] }
   environment:
     USERS_TABLE: ${self:custom.tableName}
+    SLACK_ACCESS_TOKEN: ${ssm:heybevanBotToken}
 
 # you can define service wide environment variables here
 #  environment:
@@ -58,8 +62,6 @@ functions:
           method: post
     package:
       artifact: bin/release/netcoreapp2.1/Challenge.zip
-    environment:
-      SLACK_ACCESS_TOKEN: ${ssm:heybevanBotToken}
   GetAll:
     handler: CsharpHandlers::AwsDotnetCsharp.Handler::GetAll
     description: get all bevans
