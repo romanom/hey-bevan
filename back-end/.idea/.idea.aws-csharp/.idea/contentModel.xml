@@ -29,6 +29,7 @@
       <e p="package-lock.json" t="Include" />
       <e p="package.json" t="Include" />
       <e p="packages" t="ExcludeRecursive" />
+      <e p="README.md" t="Include" />
       <e p="Repository" t="Include">
         <e p="DynamoRepository.cs" t="Include" />
       </e>

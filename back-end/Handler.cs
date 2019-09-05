@@ -65,9 +65,9 @@ namespace AwsDotnetCsharp
               Message = request.Event.Text
             };
 
-            // await _dynamoRepository.SaveBevan(bevan);
+            await _dynamoRepository.SaveBevan(bevan);
 
-            var ss = await somethingAsync();
+            // var ss = await somethingAsync();
             
             ProcessMessage(request.Event);
 
@@ -75,8 +75,7 @@ namespace AwsDotnetCsharp
             {
               StatusCode = 200, Body = JsonConvert.SerializeObject(new
               {
-                Message = request.Event.Text,
-                Something = ss
+                Message = request.Event.Text
               })
             };
           default:
