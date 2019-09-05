@@ -24,3 +24,6 @@
   margin: 10px;
   color: white;
 }
+.footer-menu > li:first-child {
+  margin-left: 0px;
+}
