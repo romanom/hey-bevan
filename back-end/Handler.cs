@@ -11,25 +11,28 @@ namespace AwsDotnetCsharp
 {
     public class Handler
     {
-      public Response AddBevan(Request request)
+      [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
+      public APIGatewayProxyResponse AddBevan(Request request)
       {
-        return new Response();
+        return new APIGatewayProxyResponse {StatusCode = 200};
       }
 
       [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
-      public APIGatewayProxyResponse Challenge(SlackAuthentication request)
+      public APIGatewayProxyResponse Challenge(APIGatewayProxyRequest request)
       {
         return new APIGatewayProxyResponse {StatusCode = 200};
       }
        
-      public Response GetAll()
+      [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
+      public APIGatewayProxyResponse GetAll()
       {
-        return new Response();
+        return new APIGatewayProxyResponse {StatusCode = 200};
       }
 
-      public Response GetById(string userId)
+      [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
+      public APIGatewayProxyResponse GetById(string userId)
       {
-        return new Response();
+        return new APIGatewayProxyResponse {StatusCode = 200};
       }
     }
 

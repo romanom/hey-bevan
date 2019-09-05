@@ -2,29 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a89f8bc9-b4df-4921-8cd5-7af5cb2b3055" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.aws-csharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.aws-csharp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.serverless/GetAll.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.serverless/addBevan.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.serverless/challenge.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.serverless/cloudformation-template-update-stack.json" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/cloudformation-template-update-stack.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.serverless/serverless-state.json" beforeDir="false" afterPath="$PROJECT_DIR$/.serverless/serverless-state.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Handler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Handler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aws-csharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/aws-csharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/release/netcoreapp2.1/linux-x64/CsharpHandlers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/release/netcoreapp2.1/linux-x64/CsharpHandlers.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/release/netcoreapp2.1/linux-x64/CsharpHandlers.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/release/netcoreapp2.1/linux-x64/CsharpHandlers.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/release/netcoreapp2.1/publish/CsharpHandlers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/release/netcoreapp2.1/publish/CsharpHandlers.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/release/netcoreapp2.1/publish/CsharpHandlers.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/release/netcoreapp2.1/publish/CsharpHandlers.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/build.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/aws-csharp.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/aws-csharp.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/aws-csharp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/netcoreapp2.1/aws-csharp.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/aws-csharp.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/aws-csharp.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/aws-csharp.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/aws-csharp.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/release/netcoreapp2.1/linux-x64/CsharpHandlers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/release/netcoreapp2.1/linux-x64/CsharpHandlers.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/release/netcoreapp2.1/linux-x64/CsharpHandlers.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/release/netcoreapp2.1/linux-x64/CsharpHandlers.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/serverless.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/release/netcoreapp2.1/publish/Amazon.Lambda.Core.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/release/netcoreapp2.1/publish/Amazon.Lambda.Serialization.Json.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/release/netcoreapp2.1/publish/CsharpHandlers.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/release/netcoreapp2.1/publish/CsharpHandlers.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/release/netcoreapp2.1/publish/CsharpHandlers.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/release/netcoreapp2.1/publish/CsharpHandlers.runtimeconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/release/netcoreapp2.1/publish/Newtonsoft.Json.dll" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,21 +49,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Handler.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+            <state relative-caret-position="253">
+              <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
               <folding>
-                <marker date="1567644042512" expanded="true" signature="6:39" ph="..." />
-                <marker date="1567644042512" expanded="true" signature="277:1379" ph="{...}" />
-                <marker date="1567644042512" expanded="true" signature="304:974" ph="{...}" />
-                <marker date="1567644042512" expanded="true" signature="358:405" ph="{...}" />
-                <marker date="1567644042512" expanded="true" signature="413:593" ph="/* ... */" />
-                <marker date="1567644042512" expanded="true" signature="757:789" ph="{...}" />
-                <marker date="1567644042512" expanded="true" signature="828:875" ph="{...}" />
-                <marker date="1567644042512" expanded="true" signature="921:968" ph="{...}" />
-                <marker date="1567644042512" expanded="true" signature="1001:1056" ph="{...}" />
-                <marker date="1567644042512" expanded="true" signature="1081:1095" ph="{...}" />
-                <marker date="1567644042512" expanded="true" signature="1121:1377" ph="{...}" />
-                <marker date="1567644042512" expanded="true" signature="1299:1371" ph="{...}" />
+                <marker date="1567644325833" expanded="true" signature="6:39" ph="..." />
+                <marker date="1567644325833" expanded="true" signature="277:1479" ph="{...}" />
+                <marker date="1567644325833" expanded="true" signature="304:1074" ph="{...}" />
+                <marker date="1567644325833" expanded="true" signature="440:487" ph="{...}" />
+                <marker date="1567644325833" expanded="true" signature="646:725" ph="{...}" />
+                <marker date="1567644325833" expanded="true" signature="846:893" ph="{...}" />
+                <marker date="1567644325833" expanded="true" signature="1021:1068" ph="{...}" />
+                <marker date="1567644325833" expanded="true" signature="1101:1156" ph="{...}" />
+                <marker date="1567644325833" expanded="true" signature="1181:1195" ph="{...}" />
+                <marker date="1567644325833" expanded="true" signature="1221:1477" ph="{...}" />
+                <marker date="1567644325833" expanded="true" signature="1399:1471" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -181,12 +165,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567637648190</updated>
-      <workItem from="1567637649332" duration="4845000" />
+      <workItem from="1567637649332" duration="5121000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4845000" />
+    <option name="totallyTimeSpent" value="5121000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -199,18 +183,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="961" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Image Layers" />
       <window_info id="Capture Tool" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14652015" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="NuGet" visible="true" weight="0.32911393" />
+      <window_info anchor="bottom" id="NuGet" weight="0.32911393" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="Terminal" weight="0.19447641" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.30379745" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -319,21 +302,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Handler.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+        <state relative-caret-position="253">
+          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
           <folding>
-            <marker date="1567644042512" expanded="true" signature="6:39" ph="..." />
-            <marker date="1567644042512" expanded="true" signature="277:1379" ph="{...}" />
-            <marker date="1567644042512" expanded="true" signature="304:974" ph="{...}" />
-            <marker date="1567644042512" expanded="true" signature="358:405" ph="{...}" />
-            <marker date="1567644042512" expanded="true" signature="413:593" ph="/* ... */" />
-            <marker date="1567644042512" expanded="true" signature="757:789" ph="{...}" />
-            <marker date="1567644042512" expanded="true" signature="828:875" ph="{...}" />
-            <marker date="1567644042512" expanded="true" signature="921:968" ph="{...}" />
-            <marker date="1567644042512" expanded="true" signature="1001:1056" ph="{...}" />
-            <marker date="1567644042512" expanded="true" signature="1081:1095" ph="{...}" />
-            <marker date="1567644042512" expanded="true" signature="1121:1377" ph="{...}" />
-            <marker date="1567644042512" expanded="true" signature="1299:1371" ph="{...}" />
+            <marker date="1567644325833" expanded="true" signature="6:39" ph="..." />
+            <marker date="1567644325833" expanded="true" signature="277:1479" ph="{...}" />
+            <marker date="1567644325833" expanded="true" signature="304:1074" ph="{...}" />
+            <marker date="1567644325833" expanded="true" signature="440:487" ph="{...}" />
+            <marker date="1567644325833" expanded="true" signature="646:725" ph="{...}" />
+            <marker date="1567644325833" expanded="true" signature="846:893" ph="{...}" />
+            <marker date="1567644325833" expanded="true" signature="1021:1068" ph="{...}" />
+            <marker date="1567644325833" expanded="true" signature="1101:1156" ph="{...}" />
+            <marker date="1567644325833" expanded="true" signature="1181:1195" ph="{...}" />
+            <marker date="1567644325833" expanded="true" signature="1221:1477" ph="{...}" />
+            <marker date="1567644325833" expanded="true" signature="1399:1471" ph="{...}" />
           </folding>
         </state>
       </provider>
