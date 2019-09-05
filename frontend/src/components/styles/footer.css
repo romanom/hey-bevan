@@ -2,6 +2,7 @@
   height: 70px;
   width: 149px;
   float: right;
+  margin-right: 20px;
 }
 #footer {
   display: flex;

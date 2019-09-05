@@ -21,16 +21,11 @@
 
 #slackimage {
   height: 30px;
-  width : 100px;
-  padding-top : 20px;
+  width: 100px;
+  padding-top: 20px;
 }
 
 #slackImageHolder {
   float: right;
-  margin-right: 10px;
-}
-
-#slacklink {
-  align : right;
-  text-align : right;
+  margin-right: 40px;
 }
