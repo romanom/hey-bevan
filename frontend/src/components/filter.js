@@ -3,11 +3,11 @@ import "./styles/filter.css";
 import serviceFunc from "./../service/service";
 class Filter extends Component {
   state = {
-    channels : []
+    channels: []
   };
 
   componentDidMount() {
-    this.setState({channels: serviceFunc.getAllChannels()})
+    this.setState({ channels: serviceFunc.getAllChannels() });
   }
 
   render() {
@@ -15,8 +15,8 @@ class Filter extends Component {
       <div>
         <span id="filter-heading">Filter</span>
         <select>
-          <option>Hey-Bevan Received</option>
-          <option>Hey-Bevan Sent</option>
+          <option>HeyBevan Received</option>
+          <option>HeyBevan Sent</option>
         </select>
         <select>
           <option>Today</option>
@@ -29,9 +29,9 @@ class Filter extends Component {
           <option>Last year</option>
         </select>
         <select>
-          {this.state.channels.map(channel => 
-            (<option>{ channel.name }</option>)
-          )}
+          {this.state.channels.map(channel => (
+            <option>{channel.name}</option>
+          ))}
         </select>
       </div>
     );
