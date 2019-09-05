@@ -1,28 +1,57 @@
 using System;
+using System.Threading.Tasks;
+using Amazon.DynamoDBv2;
+using AwsDotnetCsharp.Infrastructure;
+using AwsDotnetCsharp.Infrastructure.Configs;
 using AwsDotnetCsharp.Models;
+using AwsDotnetCsharp.Repository;
 
 namespace AwsDotnetCsharp.Business.SlackMessage
 {
-
     public class SlackMessage
     {
 
-        const string emoji = ":bevan:";
+        const string emoji = ":bevan:"; //TODO move to config
+        private static IDynamoRepository _dynamoRepository;
 
-        internal static void PostMessage(Event @event)
+        public SlackMessage()
         {
-
-            Console.WriteLine("User: {0} Message: \"{1}\"", @event.User, @event.Text);
-
-            if (@event.Text.Contains(emoji))
+            _dynamoRepository = new DynamoRepository(new DynamoDbConfiguration
             {
-                //do someting
-                var noOfEmojis = @event.Text.Split(emoji).Length - 1;
-                Console.WriteLine("{0} gave \"{1}\" emojis to someone...", @event.User, noOfEmojis);
+                TableName = "hey-bevan-table-dev"
+            }, new AwsClientFactory<AmazonDynamoDBClient>(new AwsBasicConfiguration()));
+        }
 
+        internal async static Task<Bevan> ProcessMessage(Event @event)
+        {
+            var theMessage = @event.Text;
+            var bevan = new Bevan();
+
+            if (theMessage.Contains(emoji))
+            {
+
+                var noOfEmojis = theMessage.Split(emoji).Length - 1;
+                string whoSent = @event.User; //who posted the message
+                //TODO allow multiple users
+                string whoReceived = theMessage.Split('<', '>')[1]; //only get first user mentioned in the message
+
+                Console.WriteLine("{0} gave \"{1}\" emojis to {2}", whoSent, noOfEmojis, whoReceived);
+
+                // do dynamo db inserts
+                bevan = new Bevan
+                {
+                    UserId = whoReceived,
+                    Count = noOfEmojis,
+                    Message = theMessage,
+                    Channel = @event.Channel,
+                    GiverId = whoSent
+                };
+
+                await _dynamoRepository.SaveBevan(bevan);
             }
-
+            
             //do nothing
+            return bevan;
         }
 
     }
