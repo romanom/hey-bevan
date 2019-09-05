@@ -71,6 +71,8 @@ namespace AwsDotnetCsharp
         private void ProcessMessage(Event @event)
         {
 
+            Console.WriteLine("User: {0} Message: \"{1}\"", @event.User, @event.Text);
+
             if (@event.Text.Contains(emoji)){
               //do someting
               var noOfEmojis = @event.Text.Split(emoji).Length - 1;
