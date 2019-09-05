@@ -21,6 +21,11 @@ class Menu extends Component {
             Tags
           </Link>
         </li>
+        <li>
+          <Link to="/rewards" className="link-text">
+            Rewards
+          </Link>
+        </li>
       </ul>
     );
   }

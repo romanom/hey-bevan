@@ -39,29 +39,31 @@ class Leaderboard extends Component {
               <th className="leaderboard-headings">Total HeyBevans</th>
             </tr>
           </thead>
-          {this.state.leaderboardData.map(leaderboard => (
-            <tr>
-              <td style={{ textAlign: "left" }}>{leaderboard.rank}</td>
-              <td style={{ textAlign: "left" }}>
-                <span id="leaderboard-person">
-                  {leaderboard.image ? (
-                    <img
-                      id="mediumlogo"
-                      alt="heybevans"
-                      src={require(`./images/${leaderboard.image}`)}
-                    />
-                  ) : (
-                    ""
-                  )}
-                  &nbsp;&nbsp;&nbsp;{leaderboard.name}{" "}
-                </span>
-              </td>
-              <td>
-                {leaderboard.totalBevans}
-                <img id="smalllogo" alt="heybevans" src={bevans} />
-              </td>
-            </tr>
-          ))}
+          <tbody>
+            {this.state.leaderboardData.map(leaderboard => (
+              <tr>
+                <td style={{ textAlign: "left" }}>{leaderboard.rank}</td>
+                <td style={{ textAlign: "left" }}>
+                  <span id="leaderboard-person">
+                    {leaderboard.image ? (
+                      <img
+                        id="mediumlogo"
+                        alt="heybevans"
+                        src={require(`./images/${leaderboard.image}`)}
+                      />
+                    ) : (
+                      ""
+                    )}
+                    &nbsp;&nbsp;&nbsp;{leaderboard.name}{" "}
+                  </span>
+                </td>
+                <td>
+                  {leaderboard.totalBevans}
+                  <img id="smalllogo" alt="heybevans" src={bevans} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     );

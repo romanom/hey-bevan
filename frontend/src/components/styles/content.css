@@ -26,5 +26,6 @@ table {
   width: 95%;
 }
 .page-title {
-  font-size: 20px;
+  font-size: 30px;
+  margin-left: 20px;
 }

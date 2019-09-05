@@ -16,7 +16,10 @@ class App extends Component {
         <div className="App">
           <Header />
           <Route exact path="/" component={Home} />
-          <Route path="/leaderboard" component={Content} />
+          <Route
+            path="/leaderboard"
+            render={props => <Content {...props} title="Leaderboard" />}
+          />
           <Route path="/signincallback" component={SignInCallback} />
           <Route path="/Activity" component={ActivityContainer} />
           <Route path="/Tags" component={Tags} />

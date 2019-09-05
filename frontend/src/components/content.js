@@ -10,21 +10,27 @@ class Content extends Component {
     return (
       <div id="content-container">
         <table>
-          <tr>
-            <td>
-              <table>
-                <tr id="sub-header">
-                  <td className="page-title">{this.props.title}</td>
-                  <td>
-                    <Filter />
-                  </td>
-                </tr>
-                <tr>
-                  <Leaderboard />
-                </tr>
-              </table>
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>
+                <table>
+                  <thead>
+                    <tr id="sub-header">
+                      <td className="page-title">{this.props.title}</td>
+                      <td>
+                        <Filter />
+                      </td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <Leaderboard />
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
         </table>
         <div>
           <Profile />
