@@ -65,16 +65,18 @@ namespace AwsDotnetCsharp
               Message = request.Event.Text
             };
 
-            await _dynamoRepository.SaveBevan(bevan);
-            
+            // await _dynamoRepository.SaveBevan(bevan);
 
+            var ss = await somethingAsync();
+            
             ProcessMessage(request.Event);
 
             return new APIGatewayProxyResponse
             {
               StatusCode = 200, Body = JsonConvert.SerializeObject(new
               {
-                Message = request.Event.Text
+                Message = request.Event.Text,
+                Something = ss
               })
             };
           default:
@@ -131,7 +133,7 @@ namespace AwsDotnetCsharp
       {
         using (var client = new AmazonDynamoDBClient())
         {
-          var response = await client.ScanAsync(new ScanRequest("HeyBevanTable"));
+          var response = await client.ScanAsync(new ScanRequest("hey-bevan-table-dev"));
 
           var heyBevanJson = JsonConvert.SerializeObject(response.Items);
 

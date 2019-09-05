@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a89f8bc9-b4df-4921-8cd5-7af5cb2b3055" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Infrastructure/AWSClientFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Configs/AwsBasicConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Configs/DynamoDbConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/Bevan.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Repository/DynamoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.aws-csharp/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.aws-csharp/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.aws-csharp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.aws-csharp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Handler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Handler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/serverless.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,33 +15,33 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Handler.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+            <state relative-caret-position="35">
+              <caret line="39" column="85" lean-forward="true" selection-start-line="39" selection-start-column="85" selection-end-line="39" selection-end-column="85" />
               <folding>
-                <marker date="1567652531942" expanded="true" signature="6:361" ph="..." />
-                <marker date="1567652531942" expanded="true" signature="474:4471" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="501:4464" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="630:860" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="722:777" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="1020:1099" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="1273:1434" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="1521:2743" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="1638:2735" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="1743:1908" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="1830:1893" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="2025:2151" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="2325:2489" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="2412:2474" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="2569:2724" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="2656:2709" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="2794:3185" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="2938:3149" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="3316:3395" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="3538:3617" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="3784:3863" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="4031:4110" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="4167:4449" ph="{...}" />
-                <marker date="1567652531942" expanded="true" signature="4231:4441" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="6:361" ph="..." />
+                <marker date="1567652834636" expanded="true" signature="474:4557" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="501:4550" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="630:860" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="722:777" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="1020:1099" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="1273:1434" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="1521:2823" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="1638:2815" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="1743:1908" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="1830:1893" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="2025:2151" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="2373:2569" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="2460:2554" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="2649:2804" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="2736:2789" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="2874:3265" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="3018:3229" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="3396:3475" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="3618:3697" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="3864:3943" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="4111:4190" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="4247:4535" ph="{...}" />
+                <marker date="1567652834636" expanded="true" signature="4311:4527" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -58,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Repository/DynamoRepository.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
+            <state relative-caret-position="115">
+              <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
               <folding>
                 <marker date="1567652331830" expanded="false" signature="6:227" ph="..." />
                 <marker date="1567652331830" expanded="true" signature="265:1175" ph="{...}" />
@@ -91,6 +83,7 @@
     <setting file="file://$PROJECT_DIR$/Infrastructure/Configs/AwsBasicConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/AWSClientFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Configs/DynamoDbConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/492E2457-2840-45A1-A735-A5EC880B4D70/0a/ea09a3a1/AmazonDynamoDBClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Handler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Models/SlackRequest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D52255D9-DEF3-48E6-B448-1E9249ED216A/29/6e554050/APIGatewayProxyRequest.cs" root0="SKIP_HIGHLIGHTING" />
@@ -138,16 +131,6 @@
               <item name="aws-csharp" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Infrastructure" type="24d0babc:SolutionExplorerModelNode" />
             </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="aws-csharp" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Models" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="aws-csharp" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Repository" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -185,12 +168,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567637648190</updated>
-      <workItem from="1567637649332" duration="12744000" />
+      <workItem from="1567637649332" duration="13055000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12744000" />
+    <option name="totallyTimeSpent" value="13055000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -207,13 +190,13 @@
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Image Layers" />
       <window_info id="Capture Tool" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14652015" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14652015" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="NuGet" weight="0.32911393" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.2347526" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.41657078" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -413,10 +396,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/492E2457-2840-45A1-A735-A5EC880B4D70/0a/ea09a3a1/AmazonDynamoDBClient.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="68" column="11" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Repository/DynamoRepository.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="56" />
+        <state relative-caret-position="115">
+          <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
           <folding>
             <marker date="1567652331830" expanded="false" signature="6:227" ph="..." />
             <marker date="1567652331830" expanded="true" signature="265:1175" ph="{...}" />
@@ -432,33 +422,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Handler.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+        <state relative-caret-position="35">
+          <caret line="39" column="85" lean-forward="true" selection-start-line="39" selection-start-column="85" selection-end-line="39" selection-end-column="85" />
           <folding>
-            <marker date="1567652531942" expanded="true" signature="6:361" ph="..." />
-            <marker date="1567652531942" expanded="true" signature="474:4471" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="501:4464" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="630:860" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="722:777" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="1020:1099" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="1273:1434" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="1521:2743" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="1638:2735" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="1743:1908" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="1830:1893" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="2025:2151" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="2325:2489" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="2412:2474" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="2569:2724" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="2656:2709" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="2794:3185" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="2938:3149" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="3316:3395" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="3538:3617" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="3784:3863" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="4031:4110" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="4167:4449" ph="{...}" />
-            <marker date="1567652531942" expanded="true" signature="4231:4441" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="6:361" ph="..." />
+            <marker date="1567652834636" expanded="true" signature="474:4557" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="501:4550" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="630:860" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="722:777" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="1020:1099" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="1273:1434" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="1521:2823" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="1638:2815" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="1743:1908" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="1830:1893" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="2025:2151" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="2373:2569" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="2460:2554" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="2649:2804" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="2736:2789" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="2874:3265" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="3018:3229" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="3396:3475" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="3618:3697" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="3864:3943" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="4111:4190" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="4247:4535" ph="{...}" />
+            <marker date="1567652834636" expanded="true" signature="4311:4527" ph="{...}" />
           </folding>
         </state>
       </provider>
