@@ -7,13 +7,19 @@ class Menu extends Component {
     return (
       <ul id="menu">
         <li>
-          <Link to="/leaderboard">Leaderboard</Link>
+          <Link to="/leaderboard" className="link-text">
+            Leaderboard
+          </Link>
         </li>
         <li>
-          <Link to="/activity">Activity</Link>
+          <Link to="/activity" className="link-text">
+            Activity
+          </Link>
         </li>
         <li>
-          <Link to="/tags">Tags</Link>
+          <Link to="/tags" className="link-text">
+            Tags
+          </Link>
         </li>
       </ul>
     );

@@ -7,8 +7,9 @@
   height: 80px;
 }
 
-.white-text {
+.link-text {
   color: white;
+  text-decoration: none;
 }
 .myob-gradient {
   background-image: linear-gradient(
