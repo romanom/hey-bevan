@@ -5,3 +5,10 @@
   display: inline;
   margin: 30px;
 }
+
+#menu > li > a:hover {
+  color: gray;
+}
+#menu > li > a:active {
+  color: gray;
+}

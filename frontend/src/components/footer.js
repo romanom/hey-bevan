@@ -8,9 +8,15 @@ class Footer extends Component {
       <div id="footer">
         <img alt="myoblogo" class="myob-logo" src={MYOB}></img>
         <ul class="footer-menu">
-          <li>How it works</li>
-          <li>FAQ</li>
-          <li>Support</li>
+          <li>
+            <a>How it works</a>
+          </li>
+          <li>
+            <a>FAQ</a>
+          </li>
+          <li>
+            <a>Support</a>
+          </li>
         </ul>
       </div>
     );
