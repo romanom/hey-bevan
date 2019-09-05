@@ -78,7 +78,7 @@ const getUserRedeemableTotal = (userid) => {
     return {
         userName : "JP",
         userImage : "./../images/jp.png",
-        totalBenavs : 100
+        totalBevans : 100
     };
 }
 
