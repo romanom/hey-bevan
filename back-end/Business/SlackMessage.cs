@@ -12,17 +12,14 @@ namespace AwsDotnetCsharp.Business.SlackMessage
     {
 
         const string emoji = ":bevan:"; //TODO move to config
-        private static IDynamoRepository _dynamoRepository;
+        private IDynamoRepository _dynamoRepository;
 
-        public SlackMessage()
+        public SlackMessage(IDynamoRepository dynamoRepository)
         {
-            _dynamoRepository = new DynamoRepository(new DynamoDbConfiguration
-            {
-                TableName = "hey-bevan-table-dev"
-            }, new AwsClientFactory<AmazonDynamoDBClient>(new AwsBasicConfiguration()));
+            _dynamoRepository = dynamoRepository;
         }
 
-        internal async static Task<Bevan> ProcessMessage(Event @event)
+        internal async Task<Bevan> ProcessMessage(Event @event)
         {
             var theMessage = @event.Text;
             var bevan = new Bevan();

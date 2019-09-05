@@ -21,12 +21,16 @@ namespace AwsDotnetCsharp
     {
 
         private readonly IDynamoRepository _dynamoRepository;
+        private readonly SlackMessage _slackMessage;
+        
         public Handler()
         {
             _dynamoRepository = new DynamoRepository(new DynamoDbConfiguration
             {
                 TableName = "hey-bevan-table-dev"
             }, new AwsClientFactory<AmazonDynamoDBClient>(new AwsBasicConfiguration()));
+            
+            _slackMessage  = new SlackMessage(_dynamoRepository); //hacky...
         }
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
@@ -60,7 +64,7 @@ namespace AwsDotnetCsharp
                     };
                 case "event_callback":
 
-                    await SlackMessage.ProcessMessage(request.Event);
+                    await _slackMessage.ProcessMessage(request.Event);
 
                     return new APIGatewayProxyResponse
                     {
