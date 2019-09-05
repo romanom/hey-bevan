@@ -41,7 +41,8 @@ namespace AwsDotnetCsharp.Business.SlackMessage
                     Count = noOfEmojis,
                     Message = theMessage,
                     Channel = @event.Channel,
-                    GiverId = whoSent
+                    GiverId = whoSent,
+                    Timestamp = DateTime.UtcNow
                 };
 
                 await _dynamoRepository.SaveBevan(bevan);

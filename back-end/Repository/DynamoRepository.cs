@@ -71,7 +71,8 @@ namespace AwsDotnetCsharp.Repository
                     ["count"] = bevan.Count, 
                     ["message"] = bevan.Message,
                     ["giverId"] = bevan.GiverId,
-                    ["channel"] = bevan.Channel
+                    ["channel"] = bevan.Channel,
+                    ["timestamp"] = bevan.Timestamp
                 };
 
                 await table.PutItemAsync(book);                

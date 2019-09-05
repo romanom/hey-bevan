@@ -1,3 +1,4 @@
+using System;
 using Amazon.DynamoDBv2.DataModel;
 
 namespace AwsDotnetCsharp.Models
@@ -10,11 +11,14 @@ namespace AwsDotnetCsharp.Models
         public int Count { get; set; }
         [DynamoDBProperty]
         public string Message { get; set; }
-        
-        [DynamoDBProperty] 
+
+        [DynamoDBProperty]
         public string GiverId { get; set; }
-        
-        [DynamoDBProperty] 
+
+        [DynamoDBProperty]
         public string Channel { get; set; }
+        
+        [DynamoDBProperty]
+        public DateTime Timestamp { get; set; }
     }
 }
