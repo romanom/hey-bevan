@@ -14,10 +14,20 @@
   width: 238px;
 }
 
+#header-main {
+  display: flex;
+  justify-content: space-between;
+}
+
 #slackimage {
   height: 30px;
   width : 100px;
   padding-top : 20px;
+}
+
+#slackImageHolder {
+  float: right;
+  margin-right: 10px;
 }
 
 #slacklink {
