@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Menu from "./menu";
-import Logo from "./heybevan-removebg.png";
+import Logo from "./images/logo.png";
 import "./styles/header.css";
+
 class Header extends Component {
   state = {};
   render() {
