@@ -2,19 +2,38 @@ import React, { Component } from "react";
 import Filter from "./filter";
 import Leaderboard from "./leaderboard";
 import Profile from "./profile";
+import "./styles/content.css";
 
 class Content extends Component {
   state = {};
   render() {
     return (
       <div>
-        <table>
+        <div id="sub-header">
+          <div id="content-title">
+            <h3>{this.props.title}</h3>
+          </div>
+          <div id="filter-container">
+            <Filter />
+          </div>
+        </div>
+        <div id="content-container">
+          <div>
+            <Leaderboard />
+          </div>
+          <div>
+            <Profile userName="jp" total="200" />
+          </div>
+        </div>
+        {/* <table>
           <tr>
-            <td>
+            <td id="content-container">
               <table>
-                <tr>
-                  {this.props.title}
-                  <Filter />
+                <tr id="sub-header">
+                  <td>{this.props.title}</td>
+                  <td>
+                    <Filter />
+                  </td>
                 </tr>
                 <tr>
                   <Leaderboard />
@@ -25,7 +44,7 @@ class Content extends Component {
               <Profile userName="jp" total="200" />
             </td>
           </tr>
-        </table>
+        </table> */}
       </div>
     );
   }

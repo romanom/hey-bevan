@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
-      <e p=".gitignore" t="Include" />
       <e p="aws-csharp.csproj" t="IncludeRecursive" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="build.cmd" t="Include" />
       <e p="build.sh" t="Include" />
       <e p="Handler.cs" t="Include" />
       <e p="Models" t="Include">
-        <e p="SlackAuthentication.cs" t="Include" />
+        <e p="SlackRequest.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
