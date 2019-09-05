@@ -51,19 +51,55 @@ const getLeaderboardData = ( type, dateType , channel) => {
             rank : 1,
             name : "Jp",
             userImage: "",
-            totalBevans : 32
+            totalBevans : 100
         },
         {
             rank : 2,
             name : "Melody",
             userImage : "",
-            totalBevans : 20
+            totalBevans : 80
         },
         {
             rank : 3,
             name : "Ivan",
             userImage: "",
-            totalBevans : 15
+            totalBevans : 70
+        },
+        {
+            rank : 4,
+            name : "Bevan",
+            userImage: "",
+            totalBevans : 60
+        },
+        {
+            rank : 5,
+            name : "Russel",
+            userImage: "",
+            totalBevans : 55
+        },
+        {
+            rank : 6,
+            name : "Armando",
+            userImage: "",
+            totalBevans : 50
+        },
+        {
+            rank : 7,
+            name : "Nick",
+            userImage: "",
+            totalBevans : 50
+        },
+        {
+            rank : 8,
+            name : "Saish",
+            userImage: "",
+            totalBevans : 50
+        },
+        {
+            rank : 9,
+            name : "Sinu",
+            userImage: "",
+            totalBevans : 45
         },
     ]
     return leaderboard;
@@ -77,7 +113,7 @@ const getUserRedeemableTotal = (userid) => {
     });*/
     return {
         userName : "JP",
-        userImage : "./../images/jp.png",
+        userImage : "jp.png",
         totalBevans : 100
     };
 }

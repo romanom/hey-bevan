@@ -4,11 +4,11 @@ import "./styles/profile.css";
 
 class Profile extends Component {
   state = {
-    userName: "",
-    userImage: null,
-    totalBevans: 0
-  };
-  componentDidMount() {
+    userName : "",
+    userImage: "",
+    totalBevans : 0
+  }
+  componentDidMount(){
     const response = serviceFunc.getUserRedeemableTotal(1);
     this.setState({
       userName: response.userName,
@@ -19,7 +19,7 @@ class Profile extends Component {
   render() {
     return (
       <div class="profile-container">
-        <img src={"this.state.userImage"}></img>
+        <img src={`./images/${this.state.userImage}`}></img>
         <p>{this.state.userName}</p>
         <p class="redeemable-text">Redeemable HeyBevans</p>
         <p class="no-padding">{this.state.totalBevans}</p>

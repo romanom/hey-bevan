@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Menu from "./menu";
 import Logo from "./images/logo_name.png";
 import "./styles/header.css";
+import SlackLogin from './slacklogin';
 
 class Header extends Component {
   state = {};
@@ -12,7 +13,8 @@ class Header extends Component {
         <div id="menu-container">
           <Menu />
         </div>
-      </div>
+        <SlackLogin />
+    </div>
     );
   }
 }
