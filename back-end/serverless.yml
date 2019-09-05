@@ -31,7 +31,6 @@ provider:
 #        - { "Fn::GetAtt": ["HeyBevanTable"] }
   environment:
     USERS_TABLE: ${self:custom.tableName}
-    SLACK_ACCESS_TOKEN: ${ssm:heybevanBotToken}
 
 # you can define service wide environment variables here
 #  environment:
@@ -59,6 +58,8 @@ functions:
           method: post
     package:
       artifact: bin/release/netcoreapp2.1/Challenge.zip
+    environment:
+      SLACK_ACCESS_TOKEN: ${ssm:heybevanBotToken}
   GetAll:
     handler: CsharpHandlers::AwsDotnetCsharp.Handler::GetAll
     description: get all bevans
