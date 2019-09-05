@@ -44,8 +44,8 @@ namespace AwsDotnetCsharp
             };
           case "event_callback":
             // do dynamo db inserts
-            
-            Console.WriteLine("Event " + request.Event);
+
+            Console.WriteLine("Message: \"{0}\". Posted by: {1}", request.Event.Text, request.Event.User);
 
             return new APIGatewayProxyResponse
             {
@@ -88,7 +88,8 @@ namespace AwsDotnetCsharp
 
           return heyBevanJson;
         }
-      }
+      }    
+    
     }
     
 }
