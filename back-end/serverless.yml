@@ -104,7 +104,7 @@ functions:
     events:
       - http:
           path: Redeemable
-          method: get
+          method: post
     package:
       artifact: bin/release/netcoreapp2.1/Redeemable.zip
   Channels:
