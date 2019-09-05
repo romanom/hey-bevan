@@ -29,9 +29,9 @@ provider:
         - "arn:aws:dynamodb:ap-southeast-2:*:*"
 #        - arn:aws:dynamodb:ap-southeast-2:038405731550:table/hey-bevan-table-dev
 #        - { "Fn::GetAtt": ["HeyBevanTable"] }
-environment:
-  USERS_TABLE: ${self:custom.tableName}
-  SLACK_ACCESS_TOKEN: ${ssm:heybevanBotToken}
+  environment:
+    USERS_TABLE: ${self:custom.tableName}
+    SLACK_ACCESS_TOKEN: ${ssm:heybevanBotToken}
 
 # you can define service wide environment variables here
 #  environment:

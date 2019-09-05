@@ -58,7 +58,12 @@ namespace AwsDotnetCsharp.Business.SlackMessage
 
         private async Task sendDM(string whoSent, string message)
         {
+
             var token = Environment.GetEnvironmentVariable("heybevanBotToken");         
+            if (token == null){
+                throw new Exception("Error getting slack token from ssm");
+            }
+
             var client = new SlackTaskClient(token);
 
             var response = await client.PostMessageAsync(whoSent, message, null, null, false, null, null, false, null, null, true);
