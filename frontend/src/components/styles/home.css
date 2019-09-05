@@ -7,3 +7,16 @@
   max-width: 100%;
   height: auto;
 }
+.flex-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.reason-card{
+  background-color:#FCDAEA;
+  max-width: 50%;
+  padding: 5px;
+}
