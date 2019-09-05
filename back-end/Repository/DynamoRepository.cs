@@ -18,6 +18,8 @@ namespace AwsDotnetCsharp.Repository
     {
         Task SaveBevan(Bevan bevan);
         Task<List<string>> GetChannels();
+
+        Task<object> GetBevansByChannel(string channelId);
     }
     
     public class DynamoRepository: IDynamoRepository
@@ -35,7 +37,26 @@ namespace AwsDotnetCsharp.Repository
             }
             return channels;
         }
-        
+
+        public async Task<object> GetBevansByChannel(string channelId)
+        {
+            using (var client = new AmazonDynamoDBClient())
+            {
+                var response = await client.ScanAsync(new ScanRequest("hey-bevan-table-new-dev"));
+
+                return response.Items.Where(k => k["channel"].S.Equals(channelId)).Select(i => new Bevan
+                {
+                    BevanId = i["bevanId"].S,
+                    ReceiverId = i["receiverId"].S,
+                    Count = int.Parse(i["count"].N),
+                    Message = i["message"].S,
+                    GiverId = i["giverId"].S,
+                    Channel = i["channel"].S,
+                    Timestamp = DateTime.Parse(i["timestamp"].S)
+                });
+            }
+        }
+
         public async Task SaveBevan(Bevan bevan)
         {
             using (var client = new AmazonDynamoDBClient())

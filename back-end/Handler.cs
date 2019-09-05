@@ -83,11 +83,22 @@ namespace AwsDotnetCsharp
         }
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
-        public APIGatewayProxyResponse GetAll()
+        public async Task<APIGatewayProxyResponse> GetAll()
         {
-            return new APIGatewayProxyResponse { StatusCode = 200 };
+            return new APIGatewayProxyResponse { StatusCode = 200};
         }
 
+        
+        [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
+        public async Task<APIGatewayProxyResponse> GetByChannelId(APIGatewayProxyRequest request)
+        {
+            var requestModel = JsonConvert.DeserializeObject<BevanRequest>(request.Body);
+            var bevanByChannel = await _dynamoRepository.GetBevansByChannel(requestModel.ChannelId);
+            var bevanJson = JsonConvert.SerializeObject(bevanByChannel);
+           
+            return new APIGatewayProxyResponse { StatusCode = 200, Body = bevanJson};
+        }
+        
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
         public APIGatewayProxyResponse GetById(string userId)
         {

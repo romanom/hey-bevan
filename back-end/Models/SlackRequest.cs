@@ -27,4 +27,9 @@ namespace AwsDotnetCsharp.Models
         public string Event_Ts { get; set; }
         public string Channel_Type { get; set; }
     }
+
+    public class BevanRequest
+    {
+        public string ChannelId { get; set; }
+    }
 }
