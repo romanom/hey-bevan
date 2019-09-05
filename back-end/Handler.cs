@@ -1,5 +1,7 @@
 using Amazon.Lambda.Core;
 using System;
+using System.Collections.Generic;
+using System.Security.Authentication.ExtendedProtection;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
@@ -100,16 +102,21 @@ namespace AwsDotnetCsharp
       }
       
       [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
-      public APIGatewayProxyResponse ShowSent(APIGatewayProxyRequest request)
+      public APIGatewayProxyResponse Redeemable(string userId)
       {
-        return new APIGatewayProxyResponse {StatusCode = 200};
+        // ask to dynamo ask for number of bevans given userId"
+        int totalBevans = 100;
+        return new APIGatewayProxyResponse {StatusCode = 200, Body = totalBevans.ToString()};
       }
       
       [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
-      public APIGatewayProxyResponse ShowGiven(APIGatewayProxyRequest request)
+      public APIGatewayProxyResponse Channels()
       {
-        return new APIGatewayProxyResponse {StatusCode = 200};
+        // ask to dynamo ask for my selected channels where bevans are used
+        List<string> channels = new List<string>();
+        return new APIGatewayProxyResponse {StatusCode = 200, Body = JsonConvert.SerializeObject(channels)};
       }
+      
       
       private async Task<string> somethingAsync()
       {

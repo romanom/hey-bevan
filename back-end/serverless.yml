@@ -97,6 +97,26 @@ functions:
           method: post
     package:
       artifact: bin/release/netcoreapp2.1/ShowGiven.zip
+  Redeemable:
+    handler: CsharpHandlers::AwsDotnetCsharp.Handler::Redeemable
+    memorySize: 128
+    description: Show total number of Beavans per userId
+    events:
+      - http:
+          path: Redeemable
+          method: get
+    package:
+      artifact: bin/release/netcoreapp2.1/Redeemable.zip
+  Channels:
+    handler: CsharpHandlers::AwsDotnetCsharp.Handler::Channels
+    memorySize: 128
+    description: Return list of channels that use bevans
+    events:
+      - http:
+          path: Channels
+          method: get
+    package:
+      artifact: bin/release/netcoreapp2.1/Channels.zip
     
     
 resources:
