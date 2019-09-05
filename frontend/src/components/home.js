@@ -5,7 +5,7 @@ import Easy from "./images/reason-easy.png"
 import Happy from "./images/reason-happiness.png"
 import Rewards from "./images/reason-rewards.png"
 import ReasonsWhyImage from "./images/BevansReasons.png";
-import Rewards from "./images/BevanRewards.png";
+import RewardsPoster from "./images/BevanRewards.png";
 import "./styles/home.css";
 
 export default class Home extends Component {
@@ -62,7 +62,7 @@ export default class Home extends Component {
                 <div className="RewardsPoster">
                     <img id="rewardsPoster"
                         alt="Rewards you can get from redeeming your Bevans"
-                        src={Rewards}>
+                        src={RewardsPoster}>
                     </img>
                 </div>
             </div>
