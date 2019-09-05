@@ -20,3 +20,14 @@
 /Users/jesse.paclar/Documents/learn-simplify/hack-day/hey-bevan/back-end/obj/release/netcoreapp2.1/linux-x64/aws-csharp.AssemblyInfo.cs
 /Users/jesse.paclar/Documents/learn-simplify/hack-day/hey-bevan/back-end/obj/release/netcoreapp2.1/linux-x64/CsharpHandlers.dll
 /Users/jesse.paclar/Documents/learn-simplify/hack-day/hey-bevan/back-end/obj/release/netcoreapp2.1/linux-x64/CsharpHandlers.pdb
+/Users/robert.giles/hey-bevan/back-end/bin/release/netcoreapp2.1/linux-x64/CsharpHandlers.deps.json
+/Users/robert.giles/hey-bevan/back-end/bin/release/netcoreapp2.1/linux-x64/CsharpHandlers.runtimeconfig.json
+/Users/robert.giles/hey-bevan/back-end/bin/release/netcoreapp2.1/linux-x64/CsharpHandlers.runtimeconfig.dev.json
+/Users/robert.giles/hey-bevan/back-end/bin/release/netcoreapp2.1/linux-x64/CsharpHandlers.dll
+/Users/robert.giles/hey-bevan/back-end/bin/release/netcoreapp2.1/linux-x64/CsharpHandlers.pdb
+/Users/robert.giles/hey-bevan/back-end/obj/release/netcoreapp2.1/linux-x64/aws-csharp.csprojAssemblyReference.cache
+/Users/robert.giles/hey-bevan/back-end/obj/release/netcoreapp2.1/linux-x64/aws-csharp.csproj.CoreCompileInputs.cache
+/Users/robert.giles/hey-bevan/back-end/obj/release/netcoreapp2.1/linux-x64/aws-csharp.AssemblyInfoInputs.cache
+/Users/robert.giles/hey-bevan/back-end/obj/release/netcoreapp2.1/linux-x64/aws-csharp.AssemblyInfo.cs
+/Users/robert.giles/hey-bevan/back-end/obj/release/netcoreapp2.1/linux-x64/CsharpHandlers.dll
+/Users/robert.giles/hey-bevan/back-end/obj/release/netcoreapp2.1/linux-x64/CsharpHandlers.pdb
