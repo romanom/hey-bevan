@@ -19,7 +19,7 @@ class Content extends Component {
                     <Filter />
                   </td>
                 </tr>
-                <tr></tr>
+                <tr>Tags</tr>
               </table>
             </td>
           </tr>
