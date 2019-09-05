@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import "./styles/menu.css";
+import { Link} from 'react-router-dom';
+
 class Menu extends Component {
   render() {
     return (
       <ul id="menu">
-        <li><a onClick={this.props.onClickLeaderboard}>Leaderboard</a></li>
-        <li><a onClick={this.props.onClickActivities}>Activity</a></li>
-        <li><a onClick={this.props.onClickTags}>Tags</a></li>
+        <li><Link to="/leaderboard">Leaderboard</Link></li>
+        <li><Link to="/activity">Activity</Link></li>
+        <li><Link to="/tags">Tags</Link></li>
       </ul>
     );
   }

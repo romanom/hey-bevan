@@ -7,17 +7,10 @@
   height: 80px;
 }
 
-.App-header {
-  background-image: linear-gradient(
-    to right,
-    #6100a5,
-    #8241aa,
-    #b93499,
-    #ec0677
-  );
+.white-text {
   color: white;
 }
-#footer {
+.myob-gradient {
   background-image: linear-gradient(
     to right,
     #6100a5,
@@ -25,6 +18,8 @@
     #b93499,
     #ec0677
   );
+}
+#footer {
   height: 100px;
   bottom: 0px;
 }

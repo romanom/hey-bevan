@@ -2,26 +2,22 @@ import React, { Component } from "react";
 import Menu from "./menu";
 import Logo from "./images/logo_name.png";
 import "./styles/header.css";
-import SlackLogin from './slacklogin';
+import SlackLogin from "./slacklogin";
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
   state = {};
   render() {
     return (
-      <div id="header-main">
+      <div class="myob-gradient white-text" id="header-main">
         <div id="header-container">
-          <img id="logo" alt="logo" src={Logo} />
+          <Link to="/"><img id="logo" alt="logo" src={Logo} /></Link>
           <div id="menu-container">
-            <Menu 
-              onClickActivities={this.props.onClickActivities} 
-              onClickLeaderboard= {this.props.onClickLeaderboard}
-              onClickTags={this.props.onClickTags}
-            />
+            <Menu/>
           </div>
-          
+        </div>
+        <SlackLogin />
       </div>
-      <SlackLogin />
-    </div>
     );
   }
 }
