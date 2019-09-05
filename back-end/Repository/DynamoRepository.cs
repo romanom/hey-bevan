@@ -19,7 +19,7 @@ namespace AwsDotnetCsharp.Repository
         Task SaveBevan(Bevan bevan);
         Task<List<string>> GetChannels();
 
-        Task<object> GetBevansByChannel(string channelId);
+        Task<IEnumerable<Bevan>> GetBevansByChannel(string channelId);
     }
     
     public class DynamoRepository: IDynamoRepository
@@ -37,14 +37,14 @@ namespace AwsDotnetCsharp.Repository
             }
             return channels;
         }
-
-        public async Task<object> GetBevansByChannel(string channelId)
+        
+        private async Task<IEnumerable<Bevan>> GetBevanList()
         {
             using (var client = new AmazonDynamoDBClient())
             {
                 var response = await client.ScanAsync(new ScanRequest("hey-bevan-table-new-dev"));
 
-                return response.Items.Where(k => k["channel"].S.Equals(channelId)).Select(i => new Bevan
+                return response.Items.Select(i => new Bevan
                 {
                     BevanId = i["bevanId"].S,
                     ReceiverId = i["receiverId"].S,
@@ -55,6 +55,26 @@ namespace AwsDotnetCsharp.Repository
                     Timestamp = DateTime.Parse(i["timestamp"].S)
                 });
             }
+        }
+
+        public async Task<IEnumerable<Bevan>> GetBevansByChannel(string channelId)
+        {
+            return (await GetBevanList()).Where(b => b.Channel.Equals(channelId));
+//            using (var client = new AmazonDynamoDBClient())
+//            {
+//                var response = await client.ScanAsync(new ScanRequest("hey-bevan-table-new-dev"));
+//
+//                return response.Items.Where(k => k["channel"].S.Equals(channelId)).Select(i => new Bevan
+//                {
+//                    BevanId = i["bevanId"].S,
+//                    ReceiverId = i["receiverId"].S,
+//                    Count = int.Parse(i["count"].N),
+//                    Message = i["message"].S,
+//                    GiverId = i["giverId"].S,
+//                    Channel = i["channel"].S,
+//                    Timestamp = DateTime.Parse(i["timestamp"].S)
+//                });
+//            }
         }
 
         public async Task SaveBevan(Bevan bevan)

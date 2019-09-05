@@ -87,7 +87,6 @@ namespace AwsDotnetCsharp
         {
             return new APIGatewayProxyResponse { StatusCode = 200};
         }
-
         
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
         public async Task<APIGatewayProxyResponse> GetByChannelId(APIGatewayProxyRequest request)

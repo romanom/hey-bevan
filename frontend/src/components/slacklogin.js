@@ -15,7 +15,7 @@ export default class SlackLogin extends Component{
             <div id="slackImageHolder">
                 {
                     (this.state.loggedInUser === null) ?
-                    <a id="slacklink" href={`https://slack.com/oauth/authorize?scope=identity.basic&client_id=${configurations.slackClientId}&redirect_uri=http://localhost:3000`}><img id="slackimage" src="https://api.slack.com/img/sign_in_with_slack.png" /></a> 
+                    <a id="slacklink" href={`https://slack.com/oauth/authorize?scope=identity.basic&client_id=${configurations.slackClientId}&redirect_uri=http://localhost:3000/signincallback`}><img id="slackimage" src="https://api.slack.com/img/sign_in_with_slack.png" /></a> 
                     : <div><p>user image</p><p>{this.state.loggedInUser}</p> </div>
                 }
             </div>
