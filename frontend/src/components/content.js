@@ -8,24 +8,8 @@ class Content extends Component {
   state = {};
   render() {
     return (
-      <div>
-        <div id="sub-header">
-          <div id="content-title">
-            <h3>{this.props.title}</h3>
-          </div>
-          <div id="filter-container">
-            <Filter />
-          </div>
-        </div>
-        <div id="content-container">
-          <div>
-            <Leaderboard />
-          </div>
-          <div>
-            <Profile userName="jp" total="200" />
-          </div>
-        </div>
-        {/* <table>
+      <div id="content-container">
+        <table>
           <tr>
             <td id="content-container">
               <table>
@@ -40,11 +24,11 @@ class Content extends Component {
                 </tr>
               </table>
             </td>
-            <td>
-              <Profile userName="jp" total="200" />
-            </td>
           </tr>
-        </table> */}
+        </table>
+        <div>
+          <Profile userName="jp" total="200" />
+        </div>
       </div>
     );
   }
