@@ -20,19 +20,19 @@ class Leaderboard extends Component {
 
   render() {
     return (
-      <div class="scrollable">
+      <div className="scrollable">
         <table id="leaderboard">
           <col width="10%" />
           <col width="60%" />
           <col width="30%" />
           <tr>
-            <th class="leaderboard-headings" style={{ textAlign: "left" }}>
+            <th className="leaderboard-headings" style={{ textAlign: "left" }}>
               Rank
             </th>
-            <th class="leaderboard-headings" style={{ textAlign: "left" }}>
+            <th className="leaderboard-headings" style={{ textAlign: "left" }}>
               Person
             </th>
-            <th class="leaderboard-headings">Total HeyBevans</th>
+            <th className="leaderboard-headings">Total HeyBevans</th>
           </tr>
           {this.state.leaderboardData.map(leaderboard => (
             <tr>

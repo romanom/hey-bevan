@@ -4,6 +4,7 @@
 #menu > li {
   display: inline;
   margin: 30px;
+  cursor: pointer;
 }
 
 #menu > li > a:hover {
