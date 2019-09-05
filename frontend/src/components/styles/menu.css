@@ -13,3 +13,7 @@
 #menu > li > a:active {
   color: gray;
 }
+
+.selected {
+  color: gray;
+}

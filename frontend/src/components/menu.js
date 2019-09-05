@@ -1,30 +1,46 @@
 import React, { Component } from "react";
 import "./styles/menu.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 class Menu extends Component {
   render() {
     return (
       <ul id="menu">
         <li>
-          <Link to="/leaderboard" className="link-text">
+          <NavLink
+            to="/leaderboard"
+            className="link-text"
+            activeStyle={{ color: "gray" }}
+          >
             Leaderboard
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/activity" className="link-text">
+          <NavLink
+            to="/activity"
+            className="link-text"
+            activeStyle={{ color: "gray" }}
+          >
             Activity
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/tags" className="link-text">
+          <NavLink
+            to="/tags"
+            className="link-text"
+            activeStyle={{ color: "gray" }}
+          >
             Tags
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/rewards" className="link-text">
+          <NavLink
+            to="/rewards"
+            className="link-text"
+            activeClassName="selected"
+          >
             Rewards
-          </Link>
+          </NavLink>
         </li>
       </ul>
     );
