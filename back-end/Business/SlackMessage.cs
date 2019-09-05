@@ -29,8 +29,9 @@ namespace AwsDotnetCsharp.Business.SlackMessage
 
                 var noOfEmojis = theMessage.Split(emoji).Length - 1;
                 string whoSent = @event.User; //who posted the message
+
                 //TODO allow multiple users
-                string whoReceived = theMessage.Split('<', '>')[1]; //only get first user mentioned in the message
+                var whoReceived = Regex.Match(theMessage, @"<@(.+?)>").Groups[1].Value;
 
                 Console.WriteLine("{0} gave \"{1}\" emojis to {2}", whoSent, noOfEmojis, whoReceived);
 
