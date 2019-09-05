@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
@@ -20,33 +22,18 @@ namespace AwsDotnetCsharp.Repository
     
     public class DynamoRepository: IDynamoRepository
     {
-        public DynamoRepository()
-        {
-        }
-
         public async Task<List<string>> GetChannels()
         {
-            var list = new List<string>();
-            /*using (var client = new AmazonDynamoDBClient())
+            List<string> channels;
+            using (var client = new AmazonDynamoDBClient())
             {
-                var request = new QueryRequest
-                {
-                    TableName = "hey-bevan-table-new-dev",
-                    KeyConditionExpression = "Id = :v_Id",
-                    ExpressionAttributeValues = new Dictionary<string, AttributeValue> {
-                        {":v_Id", new AttributeValue { S =  "Amazon DynamoDB#DynamoDB Thread 1" }}}
-                };
-                
-                var response = client.Query(request);
+                var response = await client.ScanAsync(new ScanRequest("hey-bevan-table-new-dev"));
 
-                foreach (Dictionary<string, AttributeValue> item in response.Items)
-                {
-                    // Process the result.
-                    list.Add(item);
-                }
-            }*/
+                var responseItems = response.Items;
+                channels = responseItems.Select(i => i["channel"].S).ToList();
 
-            return list;
+            }
+            return channels;
         }
         
         public async Task SaveBevan(Bevan bevan)
