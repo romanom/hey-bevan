@@ -78,6 +78,18 @@ namespace AwsDotnetCsharp
         return new APIGatewayProxyResponse {StatusCode = 200};
       }
       
+      [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
+      public APIGatewayProxyResponse ShowSent(APIGatewayProxyRequest request)
+      {
+        return new APIGatewayProxyResponse {StatusCode = 200};
+      }
+      
+      [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
+      public APIGatewayProxyResponse ShowGiven(APIGatewayProxyRequest request)
+      {
+        return new APIGatewayProxyResponse {StatusCode = 200};
+      }
+      
       private async Task<string> somethingAsync()
       {
         using (var client = new AmazonDynamoDBClient())
