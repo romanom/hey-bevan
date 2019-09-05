@@ -1,23 +1,26 @@
-.profile-pic {
+/* .profile-pic {
   height: 80%;
   width: 80%;
   margin-top: 10%;
+} */
+.profile-img {
+  height: 50%;
 }
 .profile-container {
   margin-top: 10px;
-  padding-top: 150px;
   border: 0px solid black;
   height: 50vh;
 }
 .redeemable-text {
-  font-size: 15px;
+  font-size: 14px;
   color: purple;
   padding-bottom: 5px;
-  font-family: "Comic Sans MS", cursive, sans-serif
+  margin-bottom: 0px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 .no-padding {
   font-size: 15px;
   margin: 0px;
   color: purple;
-  font-family: "Comic Sans MS", cursive, sans-serif
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
