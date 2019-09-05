@@ -25,11 +25,7 @@ namespace AwsDotnetCsharp
         
         public Handler()
         {
-            _dynamoRepository = new DynamoRepository(new DynamoDbConfiguration
-            {
-                TableName = "hey-bevan-table-dev"
-            }, new AwsClientFactory<AmazonDynamoDBClient>(new AwsBasicConfiguration()));
-            
+            _dynamoRepository = new DynamoRepository();
             _slackMessage  = new SlackMessage(_dynamoRepository); //hacky...
         }
 

@@ -20,18 +20,8 @@ namespace AwsDotnetCsharp.Repository
     
     public class DynamoRepository: IDynamoRepository
     {
-        private readonly AmazonDynamoDBClient _client;
-        private readonly DynamoDBOperationConfig _configuration;
-        
-        public DynamoRepository(DynamoDbConfiguration configuration,
-            IAwsClientFactory<AmazonDynamoDBClient> clientFactory)
+        public DynamoRepository()
         {
-            _client = clientFactory.GetAwsClient();
-            _configuration = new DynamoDBOperationConfig
-            {
-                OverrideTableName = configuration.TableName,
-                SkipVersionCheck = true
-            };
         }
 
         public async Task<List<string>> GetChannels()

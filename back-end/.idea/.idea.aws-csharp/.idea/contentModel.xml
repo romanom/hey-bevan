@@ -21,6 +21,7 @@
       <e p="Models" t="Include">
         <e p="Bevan.cs" t="Include" />
         <e p="SlackRequest.cs" t="Include" />
+        <e p="Users.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
