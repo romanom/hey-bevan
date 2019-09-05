@@ -1,14 +1,22 @@
 import React, { Component } from "react";
 import "./styles/filter.css";
+import serviceFunc from "./../service/service";
 class Filter extends Component {
-  state = {};
+  state = {
+    channels : []
+  };
+
+  componentDidMount() {
+    this.setState({channels: serviceFunc.getAllChannels()})
+  }
+
   render() {
     return (
       <div>
         <span id="filter-heading">Filter</span>
         <select>
-          <option>HeyBevan received</option>
-          <option> HeyBevan sent</option>
+          <option>Hey-Bevan Received</option>
+          <option>Hey-Bevan Sent</option>
         </select>
         <select>
           <option>Today</option>
@@ -21,9 +29,9 @@ class Filter extends Component {
           <option>Last year</option>
         </select>
         <select>
-          <option>All channel</option>
-          <option>cr-apollo</option>
-          <option>cr-hyperion</option>
+          {this.state.channels.map(channel => 
+            (<option>{ channel.name }</option>)
+          )}
         </select>
       </div>
     );
