@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Bevan from "./images/logo.png";
 import Achievement from "./images/reason-achievement.png";
 import Easy from "./images/reason-easy.png"
+import Happy from "./images/reason-happiness.png"
 import ReasonsWhyImage from "./images/BevansReasons.png";
 import Rewards from "./images/BevanRewards.png";
 import "./styles/home.css";
@@ -34,6 +35,13 @@ export default class Home extends Component {
                         <div class="container">
                             <h4><b>Easy to Use</b></h4>
                             <p>It only takes a few seconds to tag your team and give a Bevan</p>
+                        </div>
+                    </div>
+                    <div className="reason-card">
+                        <img src={Happy} alt="Happiness Icon" />
+                        <div class="container">
+                            <h4><b>Make Someone's Day</b></h4>
+                            <p>Spread extra happiness at MYOB</p>
                         </div>
                     </div>
                 </div>
