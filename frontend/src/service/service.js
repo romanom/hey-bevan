@@ -76,7 +76,9 @@ const getUserRedeemableTotal = (userid) => {
         return resource;
     });*/
     return {
-        totalBenavs : 100
+        userName : "JP",
+        userImage : "./../images/jp.png",
+        totalBevans : 100
     };
 }
 

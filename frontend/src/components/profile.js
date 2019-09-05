@@ -1,12 +1,24 @@
 import React, { Component } from "react";
+import serviceFunc from "./../service/service";
+import "./styles/profile.css";
+
 class Profile extends Component {
+  state = {
+    userName : "",
+    userImage: null,
+    totalBevans : 0
+  }
+  componentDidMount(){
+    const response = serviceFunc.getUserRedeemableTotal(1);
+    this.setState({ userName : response.userName , userImage: response.userImage , totalBevans : response.totalBevans})
+  }
   render() {
     return (
       <div>
-        <p>Image</p>
-        <p>{this.props.userName}</p>
-        <p>Redeemable Hey-Bevans</p>
-        <p>{this.props.total}</p>
+        <p><img src={"this.state.userImage"}></img></p>
+        <p>{this.state.userName}</p>
+        <p>Redeemable HeyBevans</p>
+        <p>{this.state.totalBevans}</p>
       </div>
     );
   }
