@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import getLeaderboardData from "./../service/service";
+import serviceFunc from "./../service/service";
 import "./styles/leaderboard.css";
+
 class Leaderboard extends Component {
   state = {
     leaderboardData: []
@@ -8,7 +9,7 @@ class Leaderboard extends Component {
 
   componentDidMount() {
     this.setState({
-      leaderboardData: getLeaderboardData(
+      leaderboardData: serviceFunc.getLeaderboardData(
         this.props.type,
         this.props.dateType,
         this.props.channel
