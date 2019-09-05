@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Filter from "./filter";
-import Activities from './activities';
+import Activities from "./activities";
 import "./styles/content.css";
 
 class ActivityContainer extends Component {
@@ -13,7 +13,7 @@ class ActivityContainer extends Component {
             <td>
               <table>
                 <tr id="sub-header">
-                  <td class="page-title">{this.props.title}</td>
+                  <td className="page-title">{this.props.title}</td>
                   <td>
                     <Filter />
                   </td>
