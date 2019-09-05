@@ -117,6 +117,14 @@ namespace AwsDotnetCsharp
         return new APIGatewayProxyResponse {StatusCode = 200, Body = JsonConvert.SerializeObject(channels)};
       }
       
+      [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
+      public APIGatewayProxyResponse LeaderBoard(Enum recognitionRole, DateTime startDate, DateTime endDate, string channel)
+      {
+        // ask to dynamo ask for my selected data
+        List<Users> users = new List<Users>();
+        return new APIGatewayProxyResponse {StatusCode = 200, Body = JsonConvert.SerializeObject(users)};
+      }
+      
       
       private async Task<string> somethingAsync()
       {
@@ -131,5 +139,4 @@ namespace AwsDotnetCsharp
       }    
     
     }
-    
 }
