@@ -47,7 +47,7 @@ namespace AwsDotnetCsharp.Business.SlackMessage
                 //check how many they've sent today
                 if (sentToday >= dailyLimit || (sentToday + noOfEmojis) >= dailyLimit) {
                     //send daily limit message                    
-                    var dailyLimitMessage = string.Format("Whoops! You tried to give {0} tacos. You have {1} tacos left to give today.", noOfEmojis, dailyLimit-noOfEmojis);
+                    var dailyLimitMessage = string.Format("Whoops! You tried to give {0} tacos. You have {1} tacos left to give today.", noOfEmojis, sentToday-noOfEmojis);
                     await sendDM(whoSent, dailyLimitMessage);    
                     return bevan;            
                 }
