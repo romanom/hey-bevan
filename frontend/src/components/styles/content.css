@@ -1,10 +1,11 @@
 #content-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 50px 0 50px;
 }
 #sub-header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 #filter-container {
   display: flex;
@@ -13,4 +14,11 @@
 }
 #title-container {
   display: inline;
+}
+
+table {
+  width: 100%;
+}
+.page-title {
+  font-size: 20px;
 }

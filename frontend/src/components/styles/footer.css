@@ -1,0 +1,25 @@
+.myob-logo {
+  height: 70px;
+  width: 149px;
+  float: right;
+}
+#footer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+.footer-menu {
+  float: left;
+  list-style-type: none;
+}
+.footer-menu > li {
+  display: inline;
+  margin: 10px;
+  color: white;
+}

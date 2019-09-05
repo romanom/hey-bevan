@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import "./styles/filter.css";
 class Filter extends Component {
   state = {};
   render() {
     return (
       <div>
-        <span>Filter</span>
+        <span id="filter-heading">Filter</span>
         <select>
           <option>Hey-Bevan Received</option>
           <option> Hey-Bevan Sent</option>
