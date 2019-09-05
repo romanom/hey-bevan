@@ -32,8 +32,21 @@ namespace AwsDotnetCsharp.Repository
                 SkipVersionCheck = true
             };
         }
-        
-        
+
+        public async Task GetChannels(Bevan bevan)
+        {
+            using (var client = new AmazonDynamoDBClient())
+            {
+                var table = Table.LoadTable(client, "hey-bevan-table-dev");
+                
+                var channelOnly = new Document
+                {
+                    ["channel"] = bevan.Channel
+                };
+
+                await table.PutItemAsync(channelOnly);
+            }
+        }
         
         public async Task SaveBevan(Bevan bevan)
         {
