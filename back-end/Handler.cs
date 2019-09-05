@@ -1,7 +1,6 @@
 using Amazon.Lambda.Core;
 using System;
 using System.Threading.Tasks;
-using System.Transactions;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Lambda.APIGatewayEvents;
@@ -10,15 +9,14 @@ using AwsDotnetCsharp.Infrastructure.Configs;
 using AwsDotnetCsharp.Models;
 using AwsDotnetCsharp.Repository;
 using Newtonsoft.Json;
+using AwsDotnetCsharp.Business.SlackMessage;
 
-[assembly:LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
+[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
 
 namespace AwsDotnetCsharp
 {
     public class Handler
     {
-
-      const string emoji = ":bevan:";
 
       private readonly IDynamoRepository _dynamoRepository;
       public Handler()
@@ -69,8 +67,8 @@ namespace AwsDotnetCsharp
 
             // var ss = await somethingAsync();
             
-            ProcessMessage(request.Event);
-
+            SlackMessage.PostMessage(request.Event);
+          
             return new APIGatewayProxyResponse
             {
               StatusCode = 200, Body = JsonConvert.SerializeObject(new
@@ -88,21 +86,6 @@ namespace AwsDotnetCsharp
             };
         }
       }
-
-        private void ProcessMessage(Event @event)
-        {
-
-            Console.WriteLine("User: {0} Message: \"{1}\"", @event.User, @event.Text);
-
-            if (@event.Text.Contains(emoji)){
-              //do someting
-              var noOfEmojis = @event.Text.Split(emoji).Length - 1;
-              Console.WriteLine("{0} gave \"{1}\" emojis to someone...", @event.User, noOfEmojis);
-
-            }
-
-            //do nothing
-        }
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
       public APIGatewayProxyResponse GetAll()
