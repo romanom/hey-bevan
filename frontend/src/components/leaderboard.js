@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import serviceFunc from "./../service/service";
 import "./styles/leaderboard.css";
+import bevans from "./images/logo.png";
 
 class Leaderboard extends Component {
   state = {
@@ -22,8 +23,8 @@ class Leaderboard extends Component {
       <div>
         <table id="leaderboard">
           <col width="10%" />
-          <col width="80%" />
-          <col width="10%" />
+          <col width="60%" />
+          <col width="30%" />
           <tr>
             <th class="leaderboard-headings" style={{ textAlign: "left" }}>
               Rank
@@ -37,9 +38,9 @@ class Leaderboard extends Component {
             <tr>
               <td style={{ textAlign: "left" }}>{leaderboard.rank}</td>
               <td style={{ textAlign: "left" }}>
-                {leaderboard.name} {leaderboard.image}
+                {leaderboard.name} {leaderboard.image ? <img id="smalllogo" alt="heybevans" src={require(`./images/${leaderboard.image}`)} /> : ''}
               </td>
-              <td>{leaderboard.totalBevans}</td>
+              <td>{leaderboard.totalBevans}<img id="smalllogo" alt="heybevans" src={bevans} /></td>
             </tr>
           ))}
         </table>

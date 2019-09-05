@@ -7,12 +7,14 @@ export default class SlackLogin extends Component{
     };
 
     render() {
+        console.log("Slack Login");
+        console.log('Logged in user ', this.state.loggedInUser);
         return (
             <div>
                 {
                     (this.state.loggedInUser === null) ?
                     <a id="slacklink" href={`https://slack.com/oauth/authorize?scope=identity.basic&client_id=${configurations.slackClientId}&redirect_uri=localhost:3000`}><img id="slackimage" src="https://api.slack.com/img/sign_in_with_slack.png" /></a> 
-                    : <div><img src=""></img><p>{this.state.loggedInUser}</p> </div>
+                    : <div><p>user image</p><p>{this.state.loggedInUser}</p> </div>
                 }
             </div>
         );

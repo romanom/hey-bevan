@@ -6,7 +6,7 @@ class Footer extends Component {
   render() {
     return (
       <div id="footer">
-        <img class="myob-logo" src={MYOB}></img>
+        <img alt="myoblogo" class="myob-logo" src={MYOB}></img>
         <ul class="footer-menu">
           <li>How it works</li>
           <li>FAQ</li>

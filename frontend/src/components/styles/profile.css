@@ -4,14 +4,20 @@
   margin-top: 10%;
 }
 .profile-container {
-  margin-top: 10%;
+  margin-top: 10px;
+  padding-top: 20px;
   border: 1px solid black;
   height: 50vh;
 }
 .redeemable-text {
-  font-size: 12px;
-  margin-bottom: 5px;
+  font-size: 15px;
+  color: purple;
+  padding-bottom: 5px;
+  font-family: "Comic Sans MS", cursive, sans-serif
 }
 .no-padding {
+  font-size: 15px;
   margin: 0px;
+  color: purple;
+  font-family: "Comic Sans MS", cursive, sans-serif
 }
