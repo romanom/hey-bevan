@@ -1,9 +1,9 @@
 import React, { Component } from "react";
+import "./styles/menu.css";
 class Menu extends Component {
-  state = {};
   render() {
     return (
-      <ul>
+      <ul id="menu">
         <li>Leaderboard</li>
         <li>Activity</li>
         <li>Tags</li>

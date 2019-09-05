@@ -1,0 +1,9 @@
+#header-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#menu-container {
+  display: flex;
+  align-items: center;
+}

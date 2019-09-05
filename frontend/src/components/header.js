@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import Menu from "./menu";
 import Logo from "./heybevan-removebg.png";
+import "./styles/header.css";
 class Header extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <div id="header-container">
         <img id="logo" alt="logo" src={Logo} />
-        <Menu />
+        <div id="menu-container">
+          <Menu />
+        </div>
       </div>
     );
   }
