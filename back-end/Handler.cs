@@ -14,6 +14,9 @@ namespace AwsDotnetCsharp
 {
     public class Handler
     {
+
+      const string emoji = ":bevan:";
+
       [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
       public APIGatewayProxyResponse AddBevan(APIGatewayProxyRequest request)
       {
@@ -45,7 +48,7 @@ namespace AwsDotnetCsharp
           case "event_callback":
             // do dynamo db inserts
 
-            Console.WriteLine("Message: \"{0}\". Posted by: {1}", request.Event.Text, request.Event.User);
+            ProcessMessage(request.Event);
 
             return new APIGatewayProxyResponse
             {
@@ -64,9 +67,21 @@ namespace AwsDotnetCsharp
             };
         }
       }
-      
-      
-      [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
+
+        private void ProcessMessage(Event @event)
+        {
+
+            if (@event.Text.Contains(emoji)){
+              //do someting
+              var noOfEmojis = @event.Text.Split(emoji).Length - 1;
+              Console.WriteLine("{0} gave \"{1}\" emojis to someone...", @event.User, noOfEmojis);
+
+            }
+
+            //do nothing
+        }
+
+        [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
       public APIGatewayProxyResponse GetAll()
       {
         return new APIGatewayProxyResponse {StatusCode = 200};
