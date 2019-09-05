@@ -12,7 +12,10 @@ class RewardPage extends Component {
           <div className="reward-img">
             <img src={Assistant}></img>
           </div>
-          <div className="description"></div>
+          <div className="description">
+            Bevan will be your PA for the day. Note that Bevan has no paid
+            experience in this role.
+          </div>
         </div>
       </div>
     );
