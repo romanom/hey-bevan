@@ -48,7 +48,7 @@ namespace AwsDotnetCsharp.Repository
 
                 var book = new Document
                 {
-                    ["userId"] = 101, 
+                    ["userId"] = bevan.UserId, 
                     ["count"] = bevan.Count, 
                     ["message"] = bevan.Message
                 };

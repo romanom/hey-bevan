@@ -13,28 +13,22 @@ provider:
   name: aws
   runtime: dotnetcore2.1
   region: ap-southeast-2
-
-
-# you can overwrite defaults here
-#  stage: dev
-#  region: us-east-1
-
-# you can add statements to the Lambda function's IAM Role here
-iamRoleStatements:
+  iamRoleStatements:
     - Effect: Allow
       Action:
         - dynamodb:*
-#        - dynamodb:DescribeTable
-#        - dynamodb:Query
-#        - dynamodb:Scan
-#        - dynamodb:GetItem
-#        - dynamodb:BatchGetItem
-#        - dynamodb:PutItem
-#        - dynamodb:UpdateItem
-#        - dynamodb:DeleteItem
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:BatchGetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
       Resource:
+        - "arn:aws:dynamodb:ap-southeast-2:*:*"
 #        - arn:aws:dynamodb:ap-southeast-2:038405731550:table/hey-bevan-table-dev
-        - { "Fn::GetAtt": ["HeyBevanTable", "Arn" ] }
+#        - { "Fn::GetAtt": ["HeyBevanTable"] }
 environment:
   USERS_TABLE: ${self:custom.tableName}
 
