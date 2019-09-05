@@ -20,7 +20,7 @@ class Leaderboard extends Component {
 
   render() {
     return (
-      <div>
+      <div class="scrollable">
         <table id="leaderboard">
           <col width="10%" />
           <col width="60%" />
@@ -38,10 +38,23 @@ class Leaderboard extends Component {
             <tr>
               <td style={{ textAlign: "left" }}>{leaderboard.rank}</td>
               <td style={{ textAlign: "left" }}>
-                <span id="leaderboard-person">{leaderboard.image ? <img id="mediumlogo" alt="heybevans" src={require(`./images/${leaderboard.image}`)} /> : ''}
-                &nbsp;&nbsp;&nbsp;{leaderboard.name} </span> 
+                <span id="leaderboard-person">
+                  {leaderboard.image ? (
+                    <img
+                      id="mediumlogo"
+                      alt="heybevans"
+                      src={require(`./images/${leaderboard.image}`)}
+                    />
+                  ) : (
+                    ""
+                  )}
+                  &nbsp;&nbsp;&nbsp;{leaderboard.name}{" "}
+                </span>
               </td>
-              <td>{leaderboard.totalBevans}<img id="smalllogo" alt="heybevans" src={bevans} /></td>
+              <td>
+                {leaderboard.totalBevans}
+                <img id="smalllogo" alt="heybevans" src={bevans} />
+              </td>
             </tr>
           ))}
         </table>

@@ -1,7 +1,7 @@
 #leaderboard {
   width: 100%;
   height: 400px;
-  overflow:auto;
+  overflow: auto;
   min-width: 500px;
   padding-left: 50px;
 }
@@ -29,11 +29,16 @@
   padding-bottom: 2px;
   padding-left: 10px;
   padding-right: 10px;
-  border-bottom: 1px solid #FEF3F3;
+  border-bottom: 1px solid #fef3f3;
 }
 
 /* .float-left {
 } */
 .leaderboard-deadings {
   font-size: 14px;
+}
+
+.scrollable {
+  height: 70vh;
+  overflow: auto;
 }
