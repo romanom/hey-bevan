@@ -9,7 +9,7 @@ class Header extends Component {
   state = {};
   render() {
     return (
-      <div class="myob-gradient white-text" id="header-main">
+      <div className="myob-gradient white-text" id="header-main">
         <div id="header-container">
           <Link to="/"><img id="logo" alt="logo" src={Logo} /></Link>
           <div id="menu-container">
