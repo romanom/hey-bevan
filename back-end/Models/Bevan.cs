@@ -6,7 +6,10 @@ namespace AwsDotnetCsharp.Models
     public class Bevan
     {
         [DynamoDBHashKey]
-        public string UserId { get; set; }
+        public string BevanId { get; set; }
+        
+        [DynamoDBProperty]
+        public string ReceiverId { get; set; }
         [DynamoDBProperty]
         public int Count { get; set; }
         [DynamoDBProperty]

@@ -31,7 +31,7 @@ namespace AwsDotnetCsharp.Repository
             {
                 var request = new QueryRequest
                 {
-                    TableName = "hey-bevan-table-dev",
+                    TableName = "hey-bevan-table-new-dev",
                     KeyConditionExpression = "Id = :v_Id",
                     ExpressionAttributeValues = new Dictionary<string, AttributeValue> {
                         {":v_Id", new AttributeValue { S =  "Amazon DynamoDB#DynamoDB Thread 1" }}}
@@ -53,11 +53,12 @@ namespace AwsDotnetCsharp.Repository
         {
             using (var client = new AmazonDynamoDBClient())
             {
-                var table = Table.LoadTable(client, "hey-bevan-table-dev");
+                var table = Table.LoadTable(client, "hey-bevan-table-new-dev");
                 
                 var book = new Document
                 {
-                    ["userId"] = bevan.UserId, 
+                    ["bevanId"] = bevan.BevanId,
+                    ["receiverId"] = bevan.ReceiverId,
                     ["count"] = bevan.Count, 
                     ["message"] = bevan.Message,
                     ["giverId"] = bevan.GiverId,

@@ -3,7 +3,6 @@
   height: 400px;
   overflow: auto;
   min-width: 500px;
-  padding-left: 50px;
 }
 
 #leaderboard-person {
@@ -21,13 +20,8 @@
   width: 25px;
 }
 
-#leaderboard th {
-  padding: 10px;
-}
-
 #leaderboard td {
   padding-bottom: 2px;
-  padding-left: 10px;
   padding-right: 10px;
   border-bottom: 1px solid #fef3f3;
 }
