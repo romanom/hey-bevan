@@ -30,7 +30,7 @@ namespace AwsDotnetCsharp.Repository
                 var response = await client.ScanAsync(new ScanRequest("hey-bevan-table-new-dev"));
 
                 var responseItems = response.Items;
-                channels = responseItems.Select(i => i["channel"].S).ToList();
+                channels = responseItems.Select(i => i["channel"].S).Distinct().ToList();
 
             }
             return channels;
