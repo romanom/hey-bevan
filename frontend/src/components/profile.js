@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import serviceFunc from "./../service/service";
+import "./styles/profile.css";
 
 class Profile extends Component {
   state = {

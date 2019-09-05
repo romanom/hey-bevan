@@ -117,6 +117,16 @@ functions:
           method: get
     package:
       artifact: bin/release/netcoreapp2.1/Channels.zip
+  LeaderBoard:
+    handler: CsharpHandlers::AwsDotnetCsharp.Handler::LeaderBoard
+    memorySize: 128
+    description: Return the leaderboard
+    events:
+      - http:
+          path: LeaderBoard
+          method: get
+    package:
+      artifact: bin/release/netcoreapp2.1/LeaderBoard.zip
     
     
 resources:
