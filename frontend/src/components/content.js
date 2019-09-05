@@ -11,10 +11,10 @@ class Content extends Component {
       <div id="content-container">
         <table>
           <tr>
-            <td id="content-container">
+            <td>
               <table>
                 <tr id="sub-header">
-                  <td>{this.props.title}</td>
+                  <td class="page-title">{this.props.title}</td>
                   <td>
                     <Filter />
                   </td>

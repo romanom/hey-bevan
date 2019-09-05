@@ -1,21 +1,4 @@
-# Welcome to Serverless!
-#
-# This file is the main config file for your service.
-# It's very minimal at this point and uses default values.
-# You can always add more config options for more control.
-# We've included some commented out config examples here.
-# Just uncomment any of them to get that config option.
-#
-# For full config options, check the docs:
-#    docs.serverless.com
-#
-# Happy Coding!
-
 service: hey-bevan
-#app: your-app-name
-#tenant: your-tenant-name
-#plugins:
-#  - serverless-domain-manager
 
 custom:
   tableName: 'hey-bevan-table-${self:provider.stage}'
@@ -30,16 +13,10 @@ provider:
   name: aws
   runtime: dotnetcore2.1
   region: ap-southeast-2
-
-
-# you can overwrite defaults here
-#  stage: dev
-#  region: us-east-1
-
-# you can add statements to the Lambda function's IAM Role here
-iamRoleStatements:
+  iamRoleStatements:
     - Effect: Allow
       Action:
+        - dynamodb:*
         - dynamodb:DescribeTable
         - dynamodb:Query
         - dynamodb:Scan
@@ -49,7 +26,9 @@ iamRoleStatements:
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
       Resource:
-        - { "Fn::GetAtt": ["HeyBevanTable", "Arn" ] }
+        - "arn:aws:dynamodb:ap-southeast-2:*:*"
+#        - arn:aws:dynamodb:ap-southeast-2:038405731550:table/hey-bevan-table-dev
+#        - { "Fn::GetAtt": ["HeyBevanTable"] }
 environment:
   USERS_TABLE: ${self:custom.tableName}
 
@@ -64,7 +43,6 @@ package:
 functions:
   addBevan:
     handler: CsharpHandlers::AwsDotnetCsharp.Handler::AddBevan
-    memorySize: 128
     description: add bevan
     events:
       - http:
@@ -74,7 +52,6 @@ functions:
       artifact: bin/release/netcoreapp2.1/AddBevan.zip
   challenge:
     handler: CsharpHandlers::AwsDotnetCsharp.Handler::Challenge
-    memorySize: 128
     description: challenge auth
     events:
       - http:
@@ -84,7 +61,6 @@ functions:
       artifact: bin/release/netcoreapp2.1/Challenge.zip
   GetAll:
     handler: CsharpHandlers::AwsDotnetCsharp.Handler::GetAll
-    memorySize: 128
     description: get all bevans
     events:
       - http:
@@ -94,7 +70,6 @@ functions:
       artifact: bin/release/netcoreapp2.1/GetAll.zip
   GetById:
     handler: CsharpHandlers::AwsDotnetCsharp.Handler::GetById
-    memorySize: 128
     description: get bevan by id
     events:
       - http:
