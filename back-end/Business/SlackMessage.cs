@@ -33,7 +33,10 @@ namespace AwsDotnetCsharp.Business.SlackMessage
             var theMessage = @event.Text;
             var bevan = new Bevan();
 
-            if (theMessage.Contains(emoji))
+            //TODO allow multiple users
+            var whoReceived = Regex.Match(theMessage, @"<@(.+?)>").Groups[1].Value;
+
+            if (theMessage.Contains(emoji) && !string.IsNullOrEmpty(whoReceived))
             {
 
                 string whoSent = @event.User; //who posted the message
@@ -49,8 +52,7 @@ namespace AwsDotnetCsharp.Business.SlackMessage
                     return bevan;            
                 }
 
-                //TODO allow multiple users
-                var whoReceived = Regex.Match(theMessage, @"<@(.+?)>").Groups[1].Value;
+                
 
                 Console.WriteLine("{0} gave \"{1}\" emojis to {2}", whoSent, noOfEmojis, whoReceived);
 
