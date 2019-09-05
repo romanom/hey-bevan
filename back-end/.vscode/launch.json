@@ -6,7 +6,7 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
-      "program": "~/.dotnet/tools/dotnet-lambda-test-tool-2.1.exe",
+      "program": "${env:HOMEPATH}/.dotnet/tools/dotnet-lambda-test-tool-2.1.exe",
       "args": [],
       "cwd": "${workspaceFolder}",
       "console": "internalConsole",
