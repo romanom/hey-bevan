@@ -39,7 +39,7 @@ class Leaderboard extends Component {
               <td style={{ textAlign: "left" }}>
                 {leaderboard.name} {leaderboard.image}
               </td>
-              <td>{leaderboard.total}</td>
+              <td>{leaderboard.totalBevans}</td>
             </tr>
           ))}
         </table>
