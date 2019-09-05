@@ -31,7 +31,7 @@ provider:
 #        - { "Fn::GetAtt": ["HeyBevanTable"] }
 environment:
   USERS_TABLE: ${self:custom.tableName}
-
+  SLACK_ACCESS_TOKEN: ${ssm:heybevanBotToken}
 
 # you can define service wide environment variables here
 #  environment:
