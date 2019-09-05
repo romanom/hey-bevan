@@ -45,14 +45,17 @@ namespace AwsDotnetCsharp.Business.SlackMessage
                 var noOfEmojis = theMessage.Split(emoji).Length - 1;
 
                 //check how many they've sent today
-                if (sentToday >= dailyLimit || (sentToday + noOfEmojis) >= dailyLimit) {
-                    //send daily limit message                    
-                    var dailyLimitMessage = string.Format("Whoops! You tried to give {0} tacos. You have {1} tacos left to give today.", noOfEmojis, dailyLimit-noOfEmojis);
-                    await sendDM(whoSent, dailyLimitMessage);    
-                    return bevan;            
+                if (sentToday >= dailyLimit || (sentToday + noOfEmojis) >= dailyLimit)
+                {
+                    //send daily limit message  
+                    Console.WriteLine("{0} >= {1} || ({0} - {2}) >= {1}) ", sentToday, dailyLimit, noOfEmojis);
+                  
+                    var dailyLimitMessage = string.Format("Whoops! You tried to give {0} {2}'s. You have {1} {2}'s left to give today.", noOfEmojis, dailyLimit - (sentToday + noOfEmojis), emoji);
+                    await sendDM(whoSent, dailyLimitMessage);
+                    return bevan;
                 }
 
-                
+
 
                 Console.WriteLine("{0} gave \"{1}\" emojis to {2}", whoSent, noOfEmojis, whoReceived);
 
@@ -78,9 +81,9 @@ namespace AwsDotnetCsharp.Business.SlackMessage
                 Console.WriteLine(receiverDM);
 
                 //@jp received 3 tacos from you. You have 2 tacos left to give out today. 
-                var giverDM = string.Format("<@{0}> received {1} {2}'s from you. You have {3} tacos left to give out today.", whoReceived, noOfEmojis, emoji, dailyLimit-noOfEmojis);
+                var giverDM = string.Format("<@{0}> received {1} {2}'s from you. You have {3} {2}'s left to give out today.", whoReceived, noOfEmojis, emoji, dailyLimit - noOfEmojis);
                 await sendDM(whoSent, giverDM);
-                
+
                 Console.WriteLine(giverDM);
 
             }
@@ -96,9 +99,9 @@ namespace AwsDotnetCsharp.Business.SlackMessage
             {
                 var response = await client.ScanAsync(new ScanRequest("hey-bevan-table-new-dev"));
                 var responseItems = response.Items;
-                var usersItems =  responseItems.Where(x=>x["giverId"].S.Equals(giverId));
-                var todays = usersItems.Where(x=> DateTime.Parse(x["timestamp"].S) >= DateTime.Today && DateTime.Parse(x["timestamp"].S) <= DateTime.Today.AddDays(1));
-                var counter = todays.Select(x=> decimal.Parse(x["count"].N)).ToList();
+                var usersItems = responseItems.Where(x => x["giverId"].S.Equals(giverId));
+                var todays = usersItems.Where(x => DateTime.Parse(x["timestamp"].S) >= DateTime.Today && DateTime.Parse(x["timestamp"].S) <= DateTime.Today.AddDays(1));
+                var counter = todays.Select(x => decimal.Parse(x["count"].N)).ToList();
                 count = counter.Sum();
             }
             return count;
