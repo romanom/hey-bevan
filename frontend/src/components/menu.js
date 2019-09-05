@@ -4,9 +4,9 @@ class Menu extends Component {
   render() {
     return (
       <ul id="menu">
-        <li>Leaderboard</li>
-        <li>Activity</li>
-        <li>Tags</li>
+        <li><a onClick={this.props.onClickLeaderboard}>Leaderboard</a></li>
+        <li><a onClick={this.props.onClickActivities}>Activity</a></li>
+        <li><a onClick={this.props.onClickTags}>Tags</a></li>
       </ul>
     );
   }

@@ -20,15 +20,11 @@ class Content extends Component {
                   </td>
                 </tr>
                 <tr>
-                  <Leaderboard />
                 </tr>
               </table>
             </td>
           </tr>
         </table>
-        <div>
-          <Profile />
-        </div>
       </div>
     );
   }

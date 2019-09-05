@@ -5,12 +5,12 @@
   display: -webkit-flex;
   display: flex;
   justify-content: space-between;
-  padding: 0 40px 0 40px;
+  padding: 0 20px 0 20px;
 }
 #sub-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding-top: 10px;
 }
 #filter-container {

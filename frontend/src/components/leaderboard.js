@@ -38,7 +38,8 @@ class Leaderboard extends Component {
             <tr>
               <td style={{ textAlign: "left" }}>{leaderboard.rank}</td>
               <td style={{ textAlign: "left" }}>
-                {leaderboard.name} {leaderboard.image ? <img id="smalllogo" alt="heybevans" src={require(`./images/${leaderboard.image}`)} /> : ''}
+                <span id="leaderboard-person">{leaderboard.image ? <img id="mediumlogo" alt="heybevans" src={require(`./images/${leaderboard.image}`)} /> : ''}
+                &nbsp;&nbsp;&nbsp;{leaderboard.name} </span> 
               </td>
               <td>{leaderboard.totalBevans}<img id="smalllogo" alt="heybevans" src={bevans} /></td>
             </tr>

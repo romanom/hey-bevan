@@ -103,6 +103,42 @@ const getLeaderboardData = ( type, dateType , channel) => {
         },
         {
             rank : 9,
+            name : "Basitha",
+            image: "basitha.png",
+            totalBevans : 50
+        },
+        {
+            rank : 10,
+            name : "Derek",
+            image: "derek.png",
+            totalBevans : 50
+        },
+        {
+            rank : 11,
+            name : "Keddy",
+            image: "keddy.png",
+            totalBevans : 50
+        },
+        {
+            rank : 12,
+            name : "Monique",
+            image: "monique.png",
+            totalBevans : 50
+        },
+        {
+            rank : 13,
+            name : "Morgan",
+            image: "morgan.png",
+            totalBevans : 50
+        },
+        {
+            rank : 14,
+            name : "Robert",
+            image: "robert.png",
+            totalBevans : 50
+        },
+        {
+            rank : 15,
             name : "Sinu Sudhakaran",
             image: "sinu.png",
             totalBevans : 45

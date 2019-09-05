@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import Filter from "./filter";
-import Leaderboard from "./leaderboard";
-import Profile from "./profile";
 import "./styles/content.css";
 
-class Content extends Component {
+class Activities extends Component {
   state = {};
   render() {
     return (
@@ -15,26 +13,17 @@ class Content extends Component {
               <table>
                 <tr id="sub-header">
                   <td class="page-title">{this.props.title}</td>
-                  <td>
-                    <Filter />
-                  </td>
                 </tr>
                 <tr>
-                  <Leaderboard />
+                  
                 </tr>
               </table>
             </td>
           </tr>
         </table>
-        <div>
-          <Profile />
-        </div>
       </div>
     );
   }
 }
-// PropTypes = {
-//   title: string.isRequired
-// };
 
-export default Content;
+export default Activities;
