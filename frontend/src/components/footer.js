@@ -5,9 +5,9 @@ import "./styles/footer.css";
 class Footer extends Component {
   render() {
     return (
-      <div id="footer">
+      <div class="myob-gradient" id="footer">
         <img alt="myoblogo" class="myob-logo" src={MYOB}></img>
-        <ul class="footer-menu">
+        <ul className="footer-menu">
           <li>
             <a>How it works</a>
           </li>
