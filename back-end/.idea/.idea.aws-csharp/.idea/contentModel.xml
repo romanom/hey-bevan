@@ -3,11 +3,20 @@
   <component name="ContentModelStore">
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="aws-csharp.csproj" t="IncludeRecursive" />
+      <e p="aws-lambda-tools-defaults.json" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="build.cmd" t="Include" />
       <e p="build.sh" t="Include" />
       <e p="Handler.cs" t="Include" />
+      <e p="Infrastructure" t="Include">
+        <e p="AWSClientFactory.cs" t="Include" />
+        <e p="Configs" t="Include">
+          <e p="AwsBasicConfiguration.cs" t="Include" />
+          <e p="DynamoDbConfiguration.cs" t="Include" />
+        </e>
+      </e>
       <e p="Models" t="Include">
+        <e p="Bevan.cs" t="Include" />
         <e p="SlackRequest.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive">
@@ -20,6 +29,9 @@
       <e p="package-lock.json" t="Include" />
       <e p="package.json" t="Include" />
       <e p="packages" t="ExcludeRecursive" />
+      <e p="Repository" t="Include">
+        <e p="DynamoRepository.cs" t="Include" />
+      </e>
       <e p="serverless.yml" t="Include" />
     </e>
     <e p="$USER_HOME$/Library/Caches/Rider2018.3/extResources" t="IncludeRecursive" />
