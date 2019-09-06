@@ -28,35 +28,35 @@ export default class Home extends Component {
                     <h1><b>5 REASONS TO GIVE BEVAN'S</b></h1>
                 </div>
                 <div className="flex-container">
-                    <div className="reason-card">
+                    <div className="reason-card-2">
                         <img src={Achievement} alt="Achievment Icon" />
                         <div class="container">
                             <h4><b>Celebrate An Achievement</b></h4>
                             <p>Boost morale by recognising your team's achievements and effort</p>
                         </div>
                     </div>
-                    <div className="reason-card">
+                    <div className="reason-card-2">
                         <img src={Easy} alt="Easy Icon" />
                         <div class="container">
                             <h4><b>Easy to Use</b></h4>
                             <p>It only takes a few seconds to tag your team and give a Bevan</p>
                         </div>
                     </div>
-                    <div className="reason-card">
+                    <div className="reason-card-2">
                         <img src={Happy} alt="Happiness Icon" />
                         <div class="container">
                             <h4><b>Make Someone's Day</b></h4>
                             <p>Spread extra happiness at MYOB</p>
                         </div>
                     </div>
-                    <div className="reason-card">
+                    <div className="reason-card-2">
                         <img src={Rewards} alt="Rewards Icon" />
                         <div class="container">
                             <h4><b>Trade in for Rewards</b></h4>
                             <p>Redeem your Bevans for awesome prizes</p>
                         </div>
                     </div>
-                    <div className="reason-card">
+                    <div className="reason-card-1">
                         <img src={Slack} alt="Slack Icon" />
                         <div class="container">
                             <h4><b>Integrated with Slack</b></h4>
