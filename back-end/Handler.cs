@@ -1,6 +1,7 @@
 using Amazon.Lambda.Core;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Authentication.ExtendedProtection;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
@@ -12,6 +13,7 @@ using AwsDotnetCsharp.Models;
 using AwsDotnetCsharp.Repository;
 using Newtonsoft.Json;
 using AwsDotnetCsharp.Business.SlackMessage;
+using AwsDotnetCsharp.Service;
 
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
 
@@ -21,10 +23,12 @@ namespace AwsDotnetCsharp
     {
 
         private readonly IDynamoRepository _dynamoRepository;
+        private readonly ISlackService _slackService;
         private readonly SlackMessage _slackMessage;
         
         public Handler()
         {
+            _slackService = new SlackService();
             _dynamoRepository = new DynamoRepository();
             _slackMessage  = new SlackMessage(_dynamoRepository); //hacky...
         }
@@ -80,6 +84,20 @@ namespace AwsDotnetCsharp
                         })
                     };
             }
+        }
+        
+        [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
+        public async Task<APIGatewayProxyResponse> tokenExchangeRedirection(APIGatewayProxyRequest request)
+        {
+            var code = request.QueryStringParameters["code"];
+
+            var something = await _slackService.DoAuth(code);
+
+            var redirectUrl = $"https://ui.hey-bevan.com?token={something.access_token}";
+
+            var ss = JsonConvert.SerializeObject(new { redirect_url = redirectUrl });
+            
+            return new APIGatewayProxyResponse { StatusCode = 301, Body = ss };
         }
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
