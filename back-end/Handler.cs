@@ -121,11 +121,11 @@ namespace AwsDotnetCsharp
         }
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
-        public APIGatewayProxyResponse LeaderBoard(Enum recognitionRole, DateTime startDate, DateTime endDate,
-          string channel)
+        public async Task<APIGatewayProxyResponse> LeaderBoard(APIGatewayProxyRequest request)
         {
             // ask to dynamo ask for my selected data
-            List<Users> users = new List<Users>();
+//            var requestModel = JsonConvert.DeserializeObject<Leaderboard>(request.Body);
+            List<User> users = await _dynamoRepository.GetLeaderboard();
             return new APIGatewayProxyResponse { StatusCode = 200, Body = JsonConvert.SerializeObject(users) };
         }
 

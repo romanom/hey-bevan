@@ -1,6 +1,6 @@
 namespace AwsDotnetCsharp
 {
-    public class Users
+    public class User
     {
         public string Name { get; set; }
         public string UserImage { get; set; }

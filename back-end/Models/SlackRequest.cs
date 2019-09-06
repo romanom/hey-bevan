@@ -1,3 +1,6 @@
+using System;
+using System.Data.Common;
+
 namespace AwsDotnetCsharp.Models
 {
     public class SlackRequest
@@ -36,5 +39,13 @@ namespace AwsDotnetCsharp.Models
     public class RedeemableRequest
     {
         public string ReceiverId { get; set; }
+    }
+
+    public class Leaderboard
+    {
+        public string RecognitionRole { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public string Channel { get; set; }
     }
 }
