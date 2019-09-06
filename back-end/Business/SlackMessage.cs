@@ -57,7 +57,7 @@ namespace AwsDotnetCsharp.Business.SlackMessage
                     //send daily limit message  
                     Console.WriteLine("{0} >= {1} || ({0} - {2}) >= {1}) ", sentToday, dailyLimit, noOfEmojis);
                   
-                    var dailyLimitMessage = string.Format("Whoops! You tried to give {0} {2}'s. You have {1} {2}'s left to give today.", noOfEmojis, dailyLimit - (sentToday + noOfEmojis), emoji);
+                    var dailyLimitMessage = string.Format("Whoops! You tried to give {0} {2}'s. You have {1} {2}'s left to give today.", noOfEmojis, (dailyLimit - sentToday), emoji);
                     await sendDM(whoSent, dailyLimitMessage);
                     return bevan;
                 }
