@@ -105,11 +105,12 @@ namespace AwsDotnetCsharp
         }
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
-        public APIGatewayProxyResponse Redeemable(string userId)
+        public async Task<APIGatewayProxyResponse> Redeemable(APIGatewayProxyRequest request)
         {
-            // ask to dynamo ask for number of bevans given userId"
-            int totalBevans = 100;
-            return new APIGatewayProxyResponse { StatusCode = 200, Body = totalBevans.ToString() };
+            var requestModel = JsonConvert.DeserializeObject<RedeemableRequest>(request.Body);
+            var redeemables = await _dynamoRepository.GetRedeemableByRecieverId(requestModel.ReceiverId);
+            var json = JsonConvert.SerializeObject(redeemables);
+            return new APIGatewayProxyResponse { StatusCode = 200, Body = json };
         }
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]

@@ -7,3 +7,52 @@
   max-width: 100%;
   height: auto;
 }
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.flex-container h4 {
+  font-family: 'Chilanka', cursive;
+  font-size: 24pt;
+}
+
+.reason-card-2 {
+  color: #34313A;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  background-color:#FCDAEA;
+  flex: 0 1 calc(50% - 1em);
+}
+
+.reason-card-1 {
+  color: #34313A;  
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  background-color:#FCDAEA;
+  flex: 0 1 calc(100% - 1em);
+}
+
+.bevans-head-jumbotron {
+  color: #34313A;
+  padding: 5% 0;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  flex: 0 1 calc(100% - 1em);
+}
+
+.reason-jumbotron {
+  color: white;
+  padding: 10% 0;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  background-color:#EC0677;
+  flex: 0 1 calc(100% - 1em);
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}

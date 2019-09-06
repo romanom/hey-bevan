@@ -14,7 +14,7 @@ class Activities extends Component {
                 <tr id="sub-header">
                   <td className="page-title">{this.props.title}</td>
                 </tr>
-                <tr></tr>
+                <tr>Activities</tr>
               </table>
             </td>
           </tr>

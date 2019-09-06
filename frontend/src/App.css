@@ -6,6 +6,10 @@
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
+.small-icon {
+  height: 25px;
+  width: 25px;
+}
 
 .link-text {
   color: white;

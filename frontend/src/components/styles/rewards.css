@@ -1,0 +1,56 @@
+.rewards-page {
+  display: flex;
+  justify-content: flex-start;
+}
+.column-container {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-size: 30px;
+  display: inline;
+  padding-top: 15px;
+}
+.title > span {
+  float: left;
+  margin-left: 40px;
+}
+.rewards-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 70vh;
+  overflow: auto;
+  margin: 0px 20px 10px 20px;
+}
+.rewards-text {
+  display: flex;
+  flex-direction: column;
+}
+.rewards-title {
+  font-size: 20px;
+  margin-bottom: 10%;
+  margin-top: 20px;
+}
+.rewards-cost {
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rewards-card {
+  display: flex;
+  margin: 20px 20px 20px 20px;
+  padding: 10px 10px 10px 10px;
+  justify-content: center;
+  max-width: 350px;
+  box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.rewards-card > img {
+  width: 200px;
+  height: 200px;
+}
+.reward-profile-container {
+  margin-right: 20px;
+}

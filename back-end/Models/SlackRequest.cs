@@ -36,6 +36,11 @@ namespace AwsDotnetCsharp.Models
         public string ChannelId { get; set; }
     }
 
+    public class RedeemableRequest
+    {
+        public string ReceiverId { get; set; }
+    }
+
     public class Leaderboard
     {
         public string RecognitionRole { get; set; }
