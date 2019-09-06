@@ -1,9 +1,25 @@
+.rewards-page {
+  display: flex;
+  justify-content: flex-start;
+}
+.column-container {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-size: 30px;
+  display: inline;
+}
+.title > span {
+  float: left;
+  margin-left: 40px;
+}
 .rewards-container {
   display: flex;
   flex-wrap: wrap;
   height: 70vh;
   overflow: auto;
-  margin: 20px 20px 10px 20px;
+  margin: 0px 20px 10px 20px;
 }
 .rewards-text {
   display: flex;
