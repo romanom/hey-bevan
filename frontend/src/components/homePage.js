@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Header from 'header';
-import Footer from 'footer';
+import Header from './header';
+import Footer from './footer';
 import Bevan from "./images/logo.png";
 import ReasonsWhyImage from "./images/BevansReasons.png";
-import Rewards from "./images/BevansRewards.png";
+import Rewards from "./images/BevanRewards.png";
 
 
 class HomePage extends Component {
