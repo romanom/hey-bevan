@@ -9,7 +9,7 @@
 .title {
   font-size: 30px;
   display: inline;
-  padding-top: 10px;
+  padding-top: 15px;
 }
 .title > span {
   float: left;
@@ -40,11 +40,14 @@
   margin: 20px 20px 20px 20px;
   padding: 10px 10px 10px 10px;
   justify-content: center;
-  max-width: 400px;
+  max-width: 350px;
   box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.3);
 }
 
 .rewards-card > img {
   width: 200px;
   height: 200px;
+}
+.reward-profile-container {
+  margin-right: 20px;
 }

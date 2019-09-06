@@ -85,7 +85,7 @@ class RewardPage extends Component {
             </div>
           </div>
         </div>
-        <div>
+        <div className="reward-profile-container">
           <Profile />
         </div>
       </div>
