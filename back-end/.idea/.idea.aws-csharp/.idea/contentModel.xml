@@ -1657,6 +1657,9 @@
         <e p="DynamoRepository.cs" t="Include" />
       </e>
       <e p="serverless.yml" t="Include" />
+      <e p="Service" t="Include">
+        <e p="SlackService.cs" t="Include" />
+      </e>
     </e>
     <e p="$USER_HOME$/Library/Caches/Rider2018.3/extResources" t="IncludeRecursive" />
     <e p="$USER_HOME$/Library/Caches/Rider2018.3/resharper-host/local/Transient/ReSharperHost/v183/SolutionCaches/_back-end.-494923637.00" t="ExcludeRecursive" />

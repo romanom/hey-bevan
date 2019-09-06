@@ -47,11 +47,12 @@ const getLeaderboardData = ( type, dateType , channel) => {
         }
     }
     
-    /*axios.get(`${BASEURL}/getleaderboards?bevanType=${type}&startdate=${startDate}&enddate=${endDate}&channel=${channel}`)
-    .then(resource => {
-        return resource;
-    });*/
-
+/*    axios.post('https://8z3kla702d.execute-api.ap-southeast-2.amazonaws.com/dev/GetByChannelId',
+        {"ChannelId": "CMNASMNQ2" })
+        .then(function (response) {
+          console.log(response)
+    });
+*/
     const leaderboard = [
         {
             rank : 1,
@@ -165,24 +166,46 @@ const getChannelActivities = (channel) => {
     /*axios.get(`${BASEURL}/getchannelactivities?channel=${channel}`)
     .then(resource => {
         return resource;
-    });*/
+    });
+    
+{
+    "BevanId": "00000000-0000-0000-0000-000000000000",
+    "ReceiverId": "U6U9AA22X",
+    "Count": 2,
+    "Message": "<@U6U9AA22X> :bevan: :bevan: sorting out the dynamo db",
+    "GiverId": "U68RW4UAC",
+    "Channel": "CMNASMNQ2",
+    "Timestamp": "2019-09-05T21:38:17.627+00:00"
+  },
+
+    */
+
     return [
         {
-            receiverName : "",
-            totalBevans : "",
-            giverName : "", 
-            channel : "",
-            datetime : "",
-            message : ""
+            bevanId : "",
+            receiverName : "Jesse Paclar",
+            giverName : "Sinu Sudhakaran",
+            count : 2, 
+            channel : "cr-hyperion",
+            timestamp : "",
+            message : "You are awesome Jess"
+        },
+        {
+            bevanId : "",
+            receiverName : "Ivan Perevernykhata",
+            giverName : "Melody Reyes",
+            count : 3, 
+            channel : "cr-hyperion",
+            timestamp : "",
+            message : "You are legend Ivan"
         }
     ];
 }
 
 const getAllChannels = () => {
-    /*axios.get(`${BASEURL}/getchannels`)
-    .then(resource => {
-        return resource;
-    });*/
+    //const response = await axios.get('https://8z3kla702d.execute-api.ap-southeast-2.amazonaws.com/dev/channels');
+    //console.log(response);
+    
     return [
         {
             name : "hackday-heybevan"

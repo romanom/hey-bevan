@@ -18,3 +18,5 @@ dotnet lambda package --configuration release --framework netcoreapp2.1 --output
 dotnet lambda package --configuration release --framework netcoreapp2.1 --output-package bin/release/netcoreapp2.1/Channels.zip
 dotnet lambda package --configuration release --framework netcoreapp2.1 --output-package bin/release/netcoreapp2.1/LeaderBoard.zip
 dotnet lambda package --configuration release --framework netcoreapp2.1 --output-package bin/release/netcoreapp2.1/GetByChannelId.zip
+dotnet lambda package --configuration release --framework netcoreapp2.1 --output-package bin/release/netcoreapp2.1/tokenExchangeRedirection.zip
+
