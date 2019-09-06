@@ -121,7 +121,7 @@ namespace AwsDotnetCsharp
         }
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
-        public async Task<APIGatewayProxyResponse> LeaderBoard(APIGatewayProxyRequest request)
+        public async Task<APIGatewayProxyResponse> LeaderBoard()
         {
             // ask to dynamo ask for my selected data
 //            var requestModel = JsonConvert.DeserializeObject<Leaderboard>(request.Body);
