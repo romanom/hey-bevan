@@ -27,7 +27,7 @@ class Activities extends Component {
                     <span className="activity-name">
                       {activity.receiverName}{" "}
                     </span>
-                    received {activity.count} hey-bevans{" "}
+                    received {activity.count} HeyBevans{" "}
                     <img id="smalllogo" src={Logo} />
                     from {activity.giverName}
                     in {activity.channel}{" "}
