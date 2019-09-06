@@ -9,6 +9,7 @@
 .title {
   font-size: 30px;
   display: inline;
+  padding-top: 10px;
 }
 .title > span {
   float: left;
@@ -29,6 +30,9 @@
   font-size: 20px;
   margin-bottom: 10%;
   margin-top: 20px;
+}
+.rewards-cost {
+  margin-top: 5%;
 }
 
 .rewards-card {

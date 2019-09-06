@@ -11,6 +11,7 @@ class Filter extends Component {
   }
 
   render() {
+    const hide = this.props.only;
     return (
       <div>
         <span id="filter-heading">Filter</span>

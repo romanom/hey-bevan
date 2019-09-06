@@ -25,6 +25,7 @@ class RewardPage extends Component {
                   Bevan will be your PA for the day. Note that Bevan has no paid
                   experience in this role.
                 </div>
+                <div className="rewards-cost">Cost 200</div>
               </div>
             </div>
             <div className="rewards-card">
@@ -37,6 +38,7 @@ class RewardPage extends Component {
                   Have you ever wanted to pick Bevan's brains? Now's your
                   chance. Coffee not included.
                 </div>
+                <div className="rewards-cost">Cost 200</div>
               </div>
             </div>
             <div className="rewards-card">
@@ -51,6 +53,7 @@ class RewardPage extends Component {
                   Want to give back to Bevan? Use your Bevans to give him a
                   culinary experience to remember!
                 </div>
+                <div className="rewards-cost">Cost 200</div>
               </div>
             </div>
             <div className="rewards-card">
@@ -63,6 +66,7 @@ class RewardPage extends Component {
                   As a man of many talents, Bevan is able to pivot. He cannot
                   pilot though. Good luck.
                 </div>
+                <div className="rewards-cost">Cost 200</div>
               </div>
             </div>
             <div className="rewards-card">
@@ -76,6 +80,7 @@ class RewardPage extends Component {
                   (and children). Bevan takes no responsibility for any damaged
                   goods.
                 </div>
+                <div className="rewards-cost">Cost 200</div>
               </div>
             </div>
           </div>
