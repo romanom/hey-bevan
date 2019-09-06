@@ -40,7 +40,7 @@ class Leaderboard extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.leaderboardData.map(leaderboard => (
+            {this.state.leaderboardData && this.state.leaderboardData.map(leaderboard => (
               <tr>
                 <td style={{ textAlign: "left" }}>{leaderboard.rank}</td>
                 <td style={{ textAlign: "left" }}>

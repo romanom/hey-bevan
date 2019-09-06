@@ -66,7 +66,7 @@ const getLeaderboardData = (type, dateType, channel) => {
         .then(function (response) {
           console.log(response)
     });
-*/
+    */
   const leaderboard = [
     {
       rank: 1,
@@ -174,23 +174,11 @@ const getUserRedeemableTotal = userid => {
   };
 };
 
-const getChannelActivities = channel => {
-  /*axios.get(`${BASEURL}/getchannelactivities?channel=${channel}`)
+const getChannelActivities = async (channel) => {
+  await axios.get(`${BASEURL}/getchannelactivities?channel=${channel}`)
     .then(resource => {
         return resource;
     });
-    
-{
-    "BevanId": "00000000-0000-0000-0000-000000000000",
-    "ReceiverId": "U6U9AA22X",
-    "Count": 2,
-    "Message": "<@U6U9AA22X> :bevan: :bevan: sorting out the dynamo db",
-    "GiverId": "U68RW4UAC",
-    "Channel": "CMNASMNQ2",
-    "Timestamp": "2019-09-05T21:38:17.627+00:00"
-  },
-
-    */
 
   return [
     {
@@ -223,22 +211,10 @@ const getChannelActivities = channel => {
   ];
 };
 
-const getAllChannels = () => {
-  //const response = await axios.get('https://8z3kla702d.execute-api.ap-southeast-2.amazonaws.com/dev/channels');
-  //console.log(response);
-
-  return [
-    {
-      name: "hackday-heybevan"
-    },
-    {
-      name: "cr-apollo"
-    },
-    {
-      name: "cr-hyperion"
-    }
-  ];
-};
+const getAllChannels = async () => {
+    const response = await axios.get('https://api.hey-bevan.com/Channels');
+    return response.data;
+}
 
 export default {
   getLeaderboardData,

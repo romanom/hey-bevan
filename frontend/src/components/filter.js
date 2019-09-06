@@ -6,8 +6,9 @@ class Filter extends Component {
     channels: []
   };
 
-  componentDidMount() {
-    this.setState({ channels: serviceFunc.getAllChannels() });
+  async componentDidMount() {
+    const channelResponse = await serviceFunc.getAllChannels();
+    this.setState({ channels: channelResponse });
   }
 
   render() {
@@ -30,8 +31,8 @@ class Filter extends Component {
           <option>Last year</option>
         </select>
         <select>
-          {this.state.channels.map(channel => (
-            <option>{channel.name}</option>
+          {this.state.channels && this.state.channels.map(channel => (
+            <option>{channel.ChannelName}</option>
           ))}
         </select>
       </div>
