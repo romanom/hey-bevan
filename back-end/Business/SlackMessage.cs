@@ -52,7 +52,7 @@ namespace AwsDotnetCsharp.Business.SlackMessage
                 }
 
                 //check how many they've sent today
-                if (sentToday >= dailyLimit || (sentToday + noOfEmojis) >= dailyLimit)
+                if (sentToday >= dailyLimit || (sentToday + noOfEmojis) > dailyLimit)
                 {
                     //send daily limit message  
                     Console.WriteLine("{0} >= {1} || ({0} - {2}) >= {1}) ", sentToday, dailyLimit, noOfEmojis);
