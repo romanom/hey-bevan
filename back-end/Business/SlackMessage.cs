@@ -140,7 +140,7 @@ namespace AwsDotnetCsharp.Business.SlackMessage
             }
         }
     
-        internal List<User> GetUsers(List<string> userIds) {
+        internal List<SlackAPI.User> GetUsers(List<string> userIds) {
 
             var token = Environment.GetEnvironmentVariable("SLACK_ACCESS_TOKEN");
             if (token == null)
@@ -164,7 +164,7 @@ namespace AwsDotnetCsharp.Business.SlackMessage
 
             client.GetUserList((ulr) => { Console.WriteLine("got users"); });
 
-            var userList = new List<User>();
+            var userList = new List<SlackAPI.User>();
             foreach(var u in userIds) {
                 userList.Add(client.Users.Find(x => x.id.Equals(u)));
             }
