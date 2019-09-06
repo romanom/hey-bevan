@@ -18,17 +18,23 @@ namespace AwsDotnetCsharp.Repository
     public interface IDynamoRepository
     {
         Task SaveBevan(Bevan bevan);
-        Task<List<string>> GetChannels();
+        Task<List<ChannelRec>> GetChannels();
 
         Task<IEnumerable<Bevan>> GetBevansByChannel(string channelId);
 
         Task<Redeemable> GetRedeemableByRecieverId(string userId);
         Task<List<User>> GetLeaderboard();
     }
+
+    public class ChannelRec
+    {
+        public string Channel { get; set; }
+        public string ChannelName { get; set; }
+    }
     
     public class DynamoRepository: IDynamoRepository
     {
-        public async Task<List<string>> GetChannels()
+        public async Task<List<ChannelRec>> GetChannels()
         {
             List<string> channels;
             using (var client = new AmazonDynamoDBClient())
@@ -38,8 +44,16 @@ namespace AwsDotnetCsharp.Repository
                 var responseItems = response.Items;
                 channels = responseItems.Select(i => i["channel"].S).Distinct().ToList();
 
+
+                
+                var slackMsg = new SlackMessage(new DynamoRepository());
+
+                return slackMsg.GetChannels(channels).Select(c => new ChannelRec
+                {
+                    Channel = c.id,
+                    ChannelName = c.name
+                }).ToList();
             }
-            return channels;
         }
         
         private async Task<IEnumerable<Bevan>> GetBevanList()

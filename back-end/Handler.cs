@@ -160,7 +160,7 @@ namespace AwsDotnetCsharp
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
         public async Task<APIGatewayProxyResponse> Channels()
         {
-            List<string> channels = await _dynamoRepository.GetChannels();
+            List<ChannelRec> channels = await _dynamoRepository.GetChannels();
             return new APIGatewayProxyResponse
             {
                 Headers = GetCorsHeaders(),
