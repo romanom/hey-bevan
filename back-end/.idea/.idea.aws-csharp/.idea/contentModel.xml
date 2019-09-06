@@ -21,7 +21,7 @@
       <e p="Models" t="Include">
         <e p="Bevan.cs" t="Include" />
         <e p="SlackRequest.cs" t="Include" />
-        <e p="Users.cs" t="Include" />
+        <e p="User.cs" t="Include" />
       </e>
       <e p="node_modules" t="ExcludeRecursive">
         <e p="ansi-styles" t="Include">
