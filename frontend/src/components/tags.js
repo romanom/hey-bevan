@@ -3,6 +3,7 @@ import Filter from "./filter";
 import Leaderboard from "./leaderboard";
 import Profile from "./profile";
 import "./styles/content.css";
+import "./styles/tags.css";
 
 class Content extends Component {
   state = {};
@@ -14,12 +15,11 @@ class Content extends Component {
             <td>
               <table>
                 <tr id="sub-header">
-                  <td className="page-title">{this.props.title}</td>
+                  <td className="page-title">Tags</td>
                   <td>
                     <Filter />
                   </td>
                 </tr>
-                <tr>Tags</tr>
               </table>
             </td>
           </tr>
