@@ -37,7 +37,7 @@ class Menu extends Component {
           <NavLink
             to="/rewards"
             className="link-text"
-            activeClassName="selected"
+            activeStyle={{ color: "gray" }}
           >
             Rewards
           </NavLink>
