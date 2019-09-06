@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import serviceFunc from "./../service/service";
 import "./styles/content.css";
+import Logo from "./images/logo_name.png";
 
 class Activities extends Component {
   state = {
-    activities : []
+    activities: []
   };
 
   componentDidMount() {
-    this.setState({ activities : serviceFunc.getChannelActivities('cr-hyperion')});
+    this.setState({
+      activities: serviceFunc.getChannelActivities("cr-hyperion")
+    });
   }
 
   render() {
@@ -18,17 +21,19 @@ class Activities extends Component {
           <tr>
             <td>
               <table>
-                <tr id="sub-header">
-                  <td className="page-title">{this.props.title}</td>
-                </tr>
-                <tr>Activities</tr>
                 {this.state.activities.map(activity => (
-                  <tr> {activity.receiverName} received {activity.count} hey-bevans 
-                  from {activity.giverName}
-                  in {activity.channel} {activity.timestamp}
-                  <p>{activity.message} </p>
+                  <tr>
+                    {" "}
+                    <span className="activity-name">
+                      {activity.receiverName}
+                    </span>{" "}
+                    received {activity.count} hey-bevans{" "}
+                    <img id="small-logo" src={Logo} />
+                    from {activity.giverName}
+                    in {activity.channel}{" "}
+                    <span className="timestamp">{activity.timestamp}</span>
+                    <p>{activity.message} </p>
                   </tr>
-                  
                 ))}
               </table>
             </td>

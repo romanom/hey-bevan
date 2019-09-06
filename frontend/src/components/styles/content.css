@@ -29,3 +29,16 @@ table {
   font-size: 30px;
   margin-left: 20px;
 }
+.timestamp {
+  color: gray;
+  font-size: 10px;
+}
+
+.activity-name {
+  font-size: 14px;
+  color: #6100a5;
+}
+#small-logo {
+  height: 20px;
+  width: 45px;
+}

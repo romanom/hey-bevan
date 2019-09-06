@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Filter from "./filter";
+// import Filter from "./filter";
+import ActivityFilter from "./activitiesFilter";
 import Activities from "./activities";
 import "./styles/content.css";
 
@@ -12,12 +13,14 @@ class ActivityContainer extends Component {
           <tr>
             <td>
               <table>
-                <tr id="sub-header">
-                  <td className="page-title">{this.props.title}</td>
-                  <td>
-                    <Filter />
-                  </td>
-                </tr>
+                <thead>
+                  <tr id="sub-header">
+                    <td className="page-title">Activities</td>
+                    <td>
+                      <ActivityFilter />
+                    </td>
+                  </tr>
+                </thead>
                 <tr>
                   <Activities />
                 </tr>
