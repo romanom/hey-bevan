@@ -51,6 +51,7 @@ functions:
       - http:
           path: addBevan
           method: post
+          cors: true
     package:
       artifact: bin/release/netcoreapp2.1/AddBevan.zip
   challenge:
@@ -69,6 +70,7 @@ functions:
       - http:
           path: getAll
           method: get
+          cors: true
     package:
       artifact: bin/release/netcoreapp2.1/GetAll.zip
   GetById:
@@ -78,6 +80,7 @@ functions:
       - http:
           path: getById
           method: get
+          cors: true
     package:
       artifact: bin/release/netcoreapp2.1/GetById.zip
   showSent:
@@ -87,6 +90,7 @@ functions:
       - http:
           path: showSent
           method: post
+          cors: true
     package:
       artifact: bin/release/netcoreapp2.1/ShowSent.zip
   showGiven:
@@ -96,6 +100,7 @@ functions:
       - http:
           path: showGiven
           method: post
+          cors: true
     package:
       artifact: bin/release/netcoreapp2.1/ShowGiven.zip
   Redeemable:
@@ -105,6 +110,7 @@ functions:
       - http:
           path: Redeemable
           method: post
+          cors: true
     package:
       artifact: bin/release/netcoreapp2.1/Redeemable.zip
   Channels:
@@ -114,6 +120,7 @@ functions:
       - http:
           path: Channels
           method: get
+          cors: true
     package:
       artifact: bin/release/netcoreapp2.1/Channels.zip
   LeaderBoard:
@@ -123,6 +130,7 @@ functions:
       - http:
           path: LeaderBoard
           method: get
+          cors: true
     package:
       artifact: bin/release/netcoreapp2.1/LeaderBoard.zip
   GetByChannelId:
@@ -132,8 +140,18 @@ functions:
       - http:
           path: GetByChannelId
           method: post
+          cors: true
     package:
       artifact: bin/release/netcoreapp2.1/GetByChannelId.zip
+  tokenExchangeRedirection:
+    handler: CsharpHandlers::AwsDotnetCsharp.Handler::tokenExchangeRedirection
+    description: token redirection
+    events:
+      - http:
+          path: tokenExchangeRedirection
+          method: get
+    package:
+      artifact: bin/release/netcoreapp2.1/tokenExchangeRedirection.zip
     
     
 resources:
