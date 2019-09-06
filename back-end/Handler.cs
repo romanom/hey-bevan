@@ -96,8 +96,10 @@ namespace AwsDotnetCsharp
             var redirectUrl = $"https://ui.hey-bevan.com?token={something.access_token}";
 
             var ss = JsonConvert.SerializeObject(new { redirect_url = redirectUrl });
-            
-            return new APIGatewayProxyResponse { StatusCode = 301, Body = ss };
+
+            var header = new Dictionary<string, string> {{"location", redirectUrl}};
+
+            return new APIGatewayProxyResponse { StatusCode = 301, Body = ss, Headers = header};
         }
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
