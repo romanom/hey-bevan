@@ -8,13 +8,14 @@ class Leaderboard extends Component {
     leaderboardData: []
   };
 
-  componentDidMount() {
+  async componentDidMount() {
+    const response = await serviceFunc.getLeaderboardData(
+      this.props.type,
+      this.props.dateType,
+      this.props.channel
+    );
     this.setState({
-      leaderboardData: serviceFunc.getLeaderboardData(
-        this.props.type,
-        this.props.dateType,
-        this.props.channel
-      )
+      leaderboardData: response
     });
   }
 
@@ -40,25 +41,25 @@ class Leaderboard extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.leaderboardData && this.state.leaderboardData.map(leaderboard => (
+            {this.state.leaderboardData && this.state.leaderboardData.map((leaderboard, index) => (
               <tr>
-                <td style={{ textAlign: "left" }}>{leaderboard.rank}</td>
+                <td style={{ textAlign: "left" }}>{index+1}</td>
                 <td style={{ textAlign: "left" }}>
                   <span id="leaderboard-person">
-                    {leaderboard.image ? (
+                    {leaderboard.UserImage ? (
                       <img
                         id="mediumlogo"
                         alt="heybevans"
-                        src={require(`./images/${leaderboard.image}`)}
+                        src={leaderboard.UserImage}
                       />
                     ) : (
                       ""
                     )}
-                    &nbsp;&nbsp;&nbsp;{leaderboard.name}{" "}
+                    &nbsp;&nbsp;&nbsp;{leaderboard.Name}{" "}
                   </span>
                 </td>
                 <td>
-                  {leaderboard.totalBevans}
+                  {leaderboard.TotalBevans}
                   <img id="smalllogo" alt="heybevans" src={bevans} />
                 </td>
               </tr>

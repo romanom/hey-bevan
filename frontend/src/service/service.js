@@ -12,7 +12,7 @@ const dateTypes = {
   allTime: 8
 };
 const BASEURL = " ";
-const getLeaderboardData = (type, dateType, channel) => {
+const getLeaderboardData = async (type, dateType, channel) => {
   let startDate = new Date();
   let endDate = new Date();
 
@@ -61,105 +61,9 @@ const getLeaderboardData = (type, dateType, channel) => {
     }
   }
 
-  /*    axios.post('https://8z3kla702d.execute-api.ap-southeast-2.amazonaws.com/dev/GetByChannelId',
-        {"ChannelId": "CMNASMNQ2" })
-        .then(function (response) {
-          console.log(response)
-    });
-    */
-  const leaderboard = [
-    {
-      rank: 1,
-      name: "Jesse Paclar",
-      image: "jp.png",
-      totalBevans: 100
-    },
-    {
-      rank: 2,
-      name: "Melody Reyes",
-      image: "melody.png",
-      totalBevans: 80
-    },
-    {
-      rank: 3,
-      name: "Ivan Perevernykhata",
-      image: "ivan.png",
-      totalBevans: 70
-    },
-    {
-      rank: 4,
-      name: "Bevan Dunning",
-      image: "logo.png",
-      totalBevans: 60
-    },
-    {
-      rank: 5,
-      name: "Russel Honnor",
-      image: "russ.png",
-      totalBevans: 55
-    },
-    {
-      rank: 6,
-      name: "Armando Vasquez",
-      image: "mondo.png",
-      totalBevans: 50
-    },
-    {
-      rank: 7,
-      name: "Nick Ye",
-      image: "ye.png",
-      totalBevans: 50
-    },
-    {
-      rank: 8,
-      name: "Saish Dharvotkar",
-      image: "saish.png",
-      totalBevans: 50
-    },
-    {
-      rank: 9,
-      name: "Basitha",
-      image: "basitha.png",
-      totalBevans: 50
-    },
-    {
-      rank: 10,
-      name: "Derek",
-      image: "derek.png",
-      totalBevans: 50
-    },
-    {
-      rank: 11,
-      name: "Keddy",
-      image: "keddy.png",
-      totalBevans: 50
-    },
-    {
-      rank: 12,
-      name: "Monique",
-      image: "monique.png",
-      totalBevans: 50
-    },
-    {
-      rank: 13,
-      name: "Morgan",
-      image: "morgan.png",
-      totalBevans: 50
-    },
-    {
-      rank: 14,
-      name: "Robert",
-      image: "robert.png",
-      totalBevans: 50
-    },
-    {
-      rank: 15,
-      name: "Sinu Sudhakaran",
-      image: "sinu.png",
-      totalBevans: 45
-    }
-  ];
-  return leaderboard;
+  const response = await axios.get('https://api.hey-bevan.com/LeaderBoard');
+  console.log('Leaderboard ', response.data);
+  return response.data;
 };
 
 const getUserRedeemableTotal = userid => {
