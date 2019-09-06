@@ -7,6 +7,7 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
+using AwsDotnetCsharp.Business.SlackMessage;
 using AwsDotnetCsharp.Infrastructure;
 using AwsDotnetCsharp.Infrastructure.Configs;
 using AwsDotnetCsharp.Models;
@@ -64,21 +65,31 @@ namespace AwsDotnetCsharp.Repository
         {
 //            var bevanList = (await GetBevanList()).Where(a => a.Timestamp >= startDate && a.Timestamp <= endDate);
             var bevanList = await GetBevanList();
-            var Users = new List<User>();
+            var userRet = new List<User>();
+            List<SlackAPI.User> Users;
+
+            var slackMsg = new SlackMessage(new DynamoRepository());
+
+            var ids = bevanList.Select(b => b.ReceiverId).Distinct();
+            
+            Users = slackMsg.GetUsers(ids.ToList()) ;
             
             foreach (var bevanData in bevanList)
             {
+                var userImg = Users.FirstOrDefault(u => u.id.Equals(bevanData.ReceiverId))?.profile.image_72;
+                
                 var sumOfBevans = bevanList.Where(b => b.ReceiverId.Equals(bevanData.ReceiverId)).Sum(a => a.Count);
                 var user = new User
                 {
                     Name = bevanData.BevanId,
                     TotalBevans = sumOfBevans,
+                    UserImage = userImg
                 };
                 
-                Users.Add(user);
+                userRet.Add(user);
             }
 
-            return Users;
+            return userRet;
         }
 
         public async Task<IEnumerable<Bevan>> GetBevansByChannel(string channelId)
