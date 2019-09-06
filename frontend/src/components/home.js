@@ -4,6 +4,7 @@ import Achievement from "./images/reason-achievement.png";
 import Easy from "./images/reason-easy.png"
 import Happy from "./images/reason-happiness.png"
 import Rewards from "./images/reason-rewards.png"
+import Slack from "./images/reason-slack.png"
 import ReasonsWhyImage from "./images/BevansReasons.png";
 import RewardsPoster from "./images/BevanRewards.png";
 import "./styles/home.css";
@@ -22,6 +23,9 @@ export default class Home extends Component {
                             Too often we get caught up in our work and forget to recognize each other, have a little fun, and celebrate. HeyBevan! is the answer.
                         </h1>
                     </div>
+                </div>
+                <div id="reason-jumbotron">
+                    <h1><b>5 REASONS TO GIVE BEVAN'S</b></h1>
                 </div>
                 <div className="flex-container">
                     <div className="reason-card">
@@ -52,6 +56,17 @@ export default class Home extends Component {
                             <p>Redeem your Bevans for awesome prizes</p>
                         </div>
                     </div>
+                    <div className="reason-card">
+                        <img src={Slack} alt="Slack Icon" />
+                        <div class="container">
+                            <h4><b>Integrated with Slack</b></h4>
+                            <p>Use Bevans through your existing Slack channels for free! Made with love using AWS Lambda, Amazon DynamoDB, .NET Core, React, and Bevan's beautiful face</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="reason-footer-jumbotron">
+                    <h1>For more information, talk to your local Bevan expert</h1>
+                    <p>learn more at ui.hey-bevan.com </p>
                 </div>
                 <div className="ReasonsWhyPoster">
                     <img id="reasonsWhyImage"
