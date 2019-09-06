@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import serviceFunc from "./../service/service";
 import "./styles/content.css";
-import Logo from "./images/logo_name.png";
+import Logo from "./images/logo.png";
 
 class Activities extends Component {
   state = {
@@ -25,10 +25,10 @@ class Activities extends Component {
                   <tr>
                     {" "}
                     <span className="activity-name">
-                      {activity.receiverName}
-                    </span>{" "}
+                      {activity.receiverName}{" "}
+                    </span>
                     received {activity.count} hey-bevans{" "}
-                    <img id="small-logo" src={Logo} />
+                    <img id="smalllogo" src={Logo} />
                     from {activity.giverName}
                     in {activity.channel}{" "}
                     <span className="timestamp">{activity.timestamp}</span>
