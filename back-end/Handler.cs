@@ -13,6 +13,7 @@ using AwsDotnetCsharp.Models;
 using AwsDotnetCsharp.Repository;
 using Newtonsoft.Json;
 using AwsDotnetCsharp.Business.SlackMessage;
+using Amazon.Runtime.Internal.Transform;
 using AwsDotnetCsharp.Service;
 
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
@@ -25,18 +26,22 @@ namespace AwsDotnetCsharp
         private readonly IDynamoRepository _dynamoRepository;
         private readonly ISlackService _slackService;
         private readonly SlackMessage _slackMessage;
-        
+
         public Handler()
         {
             _slackService = new SlackService();
             _dynamoRepository = new DynamoRepository();
-            _slackMessage  = new SlackMessage(_dynamoRepository); //hacky...
+            _slackMessage = new SlackMessage(_dynamoRepository); //hacky...
         }
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
         public APIGatewayProxyResponse AddBevan(APIGatewayProxyRequest request)
         {
-            return new APIGatewayProxyResponse { StatusCode = 200 };
+            return new APIGatewayProxyResponse
+            {
+                Headers = GetCorsHeaders(),
+                StatusCode = 200
+            };
         }
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
@@ -56,6 +61,7 @@ namespace AwsDotnetCsharp
                 case "url_verification":
                     return new APIGatewayProxyResponse
                     {
+                        Headers = GetCorsHeaders(),
                         StatusCode = 200,
                         Body = JsonConvert.SerializeObject(new
                         {
@@ -68,6 +74,7 @@ namespace AwsDotnetCsharp
 
                     return new APIGatewayProxyResponse
                     {
+                        Headers = GetCorsHeaders(),
                         StatusCode = 200,
                         Body = JsonConvert.SerializeObject(new
                         {
@@ -77,6 +84,7 @@ namespace AwsDotnetCsharp
                 default:
                     return new APIGatewayProxyResponse
                     {
+                        Headers = GetCorsHeaders(),
                         StatusCode = 200,
                         Body = JsonConvert.SerializeObject(new
                         {
@@ -105,23 +113,35 @@ namespace AwsDotnetCsharp
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
         public async Task<APIGatewayProxyResponse> GetAll()
         {
-            return new APIGatewayProxyResponse { StatusCode = 200};
+            return new APIGatewayProxyResponse
+            {
+                Headers = GetCorsHeaders(),
+                StatusCode = 200
+            };
         }
-        
+
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
         public async Task<APIGatewayProxyResponse> GetByChannelId(APIGatewayProxyRequest request)
         {
             var requestModel = JsonConvert.DeserializeObject<BevanRequest>(request.Body);
             var bevanByChannel = await _dynamoRepository.GetBevansByChannel(requestModel.ChannelId);
             var bevanJson = JsonConvert.SerializeObject(bevanByChannel);
-           
-            return new APIGatewayProxyResponse { StatusCode = 200, Body = bevanJson};
+
+            return new APIGatewayProxyResponse
+            {
+                Headers = GetCorsHeaders(),
+                StatusCode = 200, Body = bevanJson
+            };
         }
-        
+
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
         public APIGatewayProxyResponse GetById(string userId)
         {
-            return new APIGatewayProxyResponse { StatusCode = 200 };
+            return new APIGatewayProxyResponse
+            {
+                Headers = GetCorsHeaders(),
+                StatusCode = 200
+            };
         }
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
@@ -130,23 +150,46 @@ namespace AwsDotnetCsharp
             var requestModel = JsonConvert.DeserializeObject<RedeemableRequest>(request.Body);
             var redeemables = await _dynamoRepository.GetRedeemableByRecieverId(requestModel.ReceiverId);
             var json = JsonConvert.SerializeObject(redeemables);
-            return new APIGatewayProxyResponse { StatusCode = 200, Body = json };
+            return new APIGatewayProxyResponse
+            {
+                Headers = GetCorsHeaders(),
+                StatusCode = 200, Body = json
+            };
         }
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
         public async Task<APIGatewayProxyResponse> Channels()
         {
             List<string> channels = await _dynamoRepository.GetChannels();
-            return new APIGatewayProxyResponse { StatusCode = 200, Body = JsonConvert.SerializeObject(channels) };
+            return new APIGatewayProxyResponse
+            {
+                Headers = GetCorsHeaders(),
+                StatusCode = 200,
+                Body = JsonConvert.SerializeObject(channels)
+            };
+        }
+
+        private IDictionary<string, string> GetCorsHeaders()
+        {
+            return new Dictionary<string, string>()
+            {
+                new KeyValuePair<string, string>("Access-Control-Allow-Origin", "*"),
+                new KeyValuePair<string, string>("Access-Control-Allow-Credentials", "true")
+            };
         }
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
         public async Task<APIGatewayProxyResponse> LeaderBoard()
         {
             // ask to dynamo ask for my selected data
-//            var requestModel = JsonConvert.DeserializeObject<Leaderboard>(request.Body);
+            //            var requestModel = JsonConvert.DeserializeObject<Leaderboard>(request.Body);
             List<User> users = await _dynamoRepository.GetLeaderboard();
-            return new APIGatewayProxyResponse { StatusCode = 200, Body = JsonConvert.SerializeObject(users) };
+            return new APIGatewayProxyResponse
+            {
+                Headers = GetCorsHeaders(),
+                StatusCode = 200,
+                Body = JsonConvert.SerializeObject(users)
+            };
         }
 
 
