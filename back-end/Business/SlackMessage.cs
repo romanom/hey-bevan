@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
@@ -19,8 +20,7 @@ namespace AwsDotnetCsharp.Business.SlackMessage
 
         const string emoji = ":bevan:"; //TODO move to config
         const decimal dailyLimit = 5; //TODO move to config
-
-        private IDynamoRepository _dynamoRepository;
+       private IDynamoRepository _dynamoRepository;
 
         public SlackMessage(IDynamoRepository dynamoRepository)
         {
@@ -52,6 +52,7 @@ namespace AwsDotnetCsharp.Business.SlackMessage
                 }
 
                 //check how many they've sent today
+                //5 >= 5 || (5 - 1) >= 5)
                 if (sentToday >= dailyLimit || (sentToday + noOfEmojis) > dailyLimit)
                 {
                     //send daily limit message  
@@ -123,9 +124,10 @@ namespace AwsDotnetCsharp.Business.SlackMessage
                 throw new Exception("Error getting slack token from ssm");
             }
 
-            var client = new SlackTaskClient(token);
+            var client = new SlackTaskClient(token);          
 
             var response = await client.PostMessageAsync(whoSent, message, null, null, false, null, null, false, null, null, true);
+
 
             // process response from API call
             if (response.ok)
@@ -136,6 +138,78 @@ namespace AwsDotnetCsharp.Business.SlackMessage
             {
                 Console.WriteLine("Message sending failed. error: " + response.error);
             }
+        }
+    
+        internal List<User> GetUsers(List<string> userIds) {
+
+            var token = Environment.GetEnvironmentVariable("SLACK_ACCESS_TOKEN");
+            if (token == null)
+            {
+                throw new Exception("Error getting slack token from ssm");
+            }
+
+            ManualResetEventSlim clientReady = new ManualResetEventSlim(false);
+            SlackSocketClient client = new SlackSocketClient(token);
+            client.Connect((connected) =>{
+                // This is called once the client has emitted the RTM start command
+                clientReady.Set();
+            }, () =>{
+                // This is called once the RTM client has connected to the end point
+            });
+            // client.OnMessageReceived += (message) =>
+            // {
+            //     // Handle each message as you receive them
+            // };
+            clientReady.Wait();
+
+            client.GetUserList((ulr) => { Console.WriteLine("got users"); });
+
+            var userList = new List<User>();
+            foreach(var u in userIds) {
+                userList.Add(client.Users.Find(x => x.id.Equals(u)));
+            }
+
+            // Release the socket.  
+            client.CloseSocket(); 
+
+            return userList; 
+            
+        }
+
+        internal List<Channel> GetChannels(List<string> channelIds) {
+
+            var token = Environment.GetEnvironmentVariable("SLACK_ACCESS_TOKEN");
+            if (token == null)
+            {
+                throw new Exception("Error getting slack token from ssm");
+            }
+
+            ManualResetEventSlim clientReady = new ManualResetEventSlim(false);
+            SlackSocketClient client = new SlackSocketClient(token);
+            client.Connect((connected) =>{
+                // This is called once the client has emitted the RTM start command
+                clientReady.Set();
+            }, () =>{
+                // This is called once the RTM client has connected to the end point
+            });
+            // client.OnMessageReceived += (message) =>
+            // {
+            //     // Handle each message as you receive them
+            // };
+            clientReady.Wait();
+
+            client.GetChannelList((ulr) => { Console.WriteLine("got channels"); });
+
+            var channelList = new List<Channel>();
+            foreach(var u in channelIds) {
+                channelList.Add(client.Channels.Find(x => x.id.Equals(u)));
+            }
+
+            // Release the socket.  
+            client.CloseSocket(); 
+
+            return channelList; 
+            
         }
     }
 }
