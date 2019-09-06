@@ -13,18 +13,18 @@ export default class Home extends Component {
     render() {
         return (
             <div id="homepage">
-                <div>
-                    <img
-                        id="large-bevans-head"
-                        alt="Bevans head"
-                        src={Bevan}></img>
-                    <div>
-                        <h1 id="bevan-tagline">
-                            Too often we get caught up in our work and forget to recognize each other, have a little fun, and celebrate. HeyBevan! is the answer.
-                        </h1>
-                    </div>
-                </div>
                 <div className="flex-container">
+                    <div className="bevans-head-jumbotron">
+                        <img
+                            id="large-bevans-head"
+                            alt="Bevans head"
+                            src={Bevan}></img>
+                        <div>
+                            <h1 id="bevan-tagline">
+                                Too often we get caught up in our work and forget to recognize each other, have a little fun, and celebrate. HeyBevan! is the answer.
+                            </h1>
+                        </div>
+                    </div>
                     <div className="reason-jumbotron">
                         <h1>5 REASONS TO GIVE BEVANS</h1>
                     </div>
@@ -67,6 +67,10 @@ export default class Home extends Component {
                         <h1>For more information, talk to your local Bevan expert</h1>
                     </div>
                 </div>
+                <br />
+                <br />
+                <br />
+                <br />  
             </div>
         );
     }
