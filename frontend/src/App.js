@@ -21,7 +21,7 @@ class App extends Component {
             path="/leaderboard"
             render={props => <Content {...props} title="Leaderboard" />}
           />
-          <Route path="/signincallback" component={SignInCallback} />
+          <Route path="/tokenExchangeRedirection" component={SignInCallback} />
           <Route path="/Activity" component={ActivityContainer} />
           <Route path="/Tags" component={Tags} />
           <Route path="/Rewards" component={RewardPage} />
