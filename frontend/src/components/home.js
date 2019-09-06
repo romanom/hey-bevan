@@ -24,10 +24,10 @@ export default class Home extends Component {
                         </h1>
                     </div>
                 </div>
-                <div id="reason-jumbotron">
-                    <h1><b>5 REASONS TO GIVE BEVAN'S</b></h1>
-                </div>
                 <div className="flex-container">
+                    <div className="reason-jumbotron">
+                        <h1>5 REASONS TO GIVE BEVANS</h1>
+                    </div>
                     <div className="reason-card-2">
                         <img src={Achievement} alt="Achievment Icon" />
                         <div class="container">
@@ -63,22 +63,10 @@ export default class Home extends Component {
                             <p>Use Bevans through your existing Slack channels for free! Made with love using AWS Lambda, Amazon DynamoDB, .NET Core, React, and Bevan's beautiful face</p>
                         </div>
                     </div>
-                </div>
-                <div id="reason-footer-jumbotron">
-                    <h1>For more information, talk to your local Bevan expert</h1>
-                    <p>learn more at ui.hey-bevan.com </p>
-                </div>
-                <div className="ReasonsWhyPoster">
-                    <img id="reasonsWhyImage"
-                        alt="Reasons Why you should give a Bevan!"
-                        src={ReasonsWhyImage}>
-                    </img>
-                </div>
-                <div className="RewardsPoster">
-                    <img id="rewardsPoster"
-                        alt="Rewards you can get from redeeming your Bevans"
-                        src={RewardsPoster}>
-                    </img>
+                    <div className="reason-jumbotron">
+                        <h1>For more information, talk to your local Bevan expert</h1>
+                        <p>Learn more at ui.hey-bevan.com</p>
+                    </div>
                 </div>
             </div>
         );

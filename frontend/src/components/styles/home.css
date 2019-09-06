@@ -15,15 +15,26 @@
 }
 
 .reason-card-2 {
+  color: #34313A;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   background-color:#FCDAEA;
   flex: 0 1 calc(50% - 1em);
 }
 
-.reason-card-1 {  
+.reason-card-1 {
+  color: #34313A;  
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   background-color:#FCDAEA;
+  flex: 0 1 calc(100% - 1em);
+}
+
+.reason-jumbotron {
+  color: white;
+  padding: 10% 0;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  background-color:#EC0677;
   flex: 0 1 calc(100% - 1em);
 }
