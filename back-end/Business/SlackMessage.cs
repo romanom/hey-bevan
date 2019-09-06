@@ -44,6 +44,13 @@ namespace AwsDotnetCsharp.Business.SlackMessage
                 var sentToday = await getNoSentToday(whoSent);
                 var noOfEmojis = theMessage.Split(emoji).Length - 1;
 
+                //Sorry, you can only give tacos to other people on your team.
+                if(whoReceived == whoSent) {
+                    var selfMessage = string.Format("Sorry, you can only give {0}'s to other people on your team.", emoji);
+                    await sendDM(whoSent, selfMessage);
+                    return bevan;
+                }
+
                 //check how many they've sent today
                 if (sentToday >= dailyLimit || (sentToday + noOfEmojis) >= dailyLimit)
                 {
