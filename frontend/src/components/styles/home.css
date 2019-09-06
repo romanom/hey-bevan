@@ -8,10 +8,15 @@
   height: auto;
 }
 
-.flex-container{
+.flex-container {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.flex-container h4 {
+  font-family: 'Chilanka', cursive;
+  font-size: 24pt;
 }
 
 .reason-card-2 {
