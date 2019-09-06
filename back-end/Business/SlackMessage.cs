@@ -52,12 +52,12 @@ namespace AwsDotnetCsharp.Business.SlackMessage
                 }
 
                 //check how many they've sent today
-                if (sentToday >= dailyLimit || (sentToday + noOfEmojis) >= dailyLimit)
+                if (sentToday >= dailyLimit || (sentToday + noOfEmojis) > dailyLimit)
                 {
                     //send daily limit message  
                     Console.WriteLine("{0} >= {1} || ({0} - {2}) >= {1}) ", sentToday, dailyLimit, noOfEmojis);
                   
-                    var dailyLimitMessage = string.Format("Whoops! You tried to give {0} {2}'s. You have {1} {2}'s left to give today.", noOfEmojis, dailyLimit - (sentToday + noOfEmojis), emoji);
+                    var dailyLimitMessage = string.Format("Whoops! You tried to give {0} {2}'s. You have {1} {2}'s left to give today.", noOfEmojis, (dailyLimit - sentToday), emoji);
                     await sendDM(whoSent, dailyLimitMessage);
                     return bevan;
                 }
@@ -82,7 +82,7 @@ namespace AwsDotnetCsharp.Business.SlackMessage
 
                 //You received 1 taco from @ivan in #cr-hyperion.
                 //>@bevan :taco: for the awesome pitch!
-                var receiverDM = string.Format("You received {0} {1}'s from <@{2}>. >{3}", noOfEmojis, emoji, whoSent, theMessage);
+                var receiverDM = string.Format("You received {0} {1}'s from <@{2}>.\n>{3}", noOfEmojis, emoji, whoSent, theMessage);
                 await sendDM(whoReceived, receiverDM);
 
                 Console.WriteLine(receiverDM);
