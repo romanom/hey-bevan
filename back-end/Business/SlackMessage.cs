@@ -82,7 +82,7 @@ namespace AwsDotnetCsharp.Business.SlackMessage
 
                 //You received 1 taco from @ivan in #cr-hyperion.
                 //>@bevan :taco: for the awesome pitch!
-                var receiverDM = string.Format("You received {0} {1}'s from <@{2}>. >{3}", noOfEmojis, emoji, whoSent, theMessage);
+                var receiverDM = string.Format("You received {0} {1}'s from <@{2}>.\n>{3}", noOfEmojis, emoji, whoSent, theMessage);
                 await sendDM(whoReceived, receiverDM);
 
                 Console.WriteLine(receiverDM);
