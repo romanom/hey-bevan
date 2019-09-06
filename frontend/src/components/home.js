@@ -65,7 +65,6 @@ export default class Home extends Component {
                     </div>
                     <div className="reason-jumbotron">
                         <h1>For more information, talk to your local Bevan expert</h1>
-                        <p>Learn more at ui.hey-bevan.com</p>
                     </div>
                 </div>
             </div>
