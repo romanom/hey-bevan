@@ -51,7 +51,7 @@ class Leaderboard extends Component {
               <tr>
                 <td style={{ textAlign: "left" }}>{index+1}</td>
                 <td style={{ textAlign: "left" }}>
-                  <span id="leaderboard-person">
+                  <span id="leaderboard-image">
                     {leaderboard.UserImage ? (
                       <img
                         id="mediumlogo"
@@ -61,7 +61,7 @@ class Leaderboard extends Component {
                     ) : (
                       ""
                     )}
-                    &nbsp;&nbsp;&nbsp;{leaderboard.Name}{" "}
+                    <span id="leaderboard-person">{leaderboard.Name}{" "}</span>
                   </span>
                 </td>
                 <td id="totalcolumn">

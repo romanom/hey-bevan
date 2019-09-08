@@ -13,12 +13,13 @@
 
 #leaderboard-person {
   text-align: center;
-  vertical-align: center;
+  vertical-align: middle;
+  height: 45px;
 }
 
 #mediumlogo {
-  height: 35px;
-  width: 35px;
+  height: 45px;
+  width: 45px;
 }
 
 #smalllogo {
@@ -26,10 +27,15 @@
   width: 25px;
 }
 
+#leaderboard img {
+  padding-right: 10px;
+}
+
 #leaderboard td {
   padding-bottom: 2px;
   padding-right: 10px;
   border-bottom: 1px solid #fef3f3;
+  height: 45px;
 }
 
 #totalcolumn {

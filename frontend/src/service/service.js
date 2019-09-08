@@ -15,7 +15,7 @@ const getLeaderboardData = async (type, dateType, channel) => {
 
 const getUserRedeemableTotal = async userid => {
   const response = await axios.post(`${BASEURL}/Redeemable`, {
-    "ReceiverId": "U6U9AA22X"
+    "ReceiverId": userid
     });
     console.log('Redeemable total ', response.data);
   const modifiedResponse = [];
@@ -62,6 +62,7 @@ const getChannelActivities = async (channel) => {
 
 const getAllChannels = async () => {
     const response = await axios.get(`${BASEURL}/Channels`);
+    console.log('Channels from api ', response);
     return response.data;
 }
 
