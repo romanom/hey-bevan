@@ -6,3 +6,8 @@
 select {
   margin-right: 10px;
 }
+
+
+#filter-container {
+  padding-top: 15px;
+}

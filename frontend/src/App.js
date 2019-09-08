@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "./components/header";
 import "./App.css";
-import Content from "./components/content";
+import LeaderboardContainer from "./components/leaderboardcontainer";
 import Tags from "./components/tags";
 import Footer from "./components/footer";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -19,7 +19,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route
             path="/leaderboard"
-            render={props => <Content {...props} title="Leaderboard" />}
+            render={props => <LeaderboardContainer {...props} title="Leaderboard" />}
           />
           <Route path="/tokenExchangeRedirection" component={SignInCallback} />
           <Route path="/Activity" component={ActivityContainer} />

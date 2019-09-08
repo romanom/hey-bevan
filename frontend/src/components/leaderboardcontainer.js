@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import Filter from "./filter";
 import Leaderboard from "./leaderboard";
 import Profile from "./profile";
-import "./styles/content.css";
+import "./styles/leaderboardcontainer.css";
 
-class Content extends Component {
+class LeaderboardContainer extends Component {
   state = {};
   render() {
     return (
@@ -13,6 +13,7 @@ class Content extends Component {
           <tbody>
             <tr>
               <td>
+
                 <table>
                   <thead>
                     <tr id="sub-header">
@@ -24,23 +25,19 @@ class Content extends Component {
                   </thead>
                   <tbody>
                     <tr>
-                      <Leaderboard />
+                      <td><Leaderboard /></td>
+                      <td><Profile /></td>
                     </tr>
                   </tbody>
                 </table>
+
               </td>
             </tr>
           </tbody>
         </table>
-        <div>
-          <Profile />
-        </div>
       </div>
     );
   }
 }
-// PropTypes = {
-//   title: string.isRequired
-// };
 
-export default Content;
+export default LeaderboardContainer;

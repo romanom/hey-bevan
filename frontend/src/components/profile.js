@@ -1,19 +1,20 @@
 import React, { Component } from "react";
 import serviceFunc from "./../service/service";
 import "./styles/profile.css";
+import Configurations from './../config.json';
 
 class Profile extends Component {
   state = {
     userName: "",
     userImage: "",
-    totalBevans: 0
+    total: 0
   };
   componentDidMount() {
     const response = serviceFunc.getUserRedeemableTotal(1);
     this.setState({
       userName: response.userName,
       userImage: response.userImage,
-      totalBevans: response.totalBevans
+      total: response.total
     });
   }
   render() {
@@ -29,8 +30,8 @@ class Profile extends Component {
           ""
         )}
         <p>{this.state.userName}</p>
-        <p className="redeemable-text">Redeemable HeyBevans</p>
-        <p className="no-padding">{this.state.totalBevans}</p>
+        <p className="redeemable-text">Redeemable {Configurations.projectName} </p>
+        <p className="no-padding">{this.state.total}</p>
       </div>
     );
   }

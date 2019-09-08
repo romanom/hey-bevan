@@ -7,28 +7,30 @@
   justify-content: space-between;
   padding: 0 20px 0 20px;
 }
+
 #sub-header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
   padding-top: 10px;
+  vertical-align: middle;
+  text-align: center;
 }
-#filter-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+
 #title-container {
   display: inline;
 }
 
-table {
+#content-container table {
   width: 95%;
+  height: 75%;
 }
+
 .page-title {
-  font-size: 30px;
+  font-size: 25px;
   margin-left: 20px;
 }
+
 .timestamp {
   color: gray;
   font-size: 10px;

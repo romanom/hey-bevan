@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import serviceFunc from "./../service/service";
 import "./styles/leaderboard.css";
-import bevans from "./images/logo.png";
+import logo from "./images/logo.png";
+import Configurations from './../config.json';
+import spinner from './images/spin.gif';
 
 class Leaderboard extends Component {
   state = {
-    leaderboardData: []
+    leaderboardData: [],
+    loading : true
   };
 
   async componentDidMount() {
@@ -15,16 +18,19 @@ class Leaderboard extends Component {
       this.props.channel
     );
     this.setState({
-      leaderboardData: response
+      leaderboardData: response,
+      loading : false
     });
   }
 
   render() {
+    if (this.state.leaderboardData) console.log(this.state.leaderboardData);
     return (
+      this.state.loading ? <img id="spinimage" src={spinner}/> :
       <div className="scrollable">
         <table id="leaderboard">
-          <thead>
-            <tr>
+          <thead >
+            <tr >
               <th
                 className="leaderboard-headings"
                 style={{ textAlign: "left" }}
@@ -37,7 +43,7 @@ class Leaderboard extends Component {
               >
                 Person
               </th>
-              <th className="leaderboard-headings">Total HeyBevans</th>
+              <th className="leaderboard-headings">Total {Configurations.projectName}</th>
             </tr>
           </thead>
           <tbody>
@@ -49,7 +55,7 @@ class Leaderboard extends Component {
                     {leaderboard.UserImage ? (
                       <img
                         id="mediumlogo"
-                        alt="heybevans"
+                        alt={Configurations.projectName}
                         src={leaderboard.UserImage}
                       />
                     ) : (
@@ -58,9 +64,9 @@ class Leaderboard extends Component {
                     &nbsp;&nbsp;&nbsp;{leaderboard.Name}{" "}
                   </span>
                 </td>
-                <td>
-                  {leaderboard.TotalBevans}
-                  <img id="smalllogo" alt="heybevans" src={bevans} />
+                <td id="totalcolumn">
+                  {leaderboard.total}
+                  <img id="smalllogo" alt={Configurations.projectName} src={logo} />
                 </td>
               </tr>
             ))}

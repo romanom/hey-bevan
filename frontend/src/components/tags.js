@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Filter from "./filter";
 import Leaderboard from "./leaderboard";
 import Profile from "./profile";
-import "./styles/content.css";
+import "./styles/leaderboardcontainer.css";
 import "./styles/tags.css";
 
 class Content extends Component {

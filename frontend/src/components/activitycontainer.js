@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import Filter from "./filter";
 import ActivityFilter from "./activitiesFilter";
 import Activities from "./activities";
-import "./styles/content.css";
+import "./styles/leaderboardcontainer.css";
 
 class ActivityContainer extends Component {
   state = {};

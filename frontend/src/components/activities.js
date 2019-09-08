@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import serviceFunc from "./../service/service";
-import "./styles/content.css";
+import "./styles/leaderboardcontainer.css";
 import Logo from "./images/logo.png";
 
 class Activities extends Component {
@@ -8,9 +8,9 @@ class Activities extends Component {
     activities: []
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     this.setState({
-      activities: serviceFunc.getChannelActivities("cr-hyperion")
+      activities: await serviceFunc.getChannelActivities("cr-hyperion")
     });
   }
 

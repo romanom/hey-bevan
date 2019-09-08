@@ -1,10 +1,26 @@
 import React, { Component } from "react";
 import "./styles/filter.css";
 import serviceFunc from "./../service/service";
+import Configurations from './../config.json';
+import { dateTypes } from './../global';
+
 class Filter extends Component {
   state = {
-    channels: []
+    channels: [],
+    channelSelected : '',
+    typeSelected : '',
+    dateTypeSelected : 0
   };
+
+  onTypeChange = (e) => {
+    this.setState({ ...this.state, typeSelected: e.target.value })
+    console.log(e.target.value);
+  }
+
+  onChannelChange = (e) => {
+    this.setState({ ...this.state, channelSelected: e.target.value })
+    console.log(e.target.value);
+  }
 
   async componentDidMount() {
     const channelResponse = await serviceFunc.getAllChannels();
@@ -12,27 +28,21 @@ class Filter extends Component {
   }
 
   render() {
-    const hide = this.props.only;
     return (
-      <div>
+      <div id="filter-container">
         <span id="filter-heading">Filter</span>
-        <select>
-          <option>HeyBevan received</option>
-          <option>HeyBevan sent</option>
+        <select id="type" onChane={this.onTypeChange}>
+          <option>{Configurations.projectName} received</option>
+          <option>{Configurations.projectName} sent</option>
         </select>
-        <select>
-          <option>Today</option>
-          <option>Yesterday</option>
-          <option>This week</option>
-          <option>Last week</option>
-          <option>This month</option>
-          <option>Last month</option>
-          <option>This year</option>
-          <option>Last year</option>
+        <select id="dateType">
+          {dateTypes.map((type, index) => (
+            <option value={index}> { type } </option>
+          )) }
         </select>
-        <select>
+        <select id="channel" onChange={this.onChannelChange} selected={this.state.channelSelected}>
           {this.state.channels && this.state.channels.map(channel => (
-            <option>{channel.ChannelName}</option>
+            <option value={channel.ChannelId} >{channel.ChannelName}</option>
           ))}
         </select>
       </div>
