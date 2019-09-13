@@ -103,7 +103,7 @@ namespace AwsDotnetCsharp.Repository
                 userRet.Add(user);
             }
 
-            return userRet;
+            return userRet.OrderByDescending(x => x.TotalBevans).ToList();
         }
 
         public async Task<IEnumerable<Bevan>> GetBevansByChannel(string channelId)
