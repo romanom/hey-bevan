@@ -77,7 +77,6 @@ namespace AwsDotnetCsharp.Repository
 
         public async Task<List<User>> GetLeaderboard()
         {
-//            var bevanList = (await GetBevanList()).Where(a => a.Timestamp >= startDate && a.Timestamp <= endDate);
             var bevanList = await GetBevanList();
             var userRet = new List<User>();
             List<SlackAPI.User> Users;
@@ -88,14 +87,15 @@ namespace AwsDotnetCsharp.Repository
             
             Users = slackMsg.GetUsers(ids.ToList()) ;
             
-            foreach (var bevanData in bevanList)
+            foreach (var bevanData in Users)
             {
-                var userImg = Users.FirstOrDefault(u => u.id.Equals(bevanData.ReceiverId))?.profile.image_72;
+                var name = Users.FirstOrDefault(u => u.id.Equals(bevanData.id))?.name;
+                var userImg = Users.FirstOrDefault(u => u.id.Equals(bevanData.id))?.profile.image_72;
+                var sumOfBevans = bevanList.Where(b => b.ReceiverId.Equals(bevanData.id)).Sum(a => a.Count);
                 
-                var sumOfBevans = bevanList.Where(b => b.ReceiverId.Equals(bevanData.ReceiverId)).Sum(a => a.Count);
                 var user = new User
                 {
-                    Name = bevanData.BevanId,
+                    Name = name,
                     TotalBevans = sumOfBevans,
                     UserImage = userImg
                 };
