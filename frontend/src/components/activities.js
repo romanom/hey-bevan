@@ -5,41 +5,47 @@ import Logo from "./images/logo.png";
 
 class Activities extends Component {
   state = {
-    activities: []
+    activities: [],
+    channel : ''
   };
 
-  async componentDidMount() {
-    this.setState({
-      activities: await serviceFunc.getChannelActivities("cr-hyperion")
-    });
+  async componentDidUpdate() {
+    console.log(' props channel in activities ', this.props.channel);
+    if (this.props.channel !== this.state.channel){
+      var channelActivities = await serviceFunc.getChannelActivities(this.props.channel)
+      this.setState({
+        activities:  channelActivities, channel : this.props.channel
+      });  
+    }
+  }
+
+  getListOfImages = (count) => {
+    let images = [];
+    for (let i = 0; i< count ; i++){
+      images.push(<img id="smalllogo" src={Logo} />);
+    }
+  return images;
   }
 
   render() {
     return (
-      <div id="content-container">
-        <table>
+      <tbody>
+        {this.state.activities.map(activity => (
           <tr>
             <td>
-              <table>
-                {this.state.activities.map(activity => (
-                  <tr>
-                    {" "}
-                    <span className="activity-name">
-                      {activity.receiverName}{" "}
-                    </span>
-                    received {activity.count} HeyBevans{" "}
-                    <img id="smalllogo" src={Logo} />
-                    from {activity.giverName}
-                    in {activity.channel}{" "}
-                    <span className="timestamp">{activity.timestamp}</span>
-                    <p>{activity.message} </p>
-                  </tr>
-                ))}
-              </table>
+            {" "}
+            <span className="activity-name">
+              {activity.ReceiverId}{" "}
+            </span>
+            received {activity.Count} HeyBevans{" "}
+            { this.getListOfImages(activity.Count) }
+            from <span className="activity-name">{activity.GiverId} </span>
+            <span className="timestamp">{activity.timestamp}</span>
+            <p>{activity.Message} </p>
             </td>
           </tr>
-        </table>
-      </div>
+        ))}
+      </tbody>
     );
   }
 }

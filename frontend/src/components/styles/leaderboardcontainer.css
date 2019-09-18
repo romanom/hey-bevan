@@ -26,6 +26,10 @@
   height: 75%;
 }
 
+#content-container tbody {
+  text-align: left;
+}
+
 .page-title {
   font-size: 25px;
   margin-left: 20px;

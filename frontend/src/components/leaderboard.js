@@ -11,16 +11,24 @@ class Leaderboard extends Component {
     loading : true
   };
 
-  async componentDidMount() {
-    const response = await serviceFunc.getLeaderboardData(
-      this.props.type,
-      this.props.dateType,
-      this.props.channel
-    );
-    this.setState({
-      leaderboardData: response,
-      loading : false
-    });
+  async componentDidUpdate() {
+    this.loadLeaderboardData();
+  }
+  
+  loadLeaderboardData = async () => {
+    if (this.props.leaderDataType >= 0 && this.props.dateType >= 0 && this.props.channel !== "")
+    {
+      console.log('Load data for ', this.props.leaderDataType, "  ", this.props.dateType, "  ", this.props.channel);
+      const response = await serviceFunc.getLeaderboardData(
+        this.props.leaderDataType,
+        this.props.dateType,
+        this.props.channel
+      );
+      this.setState({
+        leaderboardData: response,
+        loading : false
+      });
+    }
   }
 
   render() {
@@ -50,8 +58,7 @@ class Leaderboard extends Component {
             {this.state.leaderboardData && this.state.leaderboardData.map((leaderboard, index) => (
               <tr>
                 <td style={{ textAlign: "left" }}>{index+1}</td>
-                <td style={{ textAlign: "left" }}>
-                  <span id="leaderboard-image">
+                <td>
                     {leaderboard.UserImage ? (
                       <img
                         id="mediumlogo"
@@ -61,8 +68,7 @@ class Leaderboard extends Component {
                     ) : (
                       ""
                     )}
-                    <span id="leaderboard-person">{leaderboard.Name}{" "}</span>
-                  </span>
+                  {leaderboard.Name}{" "}
                 </td>
                 <td id="totalcolumn">
                   {leaderboard.total}

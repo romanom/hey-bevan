@@ -7,48 +7,50 @@ import { dateTypes } from './../global';
 class Filter extends Component {
   state = {
     channels: [],
-    channelSelected : '',
+    channelSelected : 'C6XKWUHAN',
     typeSelected : 0,
-    dateTypeSelected : 0
+    dateTypeSelected : 4
   };
 
   onTypeChange = (e) => {
-    this.setState({ ...this.state, typeSelected: e.target.value })
-    console.log(e.target.value);
-    this.props.onChanged(this.state.typeSelected, this.state.dateTypeSelected, this.state.channelSelected);
+    this.setState({ ...this.state, typeSelected: e.target.value },
+      this.props.onChanged(e.target.value, this.state.dateTypeSelected, this.state.channelSelected));
   }
 
-  onDateChanged = (e) => {
-    this.setState({ ...this.state, dateTypeSelected: e.target.value })
-    console.log(e.target.value);
-    this.props.onChanged(this.state.typeSelected, this.state.dateTypeSelected, this.state.channelSelected);
+  onDateChange = (e) => {
+    this.setState({ ...this.state, dateTypeSelected: e.target.value },
+      this.props.onChanged(this.state.typeSelected, e.target.value, this.state.channelSelected))
   }
 
-  onChannelChange = (e) => {
-    this.setState({ ...this.state, channelSelected: e.target.value })
-    console.log(e.target.value);
-    this.props.onChanged(this.state.typeSelected, this.state.dateTypeSelected, this.state.channelSelected);
+  onChannelChange(channel){
+    this.setState({ ...this.state, channelSelected: channel },
+      this.props.onChanged(this.state.typeSelected, this.state.dateTypeSelected, channel));
+  }
+
+  onChannelChangeEvent = (e) => {
+    this.onChannelChange(e.target.value);
   }
 
   async componentDidMount() {
     const channelResponse = await serviceFunc.getAllChannels();
-    this.setState({ channels: channelResponse });
+    console.log('Channel Response ', channelResponse);
+    this.setState({ channels: channelResponse, channelSelected: channelResponse[1].Channel }, this.onChannelChange(channelResponse[1].Channel));
   }
 
   render() {
     return (
       <div id="filter-container">
         <span id="filter-heading">Filter</span>
-        <select id="type" onChane={this.onTypeChange}>
-          <option>{Configurations.projectName} received</option>
-          <option>{Configurations.projectName} sent</option>
+        <select id="type" onChange={this.onTypeChange} defaultValue={this.state.typeSelected}>
+          <option value="0">{Configurations.projectName} received</option>
+          <option value="1">{Configurations.projectName} sent</option>
         </select>
-        <select id="dateType" onChange={this.onDateChanged} selected={this.state.dateTypeSelected} >
+        <select id="dateType" onChange={this.onDateChange} defaultValue={this.state.dateTypeSelected} >
           {dateTypes.map((type, index) => (
             <option value={index}> { type } </option>
           )) }
         </select>
-        <select id="channel" onChange={this.onChannelChange} selected={this.state.channelSelected}>
+        <select id="channel" onChange={this.onChannelChangeEvent} defaultValue={this.state.channelSelected}>
           {this.state.channels && this.state.channels.map(channel => (
             <option value={channel.Channel} >{channel.ChannelName}</option>
           ))}

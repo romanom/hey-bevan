@@ -3,16 +3,16 @@ import Filter from "./filter";
 import Leaderboard from "./leaderboard";
 import Profile from "./profile";
 import "./styles/leaderboardcontainer.css";
-import { type } from "os";
 
 class LeaderboardContainer extends Component {
   state = {
     typeSelected : 0,
-    dateSelected : 0,
-    channelSelected : ''
+    dateSelected : 4,
+    channelSelected : 'C6XKWUHAN'
   };
 
-  onFilterChanged = (thpe, date, channel) =>{
+  onFilterChanged = (type, date, channel) =>{
+    console.log('on filter changed ', type, date, channel);
     this.setState({typeSelected: type, dateSelected : date, channelSelected : channel});
   }
 
@@ -23,7 +23,6 @@ class LeaderboardContainer extends Component {
           <tbody>
             <tr>
               <td>
-
                 <table>
                   <thead>
                     <tr id="sub-header">
@@ -36,7 +35,7 @@ class LeaderboardContainer extends Component {
                   <tbody>
                     <tr>
                       <td><Leaderboard 
-                        type={this.state.typeSelected} 
+                        leaderDataType={this.state.typeSelected} 
                         dateType={this.state.dateSelected} 
                         channel={this.state.channelSelected} />
                       </td>
@@ -44,7 +43,6 @@ class LeaderboardContainer extends Component {
                     </tr>
                   </tbody>
                 </table>
-
               </td>
             </tr>
           </tbody>
