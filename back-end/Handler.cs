@@ -121,10 +121,10 @@ namespace AwsDotnetCsharp
         }
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
-        public async Task<APIGatewayProxyResponse> GetByChannelId(APIGatewayProxyRequest request)
+        public async Task<APIGatewayProxyResponse> GetActivitiesByChannelId(APIGatewayProxyRequest request)
         {
             var requestModel = JsonConvert.DeserializeObject<BevanRequest>(request.Body);
-            var bevanByChannel = await _dynamoRepository.GetBevansByChannel(requestModel.ChannelId);
+            var bevanByChannel = await _dynamoRepository.GetActivitiesByChannelId(requestModel.ChannelId);
             var bevanJson = JsonConvert.SerializeObject(bevanByChannel);
 
             return new APIGatewayProxyResponse
@@ -179,11 +179,12 @@ namespace AwsDotnetCsharp
         }
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
-        public async Task<APIGatewayProxyResponse> LeaderBoard()
+        public async Task<APIGatewayProxyResponse> LeaderBoard(APIGatewayProxyRequest request)
         {
+            LeaderboardSearchRequest leaderboardRequest = JsonConvert.DeserializeObject<LeaderboardSearchRequest>(request.Body);
             // ask to dynamo ask for my selected data
             //            var requestModel = JsonConvert.DeserializeObject<Leaderboard>(request.Body);
-            List<User> users = await _dynamoRepository.GetLeaderboard();
+            List<User> users = await _dynamoRepository.GetLeaderboard(leaderboardRequest);
             return new APIGatewayProxyResponse
             {
                 Headers = GetCorsHeaders(),

@@ -20,10 +20,10 @@ namespace AwsDotnetCsharp.Repository
         Task SaveBevan(Bevan bevan);
         Task<List<ChannelRec>> GetChannels();
 
-        Task<IEnumerable<Bevan>> GetBevansByChannel(string channelId);
+        Task<IEnumerable<Activity>> GetActivitiesByChannelId(string channelId);
 
         Task<Redeemable> GetRedeemableByRecieverId(string userId);
-        Task<List<User>> GetLeaderboard();
+        Task<List<User>> GetLeaderboard(LeaderboardSearchRequest request);
     }
 
     public class ChannelRec
@@ -75,23 +75,39 @@ namespace AwsDotnetCsharp.Repository
             }
         }
 
-        public async Task<List<User>> GetLeaderboard()
+        private IEnumerable<SlackAPI.User> getUsers(IEnumerable<Bevan> bevanList)
         {
-            var bevanList = await GetBevanList();
-            var userRet = new List<User>();
             List<SlackAPI.User> Users;
 
             var slackMsg = new SlackMessage(new DynamoRepository());
 
-            var ids = bevanList.Select(b => b.ReceiverId).Distinct();
-            
-            Users = slackMsg.GetUsers(ids.ToList()) ;
-            
+            IEnumerable<string> ids = bevanList.Select(b => b.ReceiverId);
+            ids.Concat(bevanList.Select(b => b.GiverId));
+
+            Users = slackMsg.GetUsers(ids.Distinct().ToList());
+            return Users;
+        }
+
+        public async Task<List<User>> GetLeaderboard(LeaderboardSearchRequest request)
+        {
+            var bevanList = await GetBevanList();
+
+            //Filter on channel
+            bevanList = bevanList
+                .Where(b => b.Channel.Equals(request.Channel))
+                .Where(b => b.Timestamp >= request.StartDate && b.Timestamp <= request.EndDate);
+
+            var Users = getUsers(bevanList);
+
+            var userRet = new List<User>();
             foreach (var bevanData in Users)
             {
                 var name = Users.FirstOrDefault(u => u.id.Equals(bevanData.id))?.name;
                 var userImg = Users.FirstOrDefault(u => u.id.Equals(bevanData.id))?.profile.image_72;
-                var sumOfBevans = bevanList.Where(b => b.ReceiverId.Equals(bevanData.id)).Sum(a => a.Count);
+
+                var sumOfBevans = request.Type == 0
+                    ? bevanList.Where(b => b.ReceiverId.Equals(bevanData.id)).Sum(a => a.Count)
+                    : bevanList.Where(b => b.GiverId.Equals(bevanData.id)).Sum(a => a.Count);
                 
                 var user = new User
                 {
@@ -106,24 +122,42 @@ namespace AwsDotnetCsharp.Repository
             return userRet.OrderByDescending(x => x.TotalBevans).ToList();
         }
 
-        public async Task<IEnumerable<Bevan>> GetBevansByChannel(string channelId)
+        public async Task<IEnumerable<Activity>> GetActivitiesByChannelId(string channelId)
         {
-            return (await GetBevanList()).Where(b => b.Channel.Equals(channelId));
-//            using (var client = new AmazonDynamoDBClient())
-//            {
-//                var response = await client.ScanAsync(new ScanRequest("hey-bevan-table-new-dev"));
-//
-//                return response.Items.Where(k => k["channel"].S.Equals(channelId)).Select(i => new Bevan
-//                {
-//                    BevanId = i["bevanId"].S,
-//                    ReceiverId = i["receiverId"].S,
-//                    Count = int.Parse(i["count"].N),
-//                    Message = i["message"].S,
-//                    GiverId = i["giverId"].S,
-//                    Channel = i["channel"].S,
-//                    Timestamp = DateTime.Parse(i["timestamp"].S)
-//                });
-//            }
+            var bevanList = await GetBevanList();
+            bevanList = bevanList.Where(b => b.Channel.Equals(channelId));
+            var Users = getUsers(bevanList);
+
+            var activities = new List<Activity>();
+            foreach (var activityDetails in bevanList)
+            {
+                var receiver = Users.FirstOrDefault(u => u.id.Equals(activityDetails.ReceiverId));
+                var giver = Users.FirstOrDefault(u => u.id.Equals(activityDetails.GiverId));
+
+                var receiverName = receiver?.name;
+                var receiverImg = receiver?.profile.image_72;
+
+                var giverName = giver?.name;
+                var giverImg = giver?.profile.image_72;
+
+                var activity = new Activity
+                {
+                    ReceiverId = activityDetails.ReceiverId,
+                    GiverId = activityDetails.GiverId,
+                    Channel = activityDetails.Channel,
+                    Timestamp = activityDetails.Timestamp,
+                    Count = activityDetails.Count,
+                    Message = activityDetails.Message,
+                    GiverName =  giverName,
+                    ReceiverName = receiverName,
+                    ReceiverImage = receiverImg,
+                    GiverImage = giverImg
+                };
+
+                activities.Add(activity);
+            }
+
+            return activities;
         }
 
         public async Task<Redeemable> GetRedeemableByRecieverId(string userId)

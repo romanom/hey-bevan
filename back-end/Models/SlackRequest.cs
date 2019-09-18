@@ -41,9 +41,9 @@ namespace AwsDotnetCsharp.Models
         public string ReceiverId { get; set; }
     }
 
-    public class Leaderboard
+    public class LeaderboardSearchRequest
     {
-        public string RecognitionRole { get; set; }
+        public int Type { get; set; } //either received or sent
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public string Channel { get; set; }

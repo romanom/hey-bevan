@@ -31,4 +31,13 @@ namespace AwsDotnetCsharp.Models
         public string ReceiverId { get; set; }
         public int TotalCount { get; set; }
     }
+
+    public class Leaderboard
+    {
+        public string RecognitionRole { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public string Channel { get; set; }
+    }
+
 }

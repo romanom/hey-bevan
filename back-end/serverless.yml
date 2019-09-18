@@ -129,20 +129,20 @@ functions:
     events:
       - http:
           path: LeaderBoard
-          method: get
-          cors: true
-    package:
-      artifact: bin/release/netcoreapp2.1/LeaderBoard.zip
-  GetByChannelId:
-    handler: CsharpHandlers::AwsDotnetCsharp.Handler::GetByChannelId
-    description: return bevans by channel id
-    events:
-      - http:
-          path: GetByChannelId
           method: post
           cors: true
     package:
-      artifact: bin/release/netcoreapp2.1/GetByChannelId.zip
+      artifact: bin/release/netcoreapp2.1/LeaderBoard.zip
+  GetActivitiesByChannelId:
+    handler: CsharpHandlers::AwsDotnetCsharp.Handler::GetActivitiesByChannelId
+    description: return activities by channel id
+    events:
+      - http:
+          path: GetActivitiesByChannelId
+          method: post
+          cors: true
+    package:
+      artifact: bin/release/netcoreapp2.1/GetActivitiesByChannelId.zip
   tokenExchangeRedirection:
     handler: CsharpHandlers::AwsDotnetCsharp.Handler::tokenExchangeRedirection
     description: token redirection
