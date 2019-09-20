@@ -19,33 +19,23 @@ class LeaderboardContainer extends Component {
   render() {
     return (
       <div id="content-container">
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <table>
-                  <thead>
-                    <tr id="sub-header">
-                      <td className="page-title">{this.props.title}</td>
-                      <td>
-                        <Filter onChanged={this.onFilterChanged} />
-                      </td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><Leaderboard 
-                        leaderDataType={this.state.typeSelected} 
-                        dateType={this.state.dateSelected} 
-                        channel={this.state.channelSelected} />
-                      </td>
-                      <td><Profile /></td>
-                    </tr>
-                  </tbody>
-                </table>
+        <table id="header-table">
+          <thead>
+            <th className="page-title">{this.props.title}</th>
+            <th className="filter"><Filter onChanged={this.onFilterChanged} /></th>
+          </thead>
+        </table>
+        
+        <table id="body-table">
+          <tr>
+              <td className="leader-col">
+                <Leaderboard 
+                    leaderDataType={this.state.typeSelected} 
+                    dateType={this.state.dateSelected} 
+                    channel={this.state.channelSelected} />
               </td>
-            </tr>
-          </tbody>
+              <td className="profile-col"><Profile /></td>
+          </tr>
         </table>
       </div>
     );

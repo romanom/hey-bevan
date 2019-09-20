@@ -37,24 +37,11 @@ class Leaderboard extends Component {
       this.state.loading ? <img id="spinimage" src={spinner}/> :
       <div className="scrollable">
         <table id="leaderboard">
-          <thead >
-            <tr >
-              <th
-                className="leaderboard-headings"
-                style={{ textAlign: "left" }}
-              >
-                Rank
-              </th>
-              <th
-                className="leaderboard-headings"
-                style={{ textAlign: "left" }}
-              >
-                Person
-              </th>
-              <th className="leaderboard-headings">Total {Configurations.projectName}</th>
+            <tr>
+              <th>Rank</th>
+              <th>Person</th>
+              <th>Total {Configurations.projectName}</th>
             </tr>
-          </thead>
-          <tbody>
             {this.state.leaderboardData && this.state.leaderboardData.map((leaderboard, index) => (
               <tr>
                 <td style={{ textAlign: "left" }}>{index+1}</td>
@@ -76,7 +63,6 @@ class Leaderboard extends Component {
                 </td>
               </tr>
             ))}
-          </tbody>
         </table>
       </div>
     );
