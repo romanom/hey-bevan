@@ -23,7 +23,7 @@ class ActivityFilter extends Component {
         {this.state.channels ?
           <select onChange={this.onChannelChange} selected={this.state.channelSelected}>
             {this.state.channels.map(channel => (
-              <option value={channel.Channel} >{channel.ChannelName}</option>
+              <option value={channel.id} >{channel.name}</option>
             ))}
           </select> : ''
         }

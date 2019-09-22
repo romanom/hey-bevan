@@ -19,9 +19,8 @@ const getLeaderboardData = async (type, dateType, channel) => {
     Channel : channel
   };
   const response = await axios.post(`${BASEURL}/LeaderBoard`, postData);
-  //const response = await axios.get(`${BASEURL}/LeaderBoard`);
   const modifiedResponse = [];
-  response.data.map(record => (modifiedResponse.push({ ...record, total: record.TotalBevans})))
+  response.data.map(record => (modifiedResponse.push({ ...record, total: record.totalbevans})))
   console.log('Leaderboard ', modifiedResponse);
   return modifiedResponse;
 };

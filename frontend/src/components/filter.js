@@ -9,7 +9,7 @@ class Filter extends Component {
     channels: [],
     channelSelected : 'C6XKWUHAN',
     typeSelected : 0,
-    dateTypeSelected : 4
+    dateTypeSelected : 0
   };
 
   onTypeChange = (e) => {
@@ -34,7 +34,7 @@ class Filter extends Component {
   async componentDidMount() {
     const channelResponse = await serviceFunc.getAllChannels();
     console.log('Channel Response ', channelResponse);
-    this.setState({ channels: channelResponse, channelSelected: channelResponse[1].Channel }, this.onChannelChange(channelResponse[1].Channel));
+    this.setState({ channels: channelResponse, channelSelected: channelResponse[0].id }, this.onChannelChange(channelResponse[0].id));
   }
 
   render() {
@@ -52,7 +52,7 @@ class Filter extends Component {
         </select>
         <select id="channel" onChange={this.onChannelChangeEvent} defaultValue={this.state.channelSelected}>
           {this.state.channels && this.state.channels.map(channel => (
-            <option value={channel.Channel} >{channel.ChannelName}</option>
+            <option value={channel.id} >{channel.name}</option>
           ))}
         </select>
       </div>

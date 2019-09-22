@@ -40,20 +40,20 @@
 }
 
 #leaderboard td {
-  padding-bottom: 2px;
+  padding-bottom: 5px;
   padding-right: 10px;
   border-bottom: 1px solid #fef3f3;
-  height: 45px;
+  height: 25px;
   text-align: left;
   vertical-align: middle;
 }
 
 #leaderboard th {
   font-size: 16px;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
   padding-right: 10px;
-  height: 45px;
+  height: 25px;
   text-align: left;
   vertical-align: top;
 }
