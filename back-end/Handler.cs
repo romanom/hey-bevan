@@ -26,13 +26,14 @@ namespace AwsDotnetCsharp
         private readonly IDynamoRepository _dynamoRepository;
         private readonly ISlackService _slackService;
         private readonly SlackMessage _slackMessage;
-
+        private List<EventId> _eventIdList;
         public Handler()
         {
             _slackService = new SlackService();
             _dynamoRepository = new DynamoRepository();
             _slackMessage = new SlackMessage(_dynamoRepository); //hacky...
-        }
+            _eventIdList = new List<EventId>();
+    }
 
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
         public APIGatewayProxyResponse AddBevan(APIGatewayProxyRequest request)
@@ -55,6 +56,8 @@ namespace AwsDotnetCsharp
         private async Task<APIGatewayProxyResponse> HandleRequest(SlackRequest request)
         {
             Console.WriteLine("HandleRequest invoked with Type " + request.Type);
+            Console.WriteLine("HandleRequest invoked with Event text " + request.Event.Text);
+            Console.WriteLine("HandleRequest invoked with Event_id " + request.Event_Id);
 
             switch (request.Type)
             {
@@ -69,8 +72,25 @@ namespace AwsDotnetCsharp
                         })
                     };
                 case "event_callback":
+                    EventId existingId = _eventIdList.Find(i => i.id == request.Event_Id);
+                    Console.WriteLine("event_callback Existing in the list " + "  " + existingId?.id + "  ", existingId?.count);
+                    if (existingId == null)
+                    {
+                        Console.WriteLine("Adding new event to list and processing the message ");
+                        _eventIdList.Add(new EventId
+                        {
+                            id = request.Event_Id,
+                            count = 1
+                        });
 
-                    await _slackMessage.ProcessMessage(request.Event);
+                        await _slackMessage.ProcessMessage(request.Event);
+                    }
+                    else if (existingId.count > 5)
+                        _eventIdList.Remove(existingId);
+                    else
+                    {
+                        existingId.count = existingId.count + 1;
+                    }
 
                     return new APIGatewayProxyResponse
                     {
@@ -160,7 +180,7 @@ namespace AwsDotnetCsharp
         [LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
         public async Task<APIGatewayProxyResponse> Channels()
         {
-            List<ChannelRec> channels = await _dynamoRepository.GetChannels();
+            List<AwsDotnetCsharp.Models.Channel> channels = await _dynamoRepository.GetChannels();
             return new APIGatewayProxyResponse
             {
                 Headers = GetCorsHeaders(),

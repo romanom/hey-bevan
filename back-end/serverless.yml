@@ -170,3 +170,31 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
+    channel:
+        Type: 'AWS::DynamoDB::Table'
+        DeletionPolicy: Retain
+        Properties:
+            TableName: channel
+            AttributeDefinitions:
+            - AttributeName: guid
+              AttributeType: S
+            KeySchema:
+            - AttributeName: guid
+              KeyType: HASH
+            ProvisionedThroughput:
+                ReadCapacityUnits: 1
+                WriteCapacityUnits: 1
+    user:
+        Type: 'AWS::DynamoDB::Table'
+        DeletionPolicy: Retain
+        Properties:
+            TableName: user
+            AttributeDefinitions:
+            - AttributeName: guid
+              AttributeType: S
+            KeySchema:
+            - AttributeName: guid
+              KeyType: HASH
+            ProvisionedThroughput:
+                ReadCapacityUnits: 1
+                WriteCapacityUnits: 1

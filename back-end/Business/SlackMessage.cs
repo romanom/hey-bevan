@@ -19,22 +19,31 @@ namespace AwsDotnetCsharp.Business.SlackMessage
     {
 
         const string emoji = ":bevan:"; //TODO move to config
-        const decimal dailyLimit = 5; //TODO move to config
-       private IDynamoRepository _dynamoRepository;
+        const decimal dailyLimit = 100; //TODO move to config
+        private IDynamoRepository _dynamoRepository;
 
         public SlackMessage(IDynamoRepository dynamoRepository)
         {
             _dynamoRepository = dynamoRepository;
-
         }
 
         internal async Task<Bevan> ProcessMessage(Event @event)
         {
             var theMessage = @event.Text;
             var bevan = new Bevan();
-
+            Console.WriteLine(" theMessage ", theMessage + " ~~~~~~~~~~ " + @event.Text);
+            if (string.IsNullOrEmpty(theMessage)) {
+                Console.WriteLine("Message is empty , exiting");
+                return bevan;
+            }
             //TODO allow multiple users
-            var whoReceived = Regex.Match(theMessage, @"<@(.+?)>").Groups[1].Value;
+            var regexValue = Regex.Match(theMessage, @"<@(.+?)>");
+            Console.WriteLine("regexValue ", regexValue);
+            var whoReceived = regexValue.Groups[1].Value;
+            Console.WriteLine(" whoReceived ", whoReceived);
+
+            theMessage = theMessage.Replace("<@" + whoReceived + ">", "");
+            Console.WriteLine("Event message received from slack " + theMessage + " " + @event.Channel + " " + @event.User);
 
             if (theMessage.Contains(emoji) && !string.IsNullOrEmpty(whoReceived))
             {
@@ -50,6 +59,9 @@ namespace AwsDotnetCsharp.Business.SlackMessage
                     await sendDM(whoSent, selfMessage);
                     return bevan;
                 }
+                Console.WriteLine("No of emojis received "+ noOfEmojis.ToString());
+                Console.WriteLine("Total emojis sent today " + sentToday.ToString());
+                Console.WriteLine("Daily limit " + dailyLimit.ToString());
 
                 //check how many they've sent today
                 //5 >= 5 || (5 - 1) >= 5)
@@ -62,9 +74,6 @@ namespace AwsDotnetCsharp.Business.SlackMessage
                     await sendDM(whoSent, dailyLimitMessage);
                     return bevan;
                 }
-
-
-
                 Console.WriteLine("{0} gave \"{1}\" emojis to {2}", whoSent, noOfEmojis, whoReceived);
 
                 // do dynamo db inserts
@@ -89,7 +98,7 @@ namespace AwsDotnetCsharp.Business.SlackMessage
                 Console.WriteLine(receiverDM);
 
                 //@jp received 3 tacos from you. You have 2 tacos left to give out today. 
-                var giverDM = string.Format("<@{0}> received {1} {2}'s from you. You have {3} {2}'s left to give out today.", whoReceived, noOfEmojis, emoji, dailyLimit - noOfEmojis);
+                var giverDM = string.Format("<@{0}> received {1} {2}'s from you. You have {3} {2}'s left to give out today.", whoReceived, noOfEmojis, emoji, dailyLimit - (noOfEmojis + sentToday));
                 await sendDM(whoSent, giverDM);
 
                 Console.WriteLine(giverDM);
@@ -176,7 +185,7 @@ namespace AwsDotnetCsharp.Business.SlackMessage
             
         }
 
-        internal List<Channel> GetChannels(List<string> channelIds) {
+        internal List<AwsDotnetCsharp.Models.Channel> GetChannels(List<string> channelIds) {
 
             var token = Environment.GetEnvironmentVariable("SLACK_ACCESS_TOKEN");
             if (token == null)
@@ -200,9 +209,13 @@ namespace AwsDotnetCsharp.Business.SlackMessage
 
             client.GetChannelList((ulr) => { Console.WriteLine("got channels"); });
 
-            var channelList = new List<Channel>();
+            var channelList = new List<AwsDotnetCsharp.Models.Channel>();
             foreach(var u in channelIds) {
-                channelList.Add(client.Channels.Find(x => x.id.Equals(u)));
+                var slackChannels = client.Channels.Find(x => x.id.Equals(u));
+                channelList.Add(new Models.Channel {
+                    id = slackChannels.id,
+                    name = slackChannels.name
+                });
             }
 
             // Release the socket.  
