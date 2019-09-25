@@ -19,7 +19,7 @@ namespace AwsDotnetCsharp.Business.SlackMessage
     {
 
         const string emoji = ":bevan:"; //TODO move to config
-        const decimal dailyLimit = 100; //TODO move to config
+        const decimal dailyLimit = 5; //TODO move to config
         private IDynamoRepository _dynamoRepository;
 
         public SlackMessage(IDynamoRepository dynamoRepository)
